@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Dávid Halmi">
   <meta name="description" content="Dávid Halmi live CV - business, product, marketing, CRM and project leadership.">
-  <title>Dávid Halmi - Live CV</title>
+  <title>Hire Dávid Halmi</title>
   <link rel="preload" href="assets/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/oswald-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
   <style>
@@ -91,59 +91,35 @@
 
     .topbar {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       margin-bottom: 18px;
     }
 
     .language-switch {
       display: inline-flex;
       gap: 6px;
-      padding: 5px;
-      border: 1px solid var(--line);
+      padding: 4px;
+      border: 0;
       border-radius: 999px;
-      background: rgba(245, 248, 243, 0.055);
-      box-shadow: 0 16px 36px var(--shadow);
+      background: rgba(245, 248, 243, 0.045);
+      box-shadow: none;
     }
 
     .language-switch button {
       display: inline-flex;
       min-height: 38px;
       align-items: center;
-      gap: 9px;
-      border: 1px solid transparent;
+      border: 0;
       border-radius: 999px;
-      padding: 7px 12px;
+      padding: 7px 18px;
       color: var(--quiet);
       background: transparent;
       cursor: pointer;
     }
 
     .language-switch button[aria-pressed="true"] {
-      border-color: rgba(57, 242, 220, 0.44);
       color: var(--text);
       background: rgba(57, 242, 220, 0.13);
-    }
-
-    .flag {
-      width: 27px;
-      height: 18px;
-      flex: 0 0 27px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 3px;
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.24) inset;
-    }
-
-    .flag-en {
-      background:
-        linear-gradient(135deg, transparent 0 48%, rgba(255,255,255,0.95) 48% 52%, transparent 52%),
-        linear-gradient(90deg, #153d8a 0 50%, transparent 50%),
-        linear-gradient(180deg, #b22234 0 14%, #fff 14% 28%, #b22234 28% 42%, #fff 42% 56%, #b22234 56% 70%, #fff 70% 84%, #b22234 84% 100%),
-        linear-gradient(90deg, transparent 0 50%, #012169 50% 100%);
-    }
-
-    .flag-hu {
-      background: linear-gradient(180deg, #ce2939 0 33.33%, #fff 33.33% 66.66%, #477050 66.66% 100%);
     }
 
     .hero {
@@ -173,14 +149,14 @@
 
     .identity {
       display: grid;
-      grid-template-columns: 136px minmax(0, 1fr);
-      gap: 22px;
+      grid-template-columns: 154px minmax(0, 1fr);
+      gap: clamp(28px, 4vw, 46px);
       align-items: center;
     }
 
     .portrait {
-      width: 136px;
-      height: 136px;
+      width: 150px;
+      height: 150px;
       overflow: hidden;
       border: 2px solid rgba(244, 211, 94, 0.72);
       border-radius: 50%;
@@ -207,7 +183,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(3.2rem, 7vw, 6.4rem);
+      font-size: clamp(3rem, 6vw, 5.6rem);
       font-weight: 700;
       line-height: 0.92;
     }
@@ -221,11 +197,20 @@
       line-height: 1.35;
     }
 
+    .location-line {
+      margin: 10px 0 0;
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
     .contact-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 22px;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
     }
 
     .pill,
@@ -257,10 +242,30 @@
       background: rgba(244, 211, 94, 0.08);
     }
 
+    .mail-pill {
+      border-color: rgba(244, 211, 94, 0.72);
+      color: var(--bg);
+      background: var(--gold);
+    }
+
+    .mail-pill:hover,
+    .mail-pill:focus-visible {
+      color: var(--bg);
+      background: #ffe487;
+    }
+
+    .contact-phone {
+      color: var(--soft);
+      font-size: 0.98rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
     .downloads {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: flex-start;
       border-left: 1px solid var(--line);
       padding-left: clamp(18px, 2.7vw, 30px);
     }
@@ -276,15 +281,19 @@
       display: grid;
       grid-template-columns: minmax(0, 1fr);
       gap: 9px;
+      width: min(100%, 285px);
     }
 
     .cv-link {
-      min-height: 44px;
+      min-height: 38px;
       justify-content: space-between;
       border-radius: 8px;
-      padding: 10px 12px;
+      padding: 9px 11px;
       color: var(--text);
-      background: rgba(5, 8, 21, 0.32);
+      background:
+        linear-gradient(90deg, rgba(244, 211, 94, 0.2), transparent 5px),
+        rgba(5, 8, 21, 0.48);
+      box-shadow: inset 0 0 0 1px rgba(57, 242, 220, 0.08);
     }
 
     .cv-link span {
@@ -456,7 +465,7 @@
 
     .stealth-link {
       color: var(--soft);
-      font-weight: 500;
+      font-weight: 300;
       text-decoration: none;
     }
 
@@ -507,11 +516,13 @@
       justify-content: center;
       padding: 22px 0 4px;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.76rem;
+      font-weight: 300;
     }
 
     footer a {
       color: var(--quiet);
+      font-weight: 300;
       text-decoration: none;
     }
 
@@ -533,16 +544,43 @@
       justify-content: center;
       border: 1px solid rgba(57, 242, 220, 0.45);
       border-radius: 50%;
-      color: var(--teal);
-      background: rgba(5, 8, 21, 0.86);
+      color: rgba(57, 242, 220, 0.82);
+      background: rgba(5, 8, 21, 0.5);
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.34);
+      opacity: 0.72;
+      transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
     }
 
     .back-top:hover,
     .back-top:focus-visible {
+      opacity: 1;
+      transform: translateY(-2px);
       color: var(--gold);
       border-color: rgba(244, 211, 94, 0.78);
+      background: rgba(5, 8, 21, 0.78);
       text-decoration: none;
+    }
+
+    .back-top svg {
+      width: 19px;
+      height: 19px;
+      display: block;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translate3d(-18px, 10px, 0);
+      transition: opacity 520ms ease, transform 520ms ease;
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    .reveal:nth-of-type(even) {
+      transform: translate3d(18px, 10px, 0);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
     }
 
     [data-lang-content] { display: none; }
@@ -607,6 +645,11 @@
       .identity {
         justify-items: center;
         text-align: center;
+      }
+
+      .portrait {
+        width: 132px;
+        height: 132px;
       }
 
       h1 {
@@ -679,6 +722,21 @@
         text-align: center;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      .reveal,
+      .reveal:nth-of-type(even) {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .back-top {
+        transition: none;
+      }
+    }
   </style>
 </head>
 <body id="top">
@@ -686,11 +744,9 @@
     <div class="topbar" aria-label="Language">
       <div class="language-switch">
         <button type="button" data-lang-button="en" aria-pressed="true">
-          <span class="flag flag-en" aria-hidden="true"></span>
           <span>English</span>
         </button>
         <button type="button" data-lang-button="hu" aria-pressed="false">
-          <span class="flag flag-hu" aria-hidden="true"></span>
           <span>Magyar</span>
         </button>
       </div>
@@ -706,10 +762,10 @@
             <p class="eyebrow">Operations & Project Professional</p>
             <h1 id="name-en">Dávid Halmi</h1>
             <p class="tagline">Bridging Business, Product & Marketing functions</p>
+            <p class="location-line">Budapest, Hungary</p>
             <div class="contact-row" aria-label="Contact details">
-              <a class="pill" href="mailto:me@davidhalmi.com">me@davidhalmi.com</a>
-              <a class="pill" href="tel:+36309957496">+36 30 995 7496</a>
-              <span class="pill">Budapest, Hungary</span>
+              <a class="pill mail-pill" href="mailto:me@davidhalmi.com">MAIL ME</a>
+              <span class="contact-phone">+36 30 995 7496</span>
               <a class="pill" href="https://www.linkedin.com/in/davidhalmi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
@@ -727,8 +783,7 @@
 
       <section class="section" aria-labelledby="roles-en">
         <div class="section-heading">
-          <h2 id="roles-en">Functional Range</h2>
-          <p>Cross-functional leadership across customer data, delivery, growth and product work.</p>
+          <h2 id="roles-en">Career paths</h2>
         </div>
         <div class="role-grid">
           <article class="card role-card">
@@ -765,7 +820,6 @@
       <section class="section" aria-labelledby="experience-en">
         <div class="section-heading">
           <h2 id="experience-en">Experience</h2>
-          <p>Roles spanning CRM, lifecycle campaigns, product delivery, marketing, support and team leadership.</p>
         </div>
         <div class="timeline">
           <article class="job">
@@ -846,7 +900,7 @@
           </article>
           <article class="project-card">
             <h3>Music & audio</h3>
-            <p>30+ years of music and audio composition, spanning production, sound design and creative commissions. Some of that work lives quietly at <a class="stealth-link" href="https://musiconpurpose.net/" target="_blank" rel="noopener noreferrer">musiconpurpose.net</a>.</p>
+            <p>30+ years of music and audio composition, spanning production, sound design and creative commissions. You can find my works at <a class="stealth-link" href="https://musiconpurpose.net/" target="_blank" rel="noopener noreferrer">musiconpurpose.net</a>.</p>
           </article>
         </div>
       </section>
@@ -883,10 +937,10 @@
             <p class="eyebrow">Üzleti működés és projekt szakember</p>
             <h1 id="name-hu">Halmi Dávid</h1>
             <p class="tagline">Híd az Üzleti, a Termék és a Marketing területek között</p>
+            <p class="location-line">Budapest, Magyarország</p>
             <div class="contact-row" aria-label="Elérhetőségek">
-              <a class="pill" href="mailto:me@davidhalmi.com">me@davidhalmi.com</a>
-              <a class="pill" href="tel:+36309957496">+36 30 995 7496</a>
-              <span class="pill">Budapest</span>
+              <a class="pill mail-pill" href="mailto:me@davidhalmi.com">ÍRJ NEKEM</a>
+              <span class="contact-phone">+36 30 995 7496</span>
               <a class="pill" href="https://www.linkedin.com/in/davidhalmi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
@@ -904,8 +958,7 @@
 
       <section class="section" aria-labelledby="roles-hu">
         <div class="section-heading">
-          <h2 id="roles-hu">Funkcionális fókuszok</h2>
-          <p>Keresztfunkcionális vezetői tapasztalat ügyféladat, delivery, growth és termékterületen.</p>
+          <h2 id="roles-hu">Karrierutak</h2>
         </div>
         <div class="role-grid">
           <article class="card role-card">
@@ -942,7 +995,6 @@
       <section class="section" aria-labelledby="experience-hu">
         <div class="section-heading">
           <h2 id="experience-hu">Szakmai tapasztalat</h2>
-          <p>CRM, lifecycle kampányok, termék delivery, marketing, support és csapatvezetés.</p>
         </div>
         <div class="timeline">
           <article class="job">
@@ -1023,7 +1075,7 @@
           </article>
           <article class="project-card">
             <h3>Zene és audio</h3>
-            <p>30+ év zeneírás és audio kompozíció, production, sound design és kreatív megbízások metszetében. Ennek egy része csendben itt él: <a class="stealth-link" href="https://musiconpurpose.net/" target="_blank" rel="noopener noreferrer">musiconpurpose.net</a>.</p>
+            <p>30+ év zeneírás és audio kompozíció, production, sound design és kreatív megbízások metszetében. Munkáim megtalálhatók itt: <a class="stealth-link" href="https://musiconpurpose.net/" target="_blank" rel="noopener noreferrer">musiconpurpose.net</a>.</p>
           </article>
         </div>
       </section>
@@ -1056,7 +1108,11 @@
     </footer>
   </main>
 
-  <a class="back-top" href="#top" aria-label="Back to top">↑</a>
+  <a class="back-top" href="#top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 14.5 12 8l6 6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 
   <script>
     const langButtons = Array.from(document.querySelectorAll("[data-lang-button]"));
@@ -1071,7 +1127,6 @@
       const lang = normalizeLang(nextLang);
       document.documentElement.dataset.lang = lang;
       document.documentElement.lang = lang;
-      document.title = lang === "hu" ? "Halmi Dávid - Élő CV" : "Dávid Halmi - Live CV";
       langButtons.forEach((button) => {
         button.setAttribute("aria-pressed", String(button.dataset.langButton === lang));
       });
@@ -1088,6 +1143,46 @@
 
     window.addEventListener("hashchange", () => setLanguage(window.location.hash.slice(1), false));
     setLanguage(window.location.hash.slice(1), false);
+
+    const revealTargets = Array.from(document.querySelectorAll(".hero, .section, .cta"));
+    revealTargets.forEach((element, index) => {
+      element.classList.add("reveal");
+      element.style.setProperty("--reveal-delay", Math.min(index * 45, 220) + "ms");
+    });
+
+    function revealVisibleNow() {
+      revealTargets.forEach((element) => {
+        if (element.classList.contains("is-visible") || element.offsetParent === null) {
+          return;
+        }
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+          element.classList.add("is-visible");
+        }
+      });
+    }
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+      revealTargets.forEach((element) => observer.observe(element));
+    } else {
+      revealTargets.forEach((element) => element.classList.add("is-visible"));
+    }
+
+    langButtons.forEach((button) => {
+      button.addEventListener("click", () => setTimeout(revealVisibleNow, 0));
+    });
+    window.addEventListener("hashchange", () => setTimeout(revealVisibleNow, 0));
+    window.addEventListener("scroll", revealVisibleNow, { passive: true });
+    window.addEventListener("resize", revealVisibleNow);
+    setTimeout(revealVisibleNow, 0);
   </script>
 </body>
 </html>
