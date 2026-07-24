@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -91,8 +91,66 @@
 
     .topbar {
       display: flex;
-      justify-content: center;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
       margin-bottom: 18px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      min-height: 36px;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(183, 239, 122, 0.28);
+      border-radius: 999px;
+      padding: 7px 13px;
+      color: var(--soft);
+      background: rgba(183, 239, 122, 0.09);
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .status-pill::before {
+      width: 9px;
+      height: 9px;
+      flex: 0 0 9px;
+      border-radius: 50%;
+      background: #7dff79;
+      box-shadow: 0 0 0 5px rgba(125, 255, 121, 0.12), 0 0 18px rgba(125, 255, 121, 0.46);
+      content: "";
+    }
+
+    .status-pill.is-unavailable {
+      border-color: rgba(255, 122, 69, 0.26);
+      color: rgba(245, 248, 243, 0.62);
+      background: rgba(245, 248, 243, 0.05);
+    }
+
+    .status-pill.is-unavailable::before {
+      background: #8f8d90;
+      box-shadow: 0 0 0 5px rgba(255, 122, 69, 0.08), 0 0 14px rgba(255, 122, 69, 0.26);
+    }
+
+    [data-status-lang],
+    .status-unavailable {
+      display: none;
+    }
+
+    .status-pill.is-unavailable .status-available {
+      display: none;
+    }
+
+    .status-pill.is-unavailable .status-unavailable {
+      display: inline;
+    }
+
+    html[data-lang="en"] .status-available [data-status-lang="en"],
+    html[data-lang="en"] .status-unavailable [data-status-lang="en"],
+    html[data-lang="hu"] .status-available [data-status-lang="hu"],
+    html[data-lang="hu"] .status-unavailable [data-status-lang="hu"] {
+      display: inline;
     }
 
     .language-switch {
@@ -444,7 +502,8 @@
     .project-grid,
     .education-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(220px, 360px));
+      justify-content: start;
       gap: 12px;
     }
 
@@ -625,7 +684,15 @@
       }
 
       .topbar {
+        display: grid;
+        grid-template-columns: 1fr;
         justify-content: stretch;
+        gap: 8px;
+      }
+
+      .status-pill {
+        width: 100%;
+        justify-content: center;
       }
 
       .language-switch {
@@ -750,6 +817,16 @@
 <body id="top">
   <main class="page">
     <div class="topbar" aria-label="Language">
+      <div class="status-pill is-available" aria-live="polite">
+        <span class="status-available">
+          <span data-status-lang="en">Available for hire</span>
+          <span data-status-lang="hu">Pozíciót keresek!</span>
+        </span>
+        <span class="status-unavailable">
+          <span data-status-lang="en">Not searching currently</span>
+          <span data-status-lang="hu">Jelenleg nem keresek állást</span>
+        </span>
+      </div>
       <div class="language-switch">
         <button type="button" data-lang-button="en" aria-pressed="true">
           <span>English</span>
@@ -802,17 +879,17 @@
             </div>
           </article>
           <article class="card role-card">
+            <h3>Marketing manager</h3>
+            <p>Growth-oriented online & offline marketing with successful Go-To-Market campaigns.</p>
+            <div class="tags">
+              <span class="tag">End-to-end Marketing Strategy</span><span class="tag">Content Creation</span><span class="tag">GTM</span><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">HootSuite</span><span class="tag">Social Media</span><span class="tag">Media Buys</span><span class="tag">PPC</span><span class="tag">Copywriting</span><span class="tag">Print Design</span>
+            </div>
+          </article>
+          <article class="card role-card">
             <h3>Project manager</h3>
             <p>End-to-End Delivery, Agile & Cross-functional team leader.</p>
             <div class="tags">
               <span class="tag">Agile</span><span class="tag">SCRUM</span><span class="tag">Jira</span><span class="tag">Redmine</span><span class="tag">ClickUp</span><span class="tag">Trello</span><span class="tag">Asana</span><span class="tag">Team Leadership</span><span class="tag">Resource Management</span><span class="tag">Delivery Management</span>
-            </div>
-          </article>
-          <article class="card role-card">
-            <h3>Marketing manager</h3>
-            <p>Growth-oriented online & offline marketing with successful Go-To-Market campaigns.</p>
-            <div class="tags">
-              <span class="tag">End-to-end Marketing Strategy</span><span class="tag">Content Creation</span><span class="tag">GTM</span><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">Media Buys</span><span class="tag">PPC</span><span class="tag">Copywriting</span><span class="tag">Print Design</span>
             </div>
           </article>
           <article class="card role-card">
@@ -977,17 +1054,17 @@
             </div>
           </article>
           <article class="card role-card">
+            <h3>Marketing manager</h3>
+            <p>Növekedés-orientált online & offline marketing, sikeres piacraviteli kampányokkal.</p>
+            <div class="tags">
+              <span class="tag">Teljeskörű marketingstratégia</span><span class="tag">Tartalomgyártás</span><span class="tag">GTM</span><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">HootSuite</span><span class="tag">Közösségi Média</span><span class="tag">Médiavásárlás</span><span class="tag">PPC</span><span class="tag">Szövegírás</span><span class="tag">Nyomtatványtervezés</span>
+            </div>
+          </article>
+          <article class="card role-card">
             <h3>Project manager</h3>
             <p>Teljes projectciklus menedzsment, keresztfunkcionális csapatok agilis vezetése.</p>
             <div class="tags">
               <span class="tag">Agile</span><span class="tag">SCRUM</span><span class="tag">Jira</span><span class="tag">Redmine</span><span class="tag">ClickUp</span><span class="tag">Trello</span><span class="tag">Asana</span><span class="tag">Csoportvezetés</span><span class="tag">Erőforrásmenedzsment</span><span class="tag">Projektátadás menedzsment</span>
-            </div>
-          </article>
-          <article class="card role-card">
-            <h3>Marketing manager</h3>
-            <p>Növekedés-orientált online & offline marketing, sikeres piacraviteli kampányokkal.</p>
-            <div class="tags">
-              <span class="tag">Teljeskörű marketingstratégia</span><span class="tag">Tartalomgyártás</span><span class="tag">GTM</span><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">Médiavásárlás</span><span class="tag">PPC</span><span class="tag">Szövegírás</span><span class="tag">Nyomtatványtervezés</span>
             </div>
           </article>
           <article class="card role-card">
