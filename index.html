@@ -367,82 +367,6 @@
       text-align: right;
     }
 
-    .signal-card {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 18px;
-      align-items: end;
-      margin-top: 22px;
-      padding: 20px;
-      border: 1px solid rgba(237, 245, 255, 0.52);
-      border-radius: 8px;
-      color: #162033;
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(222, 255, 245, 0.88)),
-        #f5fff7;
-      box-shadow: 0 20px 46px rgba(0, 0, 0, 0.18);
-    }
-
-    .signal-card::before {
-      position: absolute;
-      inset: 0;
-      content: "";
-      background:
-        radial-gradient(circle at 12% 18%, rgba(57, 242, 220, 0.36) 0 42px, transparent 43px),
-        radial-gradient(circle at 92% 18%, rgba(244, 211, 94, 0.42) 0 62px, transparent 63px),
-        linear-gradient(128deg, transparent 0 58%, rgba(181, 108, 255, 0.18) 58.2% 59.1%, transparent 59.3%),
-        linear-gradient(38deg, transparent 0 72%, rgba(57, 242, 220, 0.22) 72.2% 73%, transparent 73.2%);
-      pointer-events: none;
-    }
-
-    .signal-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .signal-card h2 {
-      margin: 0 0 12px;
-      color: #111827;
-      font-size: clamp(1.7rem, 3vw, 2.45rem);
-      line-height: 1;
-    }
-
-    .signal-card ul {
-      margin: 0;
-      padding-left: 1.1rem;
-      color: #26324a;
-      font-size: 1.03rem;
-      font-weight: 400;
-      line-height: 1.5;
-    }
-
-    .signal-card li + li {
-      margin-top: 5px;
-    }
-
-    .signal-card .button {
-      display: inline-flex;
-      min-height: 42px;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(22, 32, 51, 0.22);
-      border-radius: 8px;
-      padding: 10px 16px;
-      color: #07111f;
-      background: #b7ef7a;
-      box-shadow: 0 10px 24px rgba(22, 32, 51, 0.16);
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .signal-card .button:hover,
-    .signal-card .button:focus-visible {
-      color: #07111f;
-      background: #d6ff9f;
-      text-decoration: none;
-    }
     .role-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -842,14 +766,6 @@
         overflow-wrap: anywhere;
       }
 
-      .signal-card {
-        grid-template-columns: 1fr;
-        align-items: start;
-      }
-
-      .signal-card .button {
-        width: 100%;
-      }
       .role-grid,
       .project-grid {
         grid-template-columns: 1fr;
@@ -936,17 +852,6 @@
         </aside>
       </section>
 
-      <article class="signal-card" aria-labelledby="signal-en">
-        <div>
-          <h2 id="signal-en">HÍVÓSZÓ</h2>
-          <ul>
-            <li>I turn messy customer and product signals into clear next steps.</li>
-            <li>I connect business, marketing and tech teams without losing the user.</li>
-            <li>I make practical systems, campaigns and workflows easier to run.</li>
-          </ul>
-        </div>
-        <a class="button" href="https://google.com/" target="_blank" rel="noopener noreferrer">Több infó</a>
-      </article>
       <section class="section" aria-labelledby="roles-en">
         <div class="section-heading">
           <h2 id="roles-en">Career paths</h2>
@@ -1154,17 +1059,6 @@
         </aside>
       </section>
 
-      <article class="signal-card" aria-labelledby="signal-hu">
-        <div>
-          <h2 id="signal-hu">HÍVÓSZÓ</h2>
-          <ul>
-            <li>Zajos ügyfél- és termékjelekből átlátható következő lépéseket csinálok.</li>
-            <li>Összekötöm az üzleti, marketing és technológiai csapatokat úgy, hogy a felhasználó fókuszban marad.</li>
-            <li>Gyakorlati rendszereket, kampányokat és workflow-kat teszek könnyebben működtethetővé.</li>
-          </ul>
-        </div>
-        <a class="button" href="https://google.com/" target="_blank" rel="noopener noreferrer">Több infó</a>
-      </article>
       <section class="section" aria-labelledby="roles-hu">
         <div class="section-heading">
           <h2 id="roles-hu">Karrierutak</h2>
