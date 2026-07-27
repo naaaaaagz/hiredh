@@ -4,27 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Dávid Halmi">
-  <meta name="description" content="Dávid Halmi live CV - business, product, marketing, CRM and project leadership.">
-  <title>Hire Dávid Halmi</title>
+  <meta name="description" content="Dávid Halmi - product, CRM, marketing and project leadership landing page.">
+  <title>Hire Dávid Halmi - Alternative</title>
   <link rel="preload" href="assets/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/oswald-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     :root {
-      --bg: #050815;
-      --bg2: #10172d;
-      --panel: rgba(16, 23, 45, 0.78);
-      --panel-strong: rgba(20, 31, 58, 0.92);
-      --line: rgba(237, 245, 255, 0.15);
-      --text: #f5f8f3;
+      --bg: #050813;
+      --bg-soft: #101728;
+      --panel: rgba(14, 21, 39, 0.82);
+      --panel-strong: rgba(18, 29, 50, 0.94);
+      --line: rgba(236, 244, 255, 0.14);
+      --line-strong: rgba(236, 244, 255, 0.24);
+      --text: #f7faf4;
       --soft: #dce8df;
-      --quiet: rgba(245, 248, 243, 0.66);
-      --muted: rgba(245, 248, 243, 0.48);
-      --teal: #39f2dc;
-      --gold: #f4d35e;
-      --coral: #ff7a45;
-      --plum: #b56cff;
-      --green: #b7ef7a;
-      --shadow: rgba(0, 0, 0, 0.36);
+      --quiet: rgba(247, 250, 244, 0.69);
+      --muted: rgba(247, 250, 244, 0.5);
+      --teal: #42ead7;
+      --gold: #f5d66f;
+      --coral: #ff8b5d;
+      --green: #b8f07d;
+      --violet: #b48cff;
+      --shadow: rgba(0, 0, 0, 0.38);
     }
 
     @font-face {
@@ -58,11 +59,12 @@
       margin: 0;
       font-family: "Oswald", Arial, sans-serif;
       letter-spacing: 0;
+      overflow-x: hidden;
       background:
-        linear-gradient(132deg, rgba(57, 242, 220, 0.14), transparent 27%),
-        linear-gradient(224deg, rgba(244, 211, 94, 0.13), transparent 24%),
-        linear-gradient(25deg, rgba(181, 108, 255, 0.12), transparent 31%),
-        linear-gradient(180deg, #050815 0%, #10172d 46%, #141a28 100%);
+        linear-gradient(140deg, rgba(66, 234, 215, 0.18), transparent 30%),
+        linear-gradient(32deg, rgba(245, 214, 111, 0.17), transparent 31%),
+        linear-gradient(215deg, rgba(255, 139, 93, 0.12), transparent 26%),
+        linear-gradient(180deg, #050813 0%, #0e1b28 42%, #161521 100%);
     }
 
     a {
@@ -93,7 +95,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 12px;
       margin-bottom: 18px;
     }
 
@@ -102,14 +104,15 @@
       min-height: 36px;
       align-items: center;
       gap: 9px;
-      border: 1px solid rgba(183, 239, 122, 0.28);
+      border: 1px solid rgba(184, 240, 125, 0.3);
       border-radius: 999px;
       padding: 7px 13px;
       color: var(--soft);
-      background: rgba(183, 239, 122, 0.09);
+      background: rgba(184, 240, 125, 0.09);
       font-size: 0.9rem;
       font-weight: 600;
       line-height: 1;
+      white-space: nowrap;
     }
 
     .status-pill::before {
@@ -123,14 +126,14 @@
     }
 
     .status-pill.is-unavailable {
-      border-color: rgba(255, 122, 69, 0.26);
-      color: rgba(245, 248, 243, 0.62);
-      background: rgba(245, 248, 243, 0.05);
+      border-color: rgba(255, 139, 93, 0.28);
+      color: rgba(247, 250, 244, 0.62);
+      background: rgba(247, 250, 244, 0.05);
     }
 
     .status-pill.is-unavailable::before {
       background: #8f8d90;
-      box-shadow: 0 0 0 5px rgba(255, 122, 69, 0.08), 0 0 14px rgba(255, 122, 69, 0.26);
+      box-shadow: 0 0 0 5px rgba(255, 139, 93, 0.08), 0 0 14px rgba(255, 139, 93, 0.26);
     }
 
     [data-status-lang],
@@ -155,21 +158,17 @@
 
     .language-switch {
       display: inline-flex;
-      gap: 6px;
+      gap: 5px;
       padding: 4px;
-      border: 0;
       border-radius: 999px;
-      background: rgba(245, 248, 243, 0.045);
-      box-shadow: none;
+      background: rgba(247, 250, 244, 0.045);
     }
 
     .language-switch button {
-      display: inline-flex;
-      min-height: 38px;
-      align-items: center;
+      min-height: 36px;
       border: 0;
       border-radius: 999px;
-      padding: 7px 18px;
+      padding: 6px 16px;
       color: var(--quiet);
       background: transparent;
       cursor: pointer;
@@ -177,117 +176,157 @@
 
     .language-switch button[aria-pressed="true"] {
       color: var(--text);
-      background: rgba(57, 242, 220, 0.13);
+      background: rgba(66, 234, 215, 0.14);
     }
+
+    [data-lang-content] { display: none; }
+    html[data-lang="en"] [data-lang-content="en"],
+    html[data-lang="hu"] [data-lang-content="hu"] { display: block; }
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(190px, 240px);
-      gap: clamp(18px, 3vw, 34px);
+      grid-template-columns: minmax(0, 1fr) minmax(190px, 260px);
+      gap: clamp(18px, 3vw, 30px);
       align-items: stretch;
-      margin-bottom: 20px;
-      padding: clamp(20px, 4vw, 36px);
+      padding: clamp(20px, 4vw, 38px);
       border: 1px solid var(--line);
       border-radius: 8px;
       background:
-        linear-gradient(135deg, rgba(57, 242, 220, 0.13), rgba(244, 211, 94, 0.08) 42%, rgba(181, 108, 255, 0.1)),
+        radial-gradient(circle at 7% 8%, rgba(245, 214, 111, 0.2), transparent 31%),
+        linear-gradient(135deg, rgba(66, 234, 215, 0.2), rgba(245, 214, 111, 0.1) 43%, rgba(180, 140, 255, 0.14)),
         var(--panel);
       box-shadow: 0 26px 70px var(--shadow);
     }
 
-    .hero > *,
-    .identity > *,
-    .downloads,
-    .card,
-    .job,
-    .project-card {
+    .hero-main {
+      display: flex;
       min-width: 0;
-    }
-
-    .identity {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
+      flex-direction: column;
+      justify-content: center;
       gap: 16px;
-      align-items: center;
     }
 
     .hero-copy {
+      min-width: 0;
+    }
+
+    .portrait {
+      width: 154px;
+      aspect-ratio: 1;
+      border: 1px solid rgba(245, 214, 111, 0.5);
+      border-radius: 50%;
+      padding: 5px;
+      background: rgba(5, 8, 19, 0.56);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+      overflow: hidden;
+    }
+
+    .portrait img {
+      display: block;
       width: 100%;
-      max-width: 36rem;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 36%;
     }
 
     .eyebrow {
-      margin: 0 0 8px;
+      margin: 0 0 9px;
       color: var(--gold);
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
     h1 {
-      margin: 0;
-      font-size: clamp(2.35rem, 4.6vw, 4.2rem);
+      margin-bottom: 5px;
+      font-size: clamp(2.5rem, 5.5vw, 5.15rem);
       font-weight: 700;
-      line-height: 0.92;
+      line-height: 0.9;
     }
 
-    .tagline {
-      max-width: 30rem;
-      margin: 16px 0 0;
+    .lead {
+      max-width: 44rem;
+      margin-bottom: 0;
       color: var(--soft);
-      font-size: clamp(1.16rem, 2vw, 1.52rem);
+      font-size: clamp(1.2rem, 2.25vw, 1.68rem);
       font-weight: 300;
-      line-height: 1.35;
+      line-height: 1.33;
     }
 
-    .location-line {
-      margin: 10px 0 0;
-      color: var(--gold);
-      font-size: 1rem;
-      font-weight: 500;
-      line-height: 1.3;
+    .support {
+      max-width: 41rem;
+      margin-bottom: 16px;
+      color: var(--quiet);
+      font-size: 1.04rem;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .mini-focus,
+    .contact-row,
+    .tag-row,
+    .fit-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .focus-chip,
+    .pill,
+    .tag,
+    .cv-link {
+      display: inline-flex;
+      max-width: 100%;
+      min-height: 32px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(66, 234, 215, 0.32);
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: var(--soft);
+      background: rgba(247, 250, 244, 0.055);
+      font-size: 0.9rem;
+      line-height: 1.1;
+      overflow-wrap: anywhere;
+    }
+
+    .focus-chip {
+      border-color: rgba(245, 214, 111, 0.3);
+      color: #f7e9aa;
+      background: rgba(245, 214, 111, 0.08);
     }
 
     .contact-row {
-      display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
       margin-top: 18px;
     }
 
-    .pill,
-    .cv-link,
-    .tag {
-      display: inline-flex;
-      max-width: 100%;
-      min-height: 34px;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(57, 242, 220, 0.34);
-      border-radius: 999px;
-      padding: 7px 11px;
+    .pill {
+      min-height: 38px;
       color: var(--teal);
-      background: rgba(245, 248, 243, 0.055);
-      font-size: 0.9rem;
-      line-height: 1.1;
       text-decoration: none;
-      overflow-wrap: anywhere;
     }
 
     .pill:hover,
     .pill:focus-visible,
     .cv-link:hover,
     .cv-link:focus-visible {
-      border-color: rgba(244, 211, 94, 0.72);
+      border-color: rgba(245, 214, 111, 0.72);
       color: var(--gold);
       text-decoration: none;
-      background: rgba(244, 211, 94, 0.08);
+      background: rgba(245, 214, 111, 0.08);
     }
 
     .mail-pill {
-      border-color: rgba(244, 211, 94, 0.72);
+      border-color: rgba(245, 214, 111, 0.72);
       color: var(--bg);
       background: var(--gold);
     }
@@ -295,206 +334,374 @@
     .mail-pill:hover,
     .mail-pill:focus-visible {
       color: var(--bg);
-      background: #ffe487;
+      background: #ffe792;
     }
 
-    .downloads {
+    .contact-phone,
+    .location {
+      color: var(--quiet);
+      font-size: 0.98rem;
+      line-height: 1.25;
+    }
+
+    .location {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .side-panel {
       display: flex;
+      min-width: 0;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
+      gap: 14px;
       border-left: 1px solid var(--line);
-      padding-left: clamp(14px, 2vw, 22px);
+      padding-left: clamp(14px, 2vw, 20px);
     }
 
-    .downloads h2 {
-      margin: 0 0 12px;
-      color: var(--text);
-      font-size: 1.42rem;
-      line-height: 1.1;
+    .side-panel h2 {
+      margin-bottom: 12px;
+      font-size: 1.38rem;
+      line-height: 1.08;
     }
 
     .download-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
+      grid-template-columns: 1fr;
       gap: 9px;
-      width: min(100%, 220px);
+    }
+
+    .hero-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
     }
 
     .cv-link {
       min-height: 38px;
-      justify-content: center;
+      justify-content: space-between;
       border-radius: 8px;
       padding: 9px 11px;
       color: var(--text);
       background:
-        linear-gradient(90deg, rgba(244, 211, 94, 0.2), transparent 5px),
-        rgba(5, 8, 21, 0.48);
-      box-shadow: inset 0 0 0 1px rgba(57, 242, 220, 0.08);
+        linear-gradient(90deg, rgba(245, 214, 111, 0.22), transparent 5px),
+        rgba(5, 8, 19, 0.48);
+      box-shadow: inset 0 0 0 1px rgba(66, 234, 215, 0.08);
     }
 
     .cv-link span {
       color: var(--muted);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
     }
 
+    .proof-strip,
+    .hero-impact {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .metric {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background:
+        linear-gradient(145deg, rgba(245, 214, 111, 0.11), rgba(66, 234, 215, 0.07)),
+        rgba(247, 250, 244, 0.055);
+      box-shadow: 0 15px 34px rgba(0, 0, 0, 0.18);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--gold);
+      font-size: 1.95rem;
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 6px;
+      color: var(--quiet);
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+
     .section {
-      margin-top: 22px;
+      margin-top: 24px;
       padding-top: 8px;
+    }
+
+    .section-band {
+      margin-right: calc((100vw - min(1180px, calc(100vw - 40px))) / -2);
+      margin-left: calc((100vw - min(1180px, calc(100vw - 40px))) / -2);
+      padding: 28px calc((100vw - min(1180px, calc(100vw - 40px))) / 2);
+      background:
+        linear-gradient(120deg, rgba(66, 234, 215, 0.08), rgba(245, 214, 111, 0.05)),
+        rgba(247, 250, 244, 0.035);
+    }
+
+    .fit-section {
+      margin-right: calc((100vw - min(1180px, calc(100vw - 40px))) / -2);
+      margin-left: calc((100vw - min(1180px, calc(100vw - 40px))) / -2);
+      padding: 30px calc((100vw - min(1180px, calc(100vw - 40px))) / 2);
+      background:
+        linear-gradient(135deg, rgba(245, 214, 111, 0.26), rgba(66, 234, 215, 0.18) 44%, rgba(255, 139, 93, 0.16)),
+        rgba(38, 46, 48, 0.94);
+      box-shadow: inset 0 1px 0 var(--line), inset 0 -1px 0 var(--line);
     }
 
     .section-heading {
       display: flex;
       align-items: end;
       justify-content: space-between;
-      gap: 16px;
-      margin: 0 0 14px;
+      gap: 18px;
+      margin-bottom: 14px;
     }
 
     .section-heading h2 {
       margin: 0;
-      font-size: clamp(1.75rem, 3.2vw, 2.7rem);
+      font-size: clamp(1.75rem, 3.2vw, 2.75rem);
       line-height: 1;
     }
 
     .section-heading p {
-      max-width: 34rem;
-      margin: 0;
-      color: var(--quiet);
-      font-size: 1rem;
-      line-height: 1.42;
-      text-align: right;
+      display: none;
     }
 
-    .role-grid {
+    .grid-3,
+    .grid-2 {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
     }
 
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .card,
-    .job,
-    .project-card,
-    .cta {
+    .case-card,
+    .experience-card,
+    .cta,
+    .mini-panel {
+      min-width: 0;
       border: 1px solid var(--line);
       border-radius: 8px;
       background:
-        linear-gradient(155deg, rgba(245, 248, 243, 0.07), rgba(57, 242, 220, 0.045)),
-        rgba(13, 19, 37, 0.72);
+        linear-gradient(155deg, rgba(247, 250, 244, 0.07), rgba(66, 234, 215, 0.045)),
+        rgba(13, 19, 36, 0.76);
       box-shadow: 0 18px 46px rgba(0, 0, 0, 0.22);
     }
 
-    .role-card {
-      min-height: 0;
-      padding: 16px 18px;
+    .card {
+      padding: 18px;
     }
 
-    .role-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.42rem;
-      line-height: 1.05;
+    .card h3,
+    .case-card h3,
+    .experience-card h3,
+    .mini-panel h3 {
+      margin-bottom: 9px;
+      font-size: 1.34rem;
+      line-height: 1.1;
     }
 
-    .role-card p {
-      margin: 0 0 12px;
+    .card p,
+    .case-card p,
+    .experience-card p,
+    .mini-panel p,
+    .mini-panel li {
       color: var(--soft);
       font-size: 1rem;
       font-weight: 300;
-      line-height: 1.44;
+      line-height: 1.47;
     }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+    .card p:last-child,
+    .case-card p:last-child,
+    .experience-card p:last-child,
+    .mini-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .tag-row {
+      margin-top: 12px;
     }
 
     .tag {
       min-height: 28px;
-      border-color: rgba(244, 211, 94, 0.28);
+      border-color: rgba(245, 214, 111, 0.28);
       padding: 6px 8px;
       color: var(--soft);
-      background: rgba(244, 211, 94, 0.07);
+      background: rgba(245, 214, 111, 0.07);
       font-size: 0.78rem;
     }
 
     .tag-capability {
-      border-color: rgba(183, 239, 122, 0.42);
+      border-color: rgba(184, 240, 125, 0.42);
       color: #e9ffd4;
-      background: rgba(183, 239, 122, 0.13);
+      background: rgba(184, 240, 125, 0.13);
     }
 
-    .role-card .tag:not(.tag-capability) {
+    .section-band .tag:not(.tag-capability) {
       display: none;
     }
 
-    .timeline {
+    .impact-card {
+      position: relative;
+      padding-top: 48px;
+    }
+
+    .impact-card::before {
+      position: absolute;
+      top: 17px;
+      left: 18px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      content: attr(data-number);
+    }
+
+    .case-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .case-head {
+      border-bottom: 1px solid var(--line);
+      padding: 17px 18px 13px;
+      background: rgba(247, 250, 244, 0.045);
+    }
+
+    .case-head h3 {
+      margin: 0;
+    }
+
+    .case-body {
       display: grid;
+      gap: 12px;
+      padding: 17px 18px 18px;
+    }
+
+    .case-body p {
+      margin: 0;
+    }
+
+    .case-label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .work-steps {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 42px 14px 15px;
+      background: rgba(247, 250, 244, 0.045);
+      counter-increment: step;
+    }
+
+    .step::before {
+      position: absolute;
+      top: 13px;
+      left: 14px;
+      display: inline-flex;
+      width: 22px;
+      height: 22px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: var(--bg);
+      background: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      content: counter(step);
+    }
+
+    .step h3 {
+      margin-bottom: 7px;
+      font-size: 1.08rem;
+      line-height: 1.08;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--quiet);
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 1.36;
+    }
+
+    .experience-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
     }
 
-    .job {
-      display: grid;
-      grid-template-columns: minmax(190px, 0.34fr) minmax(0, 1fr);
-      gap: 18px;
+    .experience-card {
       padding: 18px;
     }
 
-    .job-meta {
-      border-right: 1px solid var(--line);
-      padding-right: 18px;
+    .experience-meta {
+      border-right: 0;
+      padding-right: 0;
     }
 
-    .job-title {
-      margin: 0 0 7px;
-      color: var(--text);
-      font-size: 1.38rem;
-      line-height: 1.1;
+    .experience-card h3 {
+      margin-bottom: 7px;
+      font-size: 1.2rem;
     }
 
     .company {
-      margin: 0 0 10px;
+      margin-bottom: 9px;
       color: var(--gold);
-      font-size: 1.02rem;
+      font-size: 1rem;
       font-weight: 700;
     }
 
     .period {
       margin: 0;
-      color: var(--quiet);
-      font-size: 0.94rem;
-      line-height: 1.38;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.35;
     }
 
-    .job-text {
-      margin: 0;
-      color: var(--soft);
-      font-size: 1.03rem;
-      font-weight: 300;
-      line-height: 1.54;
-    }
-
-    .job-body {
-      color: var(--soft);
-      font-size: 1.03rem;
-      font-weight: 300;
-      line-height: 1.54;
-    }
-
-    .job-body p {
-      margin: 0 0 8px;
-      color: inherit;
-      font: inherit;
-    }
-
-    .job-body ul {
+    .experience-card ul,
+    .mini-panel ul {
       margin: 0;
       padding-left: 1.1rem;
     }
 
-    .job-body li + li {
-      margin-top: 4px;
+    .experience-card li {
+      color: var(--soft);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.45;
+    }
+
+    .experience-card li + li,
+    .mini-panel li + li {
+      margin-top: 5px;
     }
 
     strong {
@@ -502,30 +709,25 @@
       font-weight: 700;
     }
 
-    .project-grid {
+    .fit-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.84fr) minmax(260px, 0.56fr);
+      gap: 12px;
+    }
+
+    .mini-panel {
+      padding: 18px;
+    }
+
+    .fit-list {
+      margin-top: 12px;
+    }
+
+    .beyond-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(220px, 360px));
       justify-content: start;
       gap: 12px;
-    }
-
-    .project-card {
-      padding: 18px;
-    }
-
-    .project-card h3 {
-      margin: 0 0 8px;
-      color: var(--gold);
-      font-size: 1.3rem;
-      line-height: 1.12;
-    }
-
-    .project-card p {
-      margin: 0;
-      color: var(--soft);
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.48;
     }
 
     .stealth-link {
@@ -545,22 +747,30 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      margin-top: 24px;
+      width: min(100%, 620px);
+      margin: 24px auto 0;
       padding: 22px;
       background:
-        linear-gradient(120deg, rgba(57, 242, 220, 0.16), rgba(255, 122, 69, 0.1)),
+        linear-gradient(120deg, rgba(66, 234, 215, 0.16), rgba(255, 139, 93, 0.1)),
         var(--panel-strong);
     }
 
     .cta h2 {
       margin: 0;
-      font-size: clamp(1.8rem, 4vw, 3.1rem);
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
       line-height: 1;
+    }
+
+    .cta p {
+      margin: 7px 0 0;
+      color: var(--quiet);
+      font-weight: 300;
+      line-height: 1.4;
     }
 
     .cta .button {
       min-height: 46px;
-      border: 1px solid rgba(244, 211, 94, 0.72);
+      border: 1px solid rgba(245, 214, 111, 0.72);
       border-radius: 999px;
       padding: 11px 18px;
       color: var(--bg);
@@ -573,13 +783,13 @@
     .cta .button:focus-visible {
       color: var(--bg);
       text-decoration: none;
-      background: #ffe487;
+      background: #ffe792;
     }
 
     footer {
       display: flex;
       justify-content: center;
-      padding: 22px 0 4px;
+      padding: 34px 0 4px;
       color: var(--muted);
       font-size: 0.76rem;
       font-weight: 300;
@@ -607,10 +817,10 @@
       height: 44px;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(57, 242, 220, 0.45);
+      border: 1px solid rgba(66, 234, 215, 0.45);
       border-radius: 50%;
-      color: rgba(57, 242, 220, 0.82);
-      background: rgba(5, 8, 21, 0.5);
+      color: rgba(66, 234, 215, 0.82);
+      background: rgba(5, 8, 19, 0.5);
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.34);
       opacity: 0.72;
       transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
@@ -621,15 +831,15 @@
       opacity: 1;
       transform: translateY(-2px);
       color: var(--gold);
-      border-color: rgba(244, 211, 94, 0.78);
-      background: rgba(5, 8, 21, 0.78);
+      border-color: rgba(245, 214, 111, 0.78);
+      background: rgba(5, 8, 19, 0.78);
       text-decoration: none;
     }
 
     .back-top svg {
+      display: block;
       width: 19px;
       height: 19px;
-      display: block;
     }
 
     .reveal {
@@ -648,20 +858,20 @@
       transform: translate3d(0, 0, 0);
     }
 
-    [data-lang-content] { display: none; }
-    html[data-lang="en"] [data-lang-content="en"],
-    html[data-lang="hu"] [data-lang-content="hu"] { display: block; }
-
-    @media (max-width: 980px) {
+    @media (max-width: 1020px) {
       .hero,
-      .identity,
-      .job,
+      .hero-main,
+      .fit-panel,
+      .experience-card,
       .cta {
         grid-template-columns: 1fr;
       }
 
-      .downloads,
-      .job-meta {
+      .hero-main {
+        justify-items: start;
+      }
+
+      .side-panel {
         border-left: 0;
         border-right: 0;
         border-top: 1px solid var(--line);
@@ -670,15 +880,23 @@
         padding-top: 18px;
       }
 
-      .role-grid {
+      .proof-strip,
+      .hero-impact {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .experience-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .work-steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 760px) {
       .page {
         width: auto;
-        max-width: none;
         margin-right: 20px;
         margin-left: 20px;
         padding-top: 12px;
@@ -686,93 +904,41 @@
       }
 
       .topbar {
-        display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        gap: 8px;
-      }
-
-      .status-pill {
-        flex: 0 1 auto;
-        justify-content: flex-start;
       }
 
       .language-switch {
-        flex: 0 1 auto;
-        max-width: 100%;
-      }
-
-      .language-switch {
-        display: inline-flex;
+        margin-left: auto;
       }
 
       .language-switch button {
-        width: auto;
-        min-width: 0;
-        justify-content: center;
-        padding-right: 8px;
-        padding-left: 8px;
+        padding-right: 10px;
+        padding-left: 10px;
       }
 
       .hero {
-        width: 100%;
-        max-width: 100%;
         padding: 18px;
       }
 
-      .identity {
-        justify-items: start;
-        text-align: left;
+      .portrait {
+        width: 132px;
       }
 
       h1 {
-        width: 100%;
-        max-width: 100%;
-        font-size: clamp(2.45rem, 11vw, 3.3rem);
+        font-size: clamp(2.5rem, 12vw, 3.4rem);
         overflow-wrap: anywhere;
         word-break: break-word;
       }
 
-      .tagline {
-        max-width: 100%;
+      .lead,
+      .support,
+      .card p,
+      .case-card p,
+      .experience-card li,
+      .mini-panel p,
+      .mini-panel li {
         overflow-wrap: anywhere;
-        word-break: break-word;
-      }
-
-      .contact-row {
-        justify-content: flex-start;
-      }
-
-      .contact-row .pill {
-        flex: 0 1 auto;
-      }
-
-      .cv-link {
-        min-width: 0;
-        width: 100%;
-        gap: 12px;
-      }
-
-      .tag {
-        min-width: 0;
-        white-space: normal;
-      }
-
-      .role-card p,
-      .section-heading p,
-      .job-text,
-      .project-card p {
-        max-width: 100%;
-        overflow-wrap: anywhere;
-      }
-
-      .role-grid,
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .role-card {
-        min-height: auto;
       }
 
       .section-heading {
@@ -782,6 +948,24 @@
       .section-heading p {
         margin-top: 8px;
         text-align: left;
+      }
+
+      .grid-3,
+      .grid-2,
+      .proof-strip,
+      .hero-impact,
+      .work-steps,
+      .beyond-grid,
+      .experience-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section-band,
+      .fit-section {
+        margin-right: -20px;
+        margin-left: -20px;
+        padding-right: 20px;
+        padding-left: 20px;
       }
 
       .cta {
@@ -795,17 +979,45 @@
       }
     }
 
+    @media (max-width: 560px) {
+      .topbar {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .language-switch {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .language-switch button {
+        flex: 1;
+      }
+
+      .status-pill {
+        justify-content: center;
+      }
+
+      .cv-link {
+        gap: 8px;
+        justify-content: flex-start;
+      }
+
+      .cv-link span {
+        margin-left: auto;
+        text-align: right;
+        white-space: normal;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
 
       .reveal,
-      .reveal:nth-of-type(even) {
+      .reveal:nth-of-type(even),
+      .back-top {
         opacity: 1;
         transform: none;
-        transition: none;
-      }
-
-      .back-top {
         transition: none;
       }
     }
@@ -813,7 +1025,7 @@
 </head>
 <body id="top">
   <main class="page">
-    <div class="topbar" aria-label="Language">
+    <div class="topbar" aria-label="Language and availability">
       <div class="status-pill is-available" aria-live="polite">
         <span class="status-available">
           <span data-status-lang="en">Available for hire</span>
@@ -825,50 +1037,106 @@
         </span>
       </div>
       <div class="language-switch">
-        <button type="button" data-lang-button="en" aria-pressed="true">
-          <span>English</span>
-        </button>
-        <button type="button" data-lang-button="hu" aria-pressed="false">
-          <span>Magyar</span>
-        </button>
+        <button type="button" data-lang-button="en" aria-pressed="true">English</button>
+        <button type="button" data-lang-button="hu" aria-pressed="false">Magyar</button>
       </div>
     </div>
 
     <div data-lang-content="en">
-      <section class="hero" aria-labelledby="name-en">
-        <div class="identity">
+      <section class="hero" aria-labelledby="hero-en">
+        <div class="hero-main">
           <div class="hero-copy">
-            <h1 id="name-en">Dávid Halmi</h1>
-            <p class="tagline">Bridging Business, Product & Marketing functions</p>
-            <p class="location-line">Budapest, Hungary</p>
+            <h1 id="hero-en">Dávid Halmi</h1>
+            <p class="location">Budapest, Hungary</p>
+            <p class="lead">Bridging business, product & marketing functions</p>
           </div>
         </div>
-        <aside class="downloads" aria-label="CV downloads">
-          <div class="download-grid">
-            <a class="cv-link" href="david_halmi_cv_np_en.pdf" download>English CV</a>
-            <a class="cv-link" href="halmi_david_oneletrajz_np_hu.pdf" download>Hungarian CV</a>
-            <a class="cv-link" href="https://www.linkedin.com/in/davidhalmi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <aside class="side-panel" aria-label="CV downloads">
+          <div>
+            <div class="download-grid">
+              <a class="cv-link" href="david_halmi_cv_np_en.pdf" download>English CV</a>
+              <a class="cv-link" href="halmi_david_oneletrajz_np_hu.pdf" download>Hungarian CV</a>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="pill" href="https://www.linkedin.com/in/davidhalmi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="pill mail-pill" href="mailto:me@davidhalmi.com">MAIL ME</a>
           </div>
         </aside>
       </section>
 
-      <section class="section" aria-labelledby="roles-en">
+      <div class="hero-impact" aria-label="Proof points">
+        <div class="metric"><strong>19</strong><span>years across product, CRM and marketing</span></div>
+        <div class="metric"><strong>15+</strong><span>mid-size team coordination in development, support and CRM</span></div>
+        <div class="metric"><strong>20M+</strong><span>daily visitor digital portfolio experience</span></div>
+        <div class="metric"><strong>4</strong><span>connected functions: CRM, marketing, Digital product and delivery</span></div>
+      </div>
+
+      <section class="section section-band" aria-labelledby="value-en">
         <div class="section-heading">
-          <h2 id="roles-en">Career paths</h2>
+          <h2 id="value-en">What you need me for</h2>
         </div>
-        <div class="role-grid">
-          <article class="card role-card">
-            <h3>CRM / Marketing manager</h3>
-            <p>Turning customer insight into lifecycle journeys, conversion work and clear growth campaigns.</p>
-            <div class="tags">
-              <span class="tag tag-capability">AI-Powered Research</span><span class="tag tag-capability">Data Mining</span><span class="tag tag-capability">Growth Strategy</span><span class="tag tag-capability">End-to-end Marketing Strategy</span><span class="tag tag-capability">Content Creation</span><span class="tag tag-capability">GTM</span><span class="tag tag-capability">PPC</span><span class="tag tag-capability">Email Marketing</span><span class="tag tag-capability">Copywriting</span><span class="tag tag-capability">Print Design</span><span class="tag tag-capability">Social Media</span><span class="tag">HubSpot</span><span class="tag">FreshMarketer</span><span class="tag">SurveyMonkey</span><span class="tag">Anthropic Claude Code</span><span class="tag">OpenAI GPT/Codex</span><span class="tag">PowerBI</span><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">HootSuite</span><span class="tag">MailChimp</span><span class="tag">Media Buys</span>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Customer lifecycle and CRM</h3>
+            <p>Defining and executing onboarding, retention, email- and on-site communication based on user segmentation.</p>
+            <div class="tag-row"><span class="tag tag-capability">Lifecycle</span><span class="tag tag-capability">Retention</span><span class="tag tag-capability">Journeys</span><span class="tag">HubSpot</span><span class="tag">FreshMarketer</span><span class="tag">SurveyMonkey</span></div>
+          </article>
+          <article class="card">
+            <h3>Data-driven decisions</h3>
+            <p>AI-supported information processing and execution, dashboards, research and competitor analysis.</p>
+            <div class="tag-row"><span class="tag tag-capability">Data mining</span><span class="tag tag-capability">AI research</span><span class="tag tag-capability">Business Intelligence</span><span class="tag">Power BI</span><span class="tag">OpenAI GPT/Codex</span></div>
+          </article>
+          <article class="card">
+            <h3>Product discovery and UX</h3>
+            <p>Structuring business needs into user flows, wireframes, usability input and development priorities.</p>
+            <div class="tag-row"><span class="tag tag-capability">UX</span><span class="tag tag-capability">Wireframing</span><span class="tag tag-capability">Planning</span><span class="tag">Figma</span><span class="tag">Balsamiq</span></div>
+          </article>
+          <article class="card">
+            <h3>Cross-functional delivery</h3>
+            <p>Aligning business, marketing, product and development teams around scope, priorities, sprints and stakeholder decisions.</p>
+            <div class="tag-row"><span class="tag tag-capability">Agile</span><span class="tag tag-capability">Scrum</span><span class="tag tag-capability">Team leadership</span><span class="tag">Jira</span><span class="tag">ClickUp</span></div>
+          </article>
+          <article class="card">
+            <h3>Conversion and growth</h3>
+            <p>Orchestrating marketing campaigns, fixing funnel problems, content creation, GTM-focused strategies and ROI optimization.</p>
+            <div class="tag-row"><span class="tag tag-capability">GTM</span><span class="tag tag-capability">PPC</span><span class="tag tag-capability">Content creation</span><span class="tag">Google Ads</span><span class="tag">Meta Ads</span></div>
+          </article>
+          <article class="card">
+            <h3>Team Leadership</h3>
+            <p>I create clear expectations and reliable ways of working, handling individual situations with empathy and pragmatism.</p>
+            <div class="tag-row"><span class="tag">Briefing</span><span class="tag">Prototypes</span><span class="tag">WordPress</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="cases-en">
+        <div class="section-heading">
+          <h2 id="cases-en">Mini Case Studies</h2>
+        </div>
+        <div class="grid-3">
+          <article class="case-card">
+            <div class="case-head"><h3>Customer onboarding and data strategy</h3></div>
+            <div class="case-body">
+              <p><span class="case-label">Situation</span>You don't use the data on your customers sufficiently and users don't adapt well.</p>
+              <p><span class="case-label">Approach</span>Map the customer metrics, build journeys, create automation opportunities.</p>
+              <p><span class="case-label">Outcome</span>Better conversions and smarter decisions for your product.</p>
             </div>
           </article>
-          <article class="card role-card">
-            <h3>Project / Product manager</h3>
-            <p>Connecting business goals, user needs and delivery teams into usable shipped products.</p>
-            <div class="tags">
-              <span class="tag tag-capability">Agile</span><span class="tag tag-capability">Scrum</span><span class="tag tag-capability">Team Leadership</span><span class="tag tag-capability">Resource Management</span><span class="tag tag-capability">Delivery Management</span><span class="tag tag-capability">UX</span><span class="tag tag-capability">Usability</span><span class="tag tag-capability">Wireframing</span><span class="tag tag-capability">Prototyping</span><span class="tag">Jira</span><span class="tag">Redmine</span><span class="tag">ClickUp</span><span class="tag">Trello</span><span class="tag">Asana</span><span class="tag">VSCode</span><span class="tag">GitHub</span><span class="tag">Figma</span><span class="tag">Balsamiq</span><span class="tag">Adobe stack</span><span class="tag">WordPress/Elementor</span><span class="tag">HTML</span><span class="tag">CSS</span>
+          <article class="case-card">
+            <div class="case-head"><h3>Reach the proper audience with fitting messaging</h3></div>
+            <div class="case-body">
+              <p><span class="case-label">Situation</span>Your brand suffers from inconsistent messaging and non-strategic targeting.</p>
+              <p><span class="case-label">Approach</span>A deeper, data-driven approach to understand your audience and create targeted content.</p>
+              <p><span class="case-label">Outcome</span>More structured communication and better ROI across your marketing efforts.</p>
+            </div>
+          </article>
+          <article class="case-card">
+            <div class="case-head"><h3>Product delivery with development teams</h3></div>
+            <div class="case-body">
+              <p><span class="case-label">Situation</span>The development pipeline is fragmented, delivery and product suffers.</p>
+              <p><span class="case-label">Approach</span>A well-defined product roadmap/prototype and organized delivery is crucial.</p>
+              <p><span class="case-label">Outcome</span>Your product development does not lag behind your competition and your marketing efforts.</p>
             </div>
           </article>
         </div>
@@ -876,206 +1144,199 @@
 
       <section class="section" aria-labelledby="experience-en">
         <div class="section-heading">
-          <h2 id="experience-en">Experience</h2>
+          <h2 id="experience-en">Selected Experience</h2>
         </div>
-        <div class="timeline">
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">CRM- and Customer Data Manager</h3>
+        <div class="experience-list">
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>CRM and Customer Data Manager</h3>
               <p class="company">Kulcs-Soft Kft.</p>
-              <p class="period">2026/04 - 2026/07</p>
-            </div>
-            <div class="job-body">
-              <p>Strategic planning of onboarding and dashboarding utilizing customer data and the right AI tools.</p>
-              <ul>
-                <li>Streamlining user onboarding processes.</li>
-                <li>Planning and overseeing data governance initiatives.</li>
-                <li>Automating workflows and improving operational efficiency.</li>
-                <li>Supporting marketing teams with actionable customer insights.</li>
-                <li>Assessing, coordinating, and overseeing third-party CRM/data tool integrations.</li>
-              </ul>
+              <p class="period">Apr 2026 - Jul 2026</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Project, Product & CRM Manager</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Project, Product and CRM Manager</h3>
               <p class="company">Apex IT Services Kft.</p>
-              <p class="period">2016/10 - 2024/12</p>
-            </div>
-            <div class="job-body">
-              <p>Managing on-site CRM / email program of online product portfolio and customer hub.</p>
-              <ul>
-                <li>Planning & optimalizing CRM lifecycle based on user behaviour.</li>
-                <li>Handling email & on-site conversion optimalization.</li>
-                <li>Agile Project Managing of a team of 8+ developers.</li>
-                <li>UX rundown on products; wireframing of new proposed developments.</li>
-                <li>Competition analysis, monitoring trends in retention.</li>
-              </ul>
+              <p class="period">Oct 2016 - Dec 2024</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Product Owner / PM</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Product Owner / PM</h3>
               <p class="company">Virtual Skyline Kft.</p>
-              <p class="period">2016/04 - 2016/09</p>
-            </div>
-            <div class="job-body">
-              <p>Primarily: Product ownership over company portfolio with great focus on UX, conversions and cross-sales.</p>
-              <p>Secondarily: Project management; fortifying CRM by leading a team of ~10 members.</p>
-              <ul>
-                <li>Role of a key driver of product development.</li>
-                <li>Wireframing / UX input on new and existing features to boost conversions.</li>
-                <li>Creative input for landing pages and related sites.</li>
-                <li>Managing product flow and localization.</li>
-                <li>Project management (SCRUM) - maintaining weekly sprints.</li>
-              </ul>
+              <p class="period">Apr 2016 - Sep 2016</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Marketing Manager / Team Lead</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Marketing Manager / Team Lead</h3>
               <p class="company">ClickPapa</p>
-              <p class="period">2015/05 - 2016/04</p>
-            </div>
-            <div class="job-body">
-              <p>As a marketing manager, I conducted online and offline marketing of a streamlined ad network, as well as gave input in product- and project management and organizing account manager team workflow.</p>
-              <ul>
-                <li>Product marketing, incl. email and social marketing; networking, managing seasonal offers.</li>
-                <li>Product- and project management and other creative input for developers & decision makers.</li>
-                <li>Traffic monitoring, building report dashboards based on relevant KPIs.</li>
-                <li>Copywriting (web copy, press release).</li>
-                <li>Designing promo materials (both online and offline).</li>
-              </ul>
+              <p class="period">May 2015 - Apr 2016</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Marketing Manager</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Marketing Manager</h3>
               <p class="company">InfomatiX Ltd.</p>
-              <p class="period">2014/09 - 2015/05</p>
-            </div>
-            <div class="job-body">
-              <p>Marketing- and Content Management for flagship BI / agile analytical products and related business development tasks (research, planning, copywriting, PR, video- and web editing).</p>
-              <ul>
-                <li>Partaking in drawing out corporate vision (tactical and strategic).</li>
-                <li>Managing Google AdWords campaigns.</li>
-                <li>PR-related tasks (copywriting, brainstorming).</li>
-                <li>Social- and traditional online marketing.</li>
-                <li>Creating and publishing use cases for business authors and analysts using TIBCO Spotfire (both text & video).</li>
-              </ul>
+              <p class="period">Sep 2014 - May 2015</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Product- and Project Manager</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Product and Project Manager</h3>
               <p class="company">A.L.e.v.</p>
-              <p class="period">2013/01 - 2014/07</p>
-            </div>
-            <div class="job-body">
-              <p>Product- and project management for numerous entertainment- and media sites; implementation and testing of new features, simplifying current products, researching feasible methods.</p>
-              <ul>
-                <li>Project- and product management, testing.</li>
-                <li>Web usability consulting.</li>
-                <li>Copywriting.</li>
-                <li>Email and social marketing; strategic planning for traffic growth.</li>
-                <li>Occasional design tasks.</li>
-              </ul>
+              <p class="period">Jan 2013 - Jul 2014</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Marketing Manager / Media Buyer</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Marketing Manager / Media Buyer</h3>
               <p class="company">Docler Holding</p>
-              <p class="period">2009/08 - 2012/11</p>
-            </div>
-            <div class="job-body">
-              <p>Buying traffic for a prominent network of websites with 20+ million daily unique visitors, acquiring new business partners or maintaining existing business relations.</p>
-              <ul>
-                <li>Establishing, monitoring and evaluating online campaigns (flat rate/CPM/CPC/PPC based).</li>
-                <li>Conversion-oriented planning and testing of landing pages for better click-through rate.</li>
-                <li>Frequent co-operation with product development and project management departments (creative tasks, outlining new features and directions, supporting ideas).</li>
-                <li>Arranging and communicating know-hows of new products based on UX principles; planning and establishing a web usability studio in-house.</li>
-                <li>Playing a key role in the planning and development of a social site portfolio; managing traffic acquisition for said sites.</li>
-              </ul>
+              <p class="period">Aug 2009 - Nov 2012</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Customer Support, Shift Leader</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Customer Support, Shift Leader</h3>
               <p class="company">Docler Holding</p>
-              <p class="period">2007/01 - 2009/08</p>
-            </div>
-            <div class="job-body">
-              <p>International customer support in 3 shifts via chat, email and phone (in English) for websites with 20+ million daily unique visitors combined (alexa rank: in top 30 in 2009).</p>
-              <p>Later as shift leader: coordinating a team of 10+ people.</p>
-              <ul>
-                <li>Overseeing support representatives' work, handling key customers.</li>
-                <li>Information flow with corresponding departments; tight co-operation with risk management by taking tasks over, traffic monitoring with IT operation representatives.</li>
-                <li>Training new colleagues and designated shift-leaders.</li>
-                <li>Establishing training method based on the Toyota Production System.</li>
-              </ul>
+              <p class="period">Jan 2007 - Aug 2009</p>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section" aria-labelledby="projects-en">
+      <section class="section fit-section" aria-labelledby="fit-en">
         <div class="section-heading">
-          <h2 id="projects-en">Other Projects</h2>
+          <h2 id="fit-en">What I Am Looking For</h2>
         </div>
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Local startups</h3>
-            <p>Aiding local startups as PM / copywriter between 2013 and 2015, helping early teams shape product direction, messaging and practical delivery.</p>
+        <div class="fit-panel">
+          <article class="mini-panel">
+            <h3>Best-fit roles</h3>
+            <p>I am looking for senior individual contributor or small-team lead roles where CRM, project management, marketing and customer experience meet.</p>
+            <div class="fit-list">
+              <span class="focus-chip">CRM Manager</span>
+              <span class="focus-chip">Project manager</span>
+              <span class="focus-chip">Marketing manager</span>
+              <span class="focus-chip">Product manager</span>
+            </div>
           </article>
-          <article class="project-card">
-            <h3>Music & audio</h3>
-            <p>30+ years of music and audio composition, spanning production, sound design and creative commissions. You can find my works at <a class="stealth-link" href="https://musiconpurpose.net/" target="_blank" rel="noopener noreferrer">musiconpurpose.net</a>.</p>
+          <article class="mini-panel">
+            <h3>Hire me, if:</h3>
+            <ul>
+              <li>Your team needs strategy and hands-on leadership within the same person.</li>
+              <li>There is a position touching on both business and technical fields.</li>
+              <li>You need a creative but detail-oriented out-of-the-box thinker who works proactively.</li>
+              <li>You offer a collaborative and supportive work environment.</li>
+            </ul>
           </article>
         </div>
       </section>
 
       <section class="cta" aria-labelledby="contact-en">
-        <h2 id="contact-en">Interested? Contact me!</h2>
-        <a class="button" href="mailto:me@davidhalmi.com">me@davidhalmi.com</a>
+        <div>
+          <h2 id="contact-en">Interested? Contact me!</h2>
+        </div>
+        <a class="button" href="mailto:me@davidhalmi.com">MAIL ME</a>
       </section>
     </div>
 
     <div data-lang-content="hu">
-      <section class="hero" aria-labelledby="name-hu">
-        <div class="identity">
+      <section class="hero" aria-labelledby="hero-hu">
+        <div class="hero-main">
           <div class="hero-copy">
-            <h1 id="name-hu">Halmi Dávid</h1>
-            <p class="tagline">Híd az Üzleti, a Termék és a Marketing területek között</p>
-            <p class="location-line">Budapest, Magyarország</p>
+            <h1 id="hero-hu">Halmi Dávid</h1>
+            <p class="location">Budapest, Magyarország</p>
+            <p class="lead">Üzleti, termék- és marketingfunkciók áthidalása</p>
           </div>
         </div>
-        <aside class="downloads" aria-label="Önéletrajz letöltések">
-          <div class="download-grid">
-            <a class="cv-link" href="david_halmi_cv_np_en.pdf" download>Angol CV</a>
-            <a class="cv-link" href="halmi_david_oneletrajz_np_hu.pdf" download>Magyar CV</a>
-            <a class="cv-link" href="https://www.linkedin.com/in/davidhalmi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <aside class="side-panel" aria-label="CV letöltések">
+          <div>
+            <div class="download-grid">
+              <a class="cv-link" href="halmi_david_oneletrajz_np_hu.pdf" download>Magyar CV</a>
+              <a class="cv-link" href="david_halmi_cv_np_en.pdf" download>Angol CV</a>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="pill" href="https://www.linkedin.com/in/davidhalmi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="pill mail-pill" href="mailto:me@davidhalmi.com">ÍRJ NEKEM</a>
           </div>
         </aside>
       </section>
 
-      <section class="section" aria-labelledby="roles-hu">
+      <div class="hero-impact" aria-label="Bizonyítékpontok">
+        <div class="metric"><strong>19</strong><span>év IT termék, CRM és marketing metszetben</span></div>
+        <div class="metric"><strong>15+</strong><span>középméretű csapatkoordináció fejlesztői, support és CRM területen</span></div>
+        <div class="metric"><strong>20M+</strong><span>napi látogatóval rendelkező digitális portfólió tapasztalat</span></div>
+        <div class="metric"><strong>4</strong><span>összefonódó terület: CRM, marketing, projekt- és termékmenedzsment</span></div>
+      </div>
+
+      <section class="section section-band" aria-labelledby="value-hu">
         <div class="section-heading">
-          <h2 id="roles-hu">Karrierutak</h2>
+          <h2 id="value-hu">Ahol szükség van rám</h2>
         </div>
-        <div class="role-grid">
-          <article class="card role-card">
-            <h3>CRM / Marketing manager</h3>
-            <p>Ügyfélinsightokból lifecycle utak, konverziós fejlesztések és tiszta növekedési kampányok építése.</p>
-            <div class="tags">
-              <span class="tag tag-capability">AI-Powered Research</span><span class="tag tag-capability">Adatbányászat</span><span class="tag tag-capability">Growth Strategy</span><span class="tag tag-capability">Teljeskörű marketingstratégia</span><span class="tag tag-capability">Tartalomgyártás</span><span class="tag tag-capability">GTM</span><span class="tag tag-capability">PPC</span><span class="tag tag-capability">Email Marketing</span><span class="tag tag-capability">Szövegírás</span><span class="tag tag-capability">Nyomtatványtervezés</span><span class="tag tag-capability">Közösségi Média</span><span class="tag">HubSpot</span><span class="tag">FreshMarketer</span><span class="tag">SurveyMonkey</span><span class="tag">Anthropic Claude Code</span><span class="tag">OpenAI GPT/Codex</span><span class="tag">PowerBI</span><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">HootSuite</span><span class="tag">MailChimp</span><span class="tag">Médiavásárlás</span>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Ügyfél életciklus és CRM</h3>
+            <p>Bevezetés, retenció, email- és on-site kommunikáció definiálása és beépítése, ügyfél-szegmentáció alapján.</p>
+            <div class="tag-row"><span class="tag tag-capability">Lifecycle</span><span class="tag tag-capability">Retention</span><span class="tag tag-capability">Ügyfélutak</span><span class="tag">HubSpot</span><span class="tag">FreshMarketer</span><span class="tag">SurveyMonkey</span></div>
+          </article>
+          <article class="card">
+            <h3>Adatalapú döntéselőkészítés</h3>
+            <p>AI-támogatott információfeldolgozás, dashboardok, kutatás és versenytárselemzés.</p>
+            <div class="tag-row"><span class="tag tag-capability">Adatbányászat</span><span class="tag tag-capability">AI research</span><span class="tag tag-capability">Business Intelligence</span><span class="tag">Power BI</span><span class="tag">OpenAI GPT/Codex</span></div>
+          </article>
+          <article class="card">
+            <h3>Product discovery és UX</h3>
+            <p>Üzleti igények strukturálása user flow-kba, wireframe-ekbe, usability inputba és fejlesztési prioritásokba.</p>
+            <div class="tag-row"><span class="tag tag-capability">UX</span><span class="tag tag-capability">Wireframing</span><span class="tag tag-capability">Tervezés</span><span class="tag">Figma</span><span class="tag">Balsamiq</span></div>
+          </article>
+          <article class="card">
+            <h3>Keresztfunkcionális delivery</h3>
+            <p>Üzleti, marketing, product és fejlesztői csapatok összehangolása scope, prioritások, sprintek és döntéshozói igények mentén.</p>
+            <div class="tag-row"><span class="tag tag-capability">Agile</span><span class="tag tag-capability">Scrum</span><span class="tag tag-capability">Csoportvezetés</span><span class="tag">Jira</span><span class="tag">ClickUp</span></div>
+          </article>
+          <article class="card">
+            <h3>Konverzió és növekedés</h3>
+            <p>Marketing kampányok vezénylése, funnel-problémák javítása, tartalomgyártás, GTM-fókuszú stratégiák és ROI-optimalizáció.</p>
+            <div class="tag-row"><span class="tag tag-capability">GTM</span><span class="tag tag-capability">PPC</span><span class="tag tag-capability">Tartalomgyártás</span><span class="tag">Google Ads</span><span class="tag">Meta Ads</span></div>
+          </article>
+
+          <article class="card">
+            <h3>Csapatvezetés</h3>
+            <p>Kiszámítható kereteket és elvárásokat teremtek, megértéssel és gyakorlatiasan kezelem az egyéni helyzeteket.</p>
+            <div class="tag-row"><span class="tag">Briefing</span><span class="tag">Prototípusok</span><span class="tag">WordPress</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="cases-hu">
+        <div class="section-heading">
+          <h2 id="cases-hu">Mini esettanulmányok</h2>
+        </div>
+        <div class="grid-3">
+          <article class="case-card">
+            <div class="case-head"><h3>Customer onboarding és adatstratégia</h3></div>
+            <div class="case-body">
+              <p><span class="case-label">Helyzet</span>Az ügyféladat nincs jól felhasználva és integrálva, sérül az adaptációs folyamat.</p>
+              <p><span class="case-label">Megközelítés</span>Feltérképeztem az ügyfélmetrikákat, journey-ket építek, automatizálási lehetőségeket hozok létre.</p>
+              <p><span class="case-label">Eredmény</span>Jobb konverzió és okosabb üzleti döntések a terméket illetően.</p>
             </div>
           </article>
-          <article class="card role-card">
-            <h3>Project / Product manager</h3>
-            <p>Üzleti célok, felhasználói igények és delivery csapatok összekapcsolása használható termékekké.</p>
-            <div class="tags">
-              <span class="tag tag-capability">Agile</span><span class="tag tag-capability">Scrum</span><span class="tag tag-capability">Csoportvezetés</span><span class="tag tag-capability">Erőforrásmenedzsment</span><span class="tag tag-capability">Projektátadás menedzsment</span><span class="tag tag-capability">UX</span><span class="tag tag-capability">Usability</span><span class="tag tag-capability">Wireframing</span><span class="tag tag-capability">Prototípusok</span><span class="tag">Jira</span><span class="tag">Redmine</span><span class="tag">ClickUp</span><span class="tag">Trello</span><span class="tag">Asana</span><span class="tag">VSCode</span><span class="tag">GitHub</span><span class="tag">Figma</span><span class="tag">Balsamiq</span><span class="tag">Adobe stack</span><span class="tag">WordPress/Elementor</span><span class="tag">HTML</span><span class="tag">CSS</span>
+          <article class="case-card">
+            <div class="case-head"><h3>A helyes közönség megtalálása, akikkel szót kell érteni</h3></div>
+            <div class="case-body">
+              <p><span class="case-label">Helyzet</span>A brand sérül a stratégikus targetálás hiánya és a nem-egységes kommunikáció miatt.</p>
+              <p><span class="case-label">Megközelítés</span>elmélyültebb, adatvezérelt hozzáállás szükséges, hogy jobb legyen a megértés a célközönséget illetően.</p>
+              <p><span class="case-label">Eredmény</span>Struktúráltabb kommunikáció és jobb ROI a marketinges tevékenységek egészén.</p>
+            </div>
+          </article>
+          <article class="case-card">
+            <div class="case-head"><h3>Product delivery fejlesztői csapattal</h3></div>
+            <div class="case-body">
+              <p><span class="case-label">Helyzet</span>A fejlesztési pipeline töredezett, a határidők és ezzel a termék sérülnek.</p>
+              <p><span class="case-label">Megközelítés</span>Egy jól definiált termékstratégia/porototípus és jól szervezett munkafolyamat szükséges.</p>
+              <p><span class="case-label">Eredmény</span>A fejlesztés nem marad le a határidőktől, a konkurenciától és a marketinges erőfeszítésektől.</p>
             </div>
           </article>
         </div>
@@ -1083,174 +1344,106 @@
 
       <section class="section" aria-labelledby="experience-hu">
         <div class="section-heading">
-          <h2 id="experience-hu">Szakmai tapasztalat</h2>
+          <h2 id="experience-hu">Eddigi munkahelyeim</h2>
         </div>
-        <div class="timeline">
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">CRM- és Ügyféladat Manager</h3>
+        <div class="experience-list">
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>CRM- és Ügyféladat Manager</h3>
               <p class="company">Kulcs-Soft Kft.</p>
-              <p class="period">2026/04 - 2026/07</p>
-            </div>
-            <div class="job-body">
-              <p>Onboarding- és dashboard-tervezés stratégiai szinten, ügyféladatok és megfelelő AI eszközök használatával.</p>
-              <ul>
-                <li>Felhasználói onboarding folyamatok egyszerűsítése és javítása.</li>
-                <li>Adatkezelési és data governance kezdeményezések tervezése és felügyelete.</li>
-                <li>Workflow-k automatizálása és operatív hatékonyság javítása.</li>
-                <li>Marketingcsapatok támogatása használható ügyfélinsightokkal.</li>
-                <li>Külső CRM- és adatkezelő eszközök integrációinak felmérése, koordinálása és felügyelete.</li>
-              </ul>
+              <p class="period">2026. április - 2026. július</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Projekt, Termék- & CRM Manager</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Projekt, Termék- és CRM Manager</h3>
               <p class="company">Apex IT Services Kft.</p>
-              <p class="period">2016/10 - 2024/12</p>
-            </div>
-            <div class="job-body">
-              <p>Online termékportfólió és customer hub on-site CRM / email programjának menedzselése.</p>
-              <ul>
-                <li>CRM lifecycle tervezése és optimalizálása felhasználói viselkedés alapján.</li>
-                <li>Email és on-site konverziós folyamatok optimalizálása.</li>
-                <li>8+ fős fejlesztői csapat agilis projektmenedzsmentje.</li>
-                <li>Termékek UX áttekintése; új fejlesztési javaslatok wireframe-elése.</li>
-                <li>Versenytárselemzés és retention trendek monitorozása.</li>
-              </ul>
+              <p class="period">2016. október - 2024. december</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Product Owner / PM</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Product Owner / PM</h3>
               <p class="company">Virtual Skyline Kft.</p>
-              <p class="period">2016/04 - 2016/09</p>
-            </div>
-            <div class="job-body">
-              <p>Elsődlegesen: product ownership a vállalati portfólió felett, erős UX-, konverzió- és cross-sales fókusszal.</p>
-              <p>Másodlagosan: projektmenedzsment; CRM erősítése egy körülbelül 10 fős csapat vezetésével.</p>
-              <ul>
-                <li>Kulcsszerep a termékfejlesztés hajtóerejeként.</li>
-                <li>Wireframing / UX input új és meglévő funkciókhoz a konverziók növelése érdekében.</li>
-                <li>Kreatív input landing page-ekhez és kapcsolódó oldalakhoz.</li>
-                <li>Termékflow és lokalizáció kezelése.</li>
-                <li>Projektmenedzsment (SCRUM) - heti sprintek fenntartása.</li>
-              </ul>
+              <p class="period">2016. április - 2016. szeptember</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Marketing Manager / Csoportvezető</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Marketing Manager / Csoportvezető</h3>
               <p class="company">ClickPapa</p>
-              <p class="period">2015/05 - 2016/04</p>
-            </div>
-            <div class="job-body">
-              <p>Marketing managerként egy streamlined ad network online és offline marketingjét kezeltem, emellett product- és project management inputot adtam, valamint az account manager csapat workflow-ját szerveztem.</p>
-              <ul>
-                <li>Product marketing, beleértve email- és social marketinget; networking és szezonális ajánlatok kezelése.</li>
-                <li>Product- és project management, valamint kreatív input fejlesztőknek és döntéshozóknak.</li>
-                <li>Forgalommonitorozás, KPI-alapú riport dashboardok építése.</li>
-                <li>Szövegírás (webcopy, sajtóközlemény).</li>
-                <li>Promóciós anyagok tervezése online és offline felületekre.</li>
-              </ul>
+              <p class="period">2015. május - 2016. április</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Marketing Manager</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Marketing Manager</h3>
               <p class="company">InfomatiX Ltd.</p>
-              <p class="period">2014/09 - 2015/05</p>
-            </div>
-            <div class="job-body">
-              <p>Marketing- és tartalommenedzsment flagship BI / agile analitikai termékekhez, valamint kapcsolódó üzletfejlesztési feladatok (kutatás, tervezés, szövegírás, PR, videó- és webszerkesztés).</p>
-              <ul>
-                <li>Részvétel a vállalati vízió taktikai és stratégiai kidolgozásában.</li>
-                <li>Google AdWords kampányok kezelése.</li>
-                <li>PR-hez kapcsolódó feladatok (szövegírás, ötletelés).</li>
-                <li>Social és hagyományos online marketing.</li>
-                <li>Use case-ek készítése és publikálása üzleti szerzőknek és elemzőknek TIBCO Spotfire használatával (szöveg és videó).</li>
-              </ul>
+              <p class="period">2014. szeptember - 2015. május</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Termék- és Project Manager</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Termék- és Project Manager</h3>
               <p class="company">A.L.e.v.</p>
-              <p class="period">2013/01 - 2014/07</p>
-            </div>
-            <div class="job-body">
-              <p>Product- és project management több entertainment és média oldalhoz; új funkciók implementálása és tesztelése, meglévő termékek egyszerűsítése, megvalósítható módszerek kutatása.</p>
-              <ul>
-                <li>Projekt- és termékmenedzsment, tesztelés.</li>
-                <li>Web usability consulting.</li>
-                <li>Szövegírás.</li>
-                <li>Email és social marketing; stratégiai tervezés forgalomnöveléshez.</li>
-                <li>Alkalmi design feladatok.</li>
-              </ul>
+              <p class="period">2013. január - 2014. július</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Marketing Manager / Médiavásárló</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Marketing Manager / Médiavásárló</h3>
               <p class="company">Docler Holding</p>
-              <p class="period">2009/08 - 2012/11</p>
-            </div>
-            <div class="job-body">
-              <p>Forgalomvásárlás egy prominens, napi 20+ millió egyedi látogatót elérő weboldal-hálózathoz, új üzleti partnerek szerzése és meglévő üzleti kapcsolatok fenntartása.</p>
-              <ul>
-                <li>Online kampányok létrehozása, monitorozása és értékelése (flat rate/CPM/CPC/PPC alapon).</li>
-                <li>Konverziófókuszú landing page tervezés és tesztelés jobb click-through rate érdekében.</li>
-                <li>Gyakori együttműködés product development és project management csapatokkal (kreatív feladatok, új funkciók és irányok vázolása, ötletek támogatása).</li>
-                <li>Új termékek know-how-jának tervezése és kommunikálása UX elvek alapján; házon belüli web usability stúdió tervezése és kialakítása.</li>
-                <li>Kulcsszerep egy social site portfólió tervezésében és fejlesztésében; az oldalak traffic acquisition folyamatainak menedzselése.</li>
-              </ul>
+              <p class="period">2009. augusztus - 2012. november</p>
             </div>
           </article>
-          <article class="job">
-            <div class="job-meta">
-              <h3 class="job-title">Ügyfélszolgálat, Műszakvezető</h3>
+          <article class="experience-card">
+            <div class="experience-meta">
+              <h3>Ügyfélszolgálat, Műszakvezető</h3>
               <p class="company">Docler Holding</p>
-              <p class="period">2007/01 - 2009/08</p>
-            </div>
-            <div class="job-body">
-              <p>Nemzetközi ügyfélszolgálat három műszakban chat, email és telefon csatornákon (angolul), napi 20+ millió egyedi látogatót elérő weboldalakhoz (Alexa rank: top 30, 2009).</p>
-              <p>Később műszakvezetőként: 10+ fős csapat koordinálása.</p>
-              <ul>
-                <li>Support munkatársak munkájának felügyelete, kiemelt ügyfelek kezelése.</li>
-                <li>Információáramlás kapcsolódó osztályokkal; szoros együttműködés risk managementtel feladatok átvételével, valamint traffic monitoring IT operation képviselőkkel.</li>
-                <li>Új kollégák és kijelölt műszakvezetők tréningelése.</li>
-                <li>Toyota Production System alapú tréningmódszer kialakítása.</li>
-              </ul>
+              <p class="period">2007. január - 2009. augusztus</p>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section" aria-labelledby="projects-hu">
+      <section class="section fit-section" aria-labelledby="fit-hu">
         <div class="section-heading">
-          <h2 id="projects-hu">Egyéb projectek</h2>
+          <h2 id="fit-hu">Amit keresek</h2>
         </div>
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Helyi startupok</h3>
-            <p>Helyi startupok támogatása PM / szövegíró szerepben 2013 és 2015 között, termékirány, üzenet és gyakorlati megvalósítás területén.</p>
+        <div class="fit-panel">
+          <article class="mini-panel">
+            <h3>Legjobb illeszkedés</h3>
+            <p>Egyéni vagy kisebb csapatot vezető szerepeket keresek, ahol CRM, projectmenedzsment, marketing és az ügyfélelégedettség találkozik.</p>
+            <div class="fit-list">
+              <span class="focus-chip">CRM Manager</span>
+              <span class="focus-chip">Project Manager</span>
+              <span class="focus-chip">Marketing Manager</span>
+              <span class="focus-chip">Product Manager</span>
+            </div>
           </article>
-          <article class="project-card">
-            <h3>Zene és audio</h3>
-            <p>30+ év zeneírás és audio kompozíció, production, sound design és kreatív megbízások metszetében. Munkáim megtalálhatók itt: <a class="stealth-link" href="https://musiconpurpose.net/" target="_blank" rel="noopener noreferrer">musiconpurpose.net</a>.</p>
+          <article class="mini-panel">
+            <h3>Beszéljünk, ha:</h3>
+            <ul>
+              <li>A csapatnak stratégiai és vezetési szakemberre van szüksége, egy személyben</li>
+              <li>A pozíció egyaránt üzleti- és technikai beállítottságot igényel</li>
+              <li>Kreatív de részletes out-of-the-box gondolkodó kell, aki proaktívan dolgozik</li>
+              <li>Kollaboratív és együtműködő csapattal dolgozhatok.</li>
+            </ul>
           </article>
         </div>
       </section>
 
       <section class="cta" aria-labelledby="contact-hu">
-        <h2 id="contact-hu">Beszéljünk!</h2>
-        <a class="button" href="mailto:me@davidhalmi.com">me@davidhalmi.com</a>
+        <div>
+          <h2 id="contact-hu">Beszéljünk!</h2>
+        </div>
+        <a class="button" href="mailto:me@davidhalmi.com">ÍRJ NEKEM</a>
       </section>
     </div>
 
     <footer>
-      <span data-footer-en>© <a href="https://davidhalmi.com/" target="_blank" rel="noopener noreferrer">Dávid Halmi</a></span>
-      <span data-footer-hu>© <a href="https://davidhalmi.com/" target="_blank" rel="noopener noreferrer">Halmi Dávid</a></span>
+      <span data-footer-en>&copy; <a href="https://davidhalmi.com/" target="_blank" rel="noopener noreferrer">Dávid Halmi</a></span>
+      <span data-footer-hu>&copy; <a href="https://davidhalmi.com/" target="_blank" rel="noopener noreferrer">Halmi Dávid</a></span>
     </footer>
   </main>
 
@@ -1293,7 +1486,7 @@
     const revealTargets = Array.from(document.querySelectorAll(".hero, .section, .cta"));
     revealTargets.forEach((element, index) => {
       element.classList.add("reveal");
-      element.style.setProperty("--reveal-delay", Math.min(index * 45, 220) + "ms");
+      element.style.setProperty("--reveal-delay", Math.min(index * 40, 220) + "ms");
     });
 
     function revealVisibleNow() {
