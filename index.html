@@ -433,6 +433,35 @@
       line-height: 1.25;
     }
 
+    .hero .hero-impact {
+      grid-column: 1 / -1;
+      margin-top: 4px;
+      padding-top: clamp(12px, 2vw, 18px);
+      border-top: 1px solid var(--line);
+    }
+
+    .hero .metric {
+      border: 0;
+      border-right: 1px solid rgba(236, 244, 255, 0.13);
+      border-radius: 0;
+      padding: 2px 18px 2px 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .hero .metric:last-child {
+      border-right: 0;
+    }
+
+    .hero .metric strong {
+      font-size: clamp(1.65rem, 3vw, 2.45rem);
+    }
+
+    .hero .metric span {
+      max-width: 16rem;
+      font-size: clamp(0.92rem, 1.15vw, 1.08rem);
+    }
+
     .section {
       margin-top: 24px;
       padding-top: 8px;
@@ -971,6 +1000,17 @@
         padding-left: 20px;
       }
 
+      .hero .metric {
+        border-right: 0;
+        border-bottom: 1px solid rgba(236, 244, 255, 0.13);
+        padding: 0 0 14px;
+      }
+
+      .hero .metric:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
       .cta {
         align-items: flex-start;
       }
@@ -1066,14 +1106,13 @@
             <a class="pill mail-pill" href="mailto:me@davidhalmi.com">MAIL ME</a>
           </div>
         </aside>
+        <div class="hero-impact" aria-label="Proof points">
+          <div class="metric"><strong>19 years</strong><span>across product, CRM and marketing</span></div>
+          <div class="metric"><strong>15+ people</strong><span>mid-size team coordination in development, support and CRM</span></div>
+          <div class="metric"><strong>20M+ visitors</strong><span>daily, on websites I worked on </span></div>
+          <div class="metric"><strong>4 functions</strong><span>CRM, Marketing, Project Management and Product Owner</span></div>
+        </div>
       </section>
-
-      <div class="hero-impact" aria-label="Proof points">
-        <div class="metric"><strong>19 years</strong><span>across product, CRM and marketing</span></div>
-        <div class="metric"><strong>15+ people</strong><span>mid-size team coordination in development, support and CRM</span></div>
-        <div class="metric"><strong>20M+ visitors</strong><span>daily, on websites I worked on </span></div>
-        <div class="metric"><strong>4 functions</strong><span>CRM, Marketing, Project Management and Product Owner</span></div>
-      </div>
 
       <section class="section section-band" aria-labelledby="value-en">
         <div class="section-heading">
@@ -1265,14 +1304,13 @@
             <a class="pill mail-pill" href="mailto:me@davidhalmi.com">ÍRJ NEKEM</a>
           </div>
         </aside>
+        <div class="hero-impact" aria-label="Bizonyítékpontok">
+          <div class="metric"><strong>19 év</strong><span>IT termék, CRM és marketing metszetben</span></div>
+          <div class="metric"><strong>15+ fős csapat</strong><span>középméretű csapatkoordináció fejlesztői, support és CRM területen</span></div>
+          <div class="metric"><strong>20M+ látogató</strong><span>naponta a rám bízott weboldalakon</span></div>
+          <div class="metric"><strong>4 terület</strong><span>CRM, marketing, projekt- és termékmenedzsment</span></div>
+        </div>
       </section>
-
-      <div class="hero-impact" aria-label="Bizonyítékpontok">
-        <div class="metric"><strong>19 év</strong><span>IT termék, CRM és marketing metszetben</span></div>
-        <div class="metric"><strong>15+ fős csapat</strong><span>középméretű csapatkoordináció fejlesztői, support és CRM területen</span></div>
-        <div class="metric"><strong>20M+ látogató</strong><span>naponta a rám bízott weboldalakon</span></div>
-        <div class="metric"><strong>4 terület</strong><span>CRM, marketing, projekt- és termékmenedzsment</span></div>
-      </div>
 
       <section class="section section-band" aria-labelledby="value-hu">
         <div class="section-heading">
