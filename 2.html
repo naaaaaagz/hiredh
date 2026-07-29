@@ -237,8 +237,8 @@
     .hero-copy,
     .hero-panel,
     .section-head > *,
-    .outcome-card,
-    .value-step,
+    .help-card,
+    .work-card,
     .experience-card,
     .fit-card,
     .cta {
@@ -355,13 +355,14 @@
       letter-spacing: 0;
     }
 
-    .outcomes {
+    .help-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
 
-    .outcome-card,
+    .help-card,
+    .work-card,
     .experience-card,
     .fit-card,
     .cta {
@@ -371,119 +372,69 @@
       box-shadow: 0 12px 34px rgba(19, 36, 60, 0.08);
     }
 
-    .outcome-card {
+    .help-card {
       display: flex;
       min-height: 100%;
       flex-direction: column;
-      padding: 22px;
+      padding: 24px;
     }
 
-    .outcome-card h3 {
+    .help-card h3 {
       margin-bottom: 12px;
       color: var(--navy);
-      font-size: 1.55rem;
+      font-size: 1.42rem;
       line-height: 1.13;
     }
 
-    .outcome-card dl {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-    }
-
-    .outcome-card dt {
-      margin-bottom: 3px;
-      color: var(--teal-dark);
-      font-size: 0.77rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .outcome-card dd {
-      margin: 0;
+    .help-card p {
       color: var(--ink-soft);
     }
 
-    .principle {
-      margin-top: 16px;
-      border-left: 5px solid var(--gold);
-      border-radius: var(--radius);
-      padding: 20px 22px;
-      color: var(--navy);
-      background: #fff6d6;
-      font-size: 1.16rem;
-      font-weight: 800;
+    .help-answer {
+      margin-bottom: 16px;
+      font-size: 1.03rem;
     }
 
-    .value-flow {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      overflow: hidden;
-      border: 1px solid rgba(19, 36, 60, 0.11);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.7);
-      box-shadow: 0 12px 34px rgba(19, 36, 60, 0.08);
+    .proof-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
     }
 
-    .value-step {
-      position: relative;
-      min-height: 170px;
-      padding: 22px;
-      border-right: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(245, 241, 232, 0.62));
-    }
-
-    .value-step:last-child {
-      border-right: 0;
-    }
-
-    .value-step::after {
-      position: absolute;
-      top: 50%;
-      right: -13px;
-      z-index: 2;
-      display: grid;
-      width: 26px;
-      height: 26px;
-      place-items: center;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--teal-dark);
-      background: #f4efe6;
-      content: "→";
-      font-weight: 900;
-      transform: translateY(-50%);
-    }
-
-    .value-step:last-child::after {
-      display: none;
-    }
-
-    .step-number {
+    .proof-chip {
       display: inline-flex;
-      width: 30px;
-      height: 30px;
+      min-height: 30px;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
+      border: 1px solid rgba(15, 143, 134, 0.18);
       border-radius: 999px;
-      color: var(--white);
-      background: var(--teal-dark);
-      font-size: 0.86rem;
-      font-weight: 900;
+      padding: 5px 10px;
+      color: var(--teal-dark);
+      background: rgba(15, 143, 134, 0.08);
+      font-size: 0.82rem;
+      font-weight: 850;
     }
 
-    .value-step h3 {
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .work-card {
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(245, 241, 232, 0.78));
+    }
+
+    .work-card h3 {
       margin-bottom: 8px;
       color: var(--navy);
-      font-size: 1.22rem;
+      font-size: 1.28rem;
     }
 
-    .value-step p {
+    .work-card p {
       margin-bottom: 0;
       color: var(--ink-soft);
-      font-weight: 650;
     }
 
     .experience-list {
@@ -677,21 +628,13 @@
         grid-template-columns: 1fr;
       }
 
-      .outcomes {
+      .help-grid {
         grid-template-columns: 1fr;
       }
 
-      .value-flow,
+      .work-grid,
       .experience-list {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .value-step:nth-child(2) {
-        border-right: 0;
-      }
-
-      .value-step:nth-child(2)::after {
-        display: none;
       }
 
       .hero-proof {
@@ -742,29 +685,11 @@
       }
 
       .button-row,
-      .value-flow,
+      .work-grid,
       .experience-list,
       .fit-grid,
       .cta {
         grid-template-columns: 1fr;
-      }
-
-      .value-step {
-        min-height: auto;
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .value-step:last-child {
-        border-bottom: 0;
-      }
-
-      .value-step::after {
-        top: auto;
-        right: auto;
-        bottom: -13px;
-        left: 22px;
-        transform: rotate(90deg);
       }
 
       .button,
@@ -815,11 +740,9 @@
     <div data-lang-content="en">
       <section class="hero reveal" aria-labelledby="hero-en">
         <div class="hero-copy">
-          <p class="eyebrow">CRM & Cross-functional Delivery Manager</p>
           <h1 id="hero-en">Dávid Halmi</h1>
           <p class="location">Budapest, Hungary</p>
           <p class="hero-lead">I turn customer insight and business priorities into coordinated CRM, product and marketing execution.</p>
-          <p>I find the real constraint, align the people involved and turn the answer into a working process.</p>
         </div>
         <aside class="hero-panel" aria-label="Contact and CV links">
           <div>
@@ -836,92 +759,66 @@
         </aside>
       </section>
 
-      <section class="section reveal" aria-labelledby="outcomes-en">
+      <section class="section reveal" aria-labelledby="help-en">
         <div class="section-head">
-          <h2 id="outcomes-en">From scattered signals to coordinated action</h2>
+          <h2 id="help-en">Can I help with this?</h2>
         </div>
-        <div class="outcomes">
-          <article class="outcome-card">
-            <h3>Activate customer data</h3>
-            <dl>
-              <div>
-                <dt>Problem</dt>
-                <dd>You have data, but customers still get generic journeys.</dd>
-              </div>
-              <div>
-                <dt>Move</dt>
-                <dd>Segment, map journeys, automate the right touchpoints.</dd>
-              </div>
-              <div>
-                <dt>Result</dt>
-                <dd>More relevant onboarding, CRM and retention.</dd>
-              </div>
-            </dl>
+        <div class="help-grid">
+          <article class="help-card">
+            <h3>You need someone who understands your customers and how to onboard and keep them?</h3>
+            <p class="help-answer">I turn customer data into segments, journeys, CRM flows, onboarding logic and dashboards. I also use AI-powered research to find patterns faster.</p>
+            <div class="proof-chips">
+              <span class="proof-chip">AI-powered research</span>
+              <span class="proof-chip">Dashboarding</span>
+              <span class="proof-chip">Customer lifecycle</span>
+              <span class="proof-chip">Retention</span>
+            </div>
           </article>
 
-          <article class="outcome-card">
-            <h3>Create delivery clarity</h3>
-            <dl>
-              <div>
-                <dt>Problem</dt>
-                <dd>Teams are busy, but priorities and owners are unclear.</dd>
-              </div>
-              <div>
-                <dt>Move</dt>
-                <dd>Set priorities, owners, roadmap and working rhythm.</dd>
-              </div>
-              <div>
-                <dt>Result</dt>
-                <dd>Less drift, fewer hand-off losses, clearer delivery.</dd>
-              </div>
-            </dl>
+          <article class="help-card">
+            <h3>You need creative marketing ideas and an end-to-end campaign strategist?</h3>
+            <p class="help-answer">I can build the path from audience and positioning to content, channels, creative work, campaigns and ROI-focused improvement.</p>
+            <div class="proof-chips">
+              <span class="proof-chip">Successful campaigns</span>
+              <span class="proof-chip">ROI improvement</span>
+              <span class="proof-chip">GTM</span>
+              <span class="proof-chip">Content + PPC</span>
+            </div>
           </article>
 
-          <article class="outcome-card">
-            <h3>Connect growth with the product</h3>
-            <dl>
-              <div>
-                <dt>Problem</dt>
-                <dd>Marketing, funnel and product decisions pull apart.</dd>
-              </div>
-              <div>
-                <dt>Move</dt>
-                <dd>Align audience, message, funnel, UX and product feedback.</dd>
-              </div>
-              <div>
-                <dt>Result</dt>
-                <dd>A cleaner go-to-market story and better conversion potential.</dd>
-              </div>
-            </dl>
+          <article class="help-card">
+            <h3>You need an efficient team player to manage development and product lifecycle?</h3>
+            <p class="help-answer">I keep roadmap, ownership, requirements and delivery rhythm clear across business, product, marketing, support and development teams.</p>
+            <div class="proof-chips">
+              <span class="proof-chip">10+ team coordination</span>
+              <span class="proof-chip">Roadmaps</span>
+              <span class="proof-chip">Product lifecycle</span>
+              <span class="proof-chip">Delivery management</span>
+            </div>
           </article>
         </div>
-        <p class="principle">Simple version: find the signal, choose the priority, ship the work, improve the result.</p>
       </section>
 
       <section class="section reveal" aria-labelledby="work-en">
         <div class="section-head">
           <h2 id="work-en">How I create value</h2>
         </div>
-        <div class="value-flow" aria-label="Value creation flow">
-          <article class="value-step">
-            <span class="step-number">1</span>
-            <h3>Find the signal</h3>
-            <p>Customer data, research, funnel clues.</p>
+        <div class="work-grid">
+          <article class="work-card">
+            <h3>Customer lifecycle systems</h3>
+            <p>Segmentation, journey mapping, onboarding logic, retention communication and CRM workflows that make customer work less improvised.</p>
           </article>
-          <article class="value-step">
-            <span class="step-number">2</span>
-            <h3>Pick the priority</h3>
-            <p>What matters now, what can wait.</p>
+          <article class="work-card">
+            <h3>Research into priorities</h3>
+            <p>Audience, funnel, product and market research translated into decisions, not just documents or dashboards.</p>
           </article>
-          <article class="value-step">
-            <span class="step-number">3</span>
-            <h3>Ship the work</h3>
-            <p>Owners, roadmap, CRM, product, campaign.</p>
+          <article class="work-card">
+            <h3>Roadmaps and delivery cadence</h3>
+            <p>Clear problem statements, ownership, dependencies, backlog hygiene and practical team routines across business and technical teams.</p>
           </article>
-          <article class="value-step">
-            <span class="step-number">4</span>
-            <h3>Improve it</h3>
-            <p>Measure, learn, tune the next step.</p>
+          <article class="work-card">
+            <h3>Go-to-market coherence</h3>
+            <p>Messaging, campaigns, content, UX input and product feedback connected so the market-facing work supports the product reality.</p>
           </article>
         </div>
       </section>
@@ -981,11 +878,9 @@
     <div data-lang-content="hu">
       <section class="hero reveal" aria-labelledby="hero-hu">
         <div class="hero-copy">
-          <p class="eyebrow">CRM & cross-functional delivery manager</p>
           <h1 id="hero-hu">Halmi Dávid</h1>
           <p class="location">Budapest, Magyarország</p>
           <p class="hero-lead">Ügyféladatból és üzleti prioritásokból összehangolt CRM-, termék- és marketing-végrehajtást építek.</p>
-          <p>Megtalálom a valódi akadályt, összehangolom az érintetteket, és működő folyamatot építek belőle.</p>
         </div>
         <aside class="hero-panel" aria-label="Kapcsolat és CV linkek">
           <div>
@@ -1002,92 +897,66 @@
         </aside>
       </section>
 
-      <section class="section reveal" aria-labelledby="outcomes-hu">
+      <section class="section reveal" aria-labelledby="help-hu">
         <div class="section-head">
-          <h2 id="outcomes-hu">Széttartó jelekből összehangolt cselekvés</h2>
+          <h2 id="help-hu">Ebben tudok segíteni</h2>
         </div>
-        <div class="outcomes">
-          <article class="outcome-card">
-            <h3>Ügyféladat aktiválása</h3>
-            <dl>
-              <div>
-                <dt>Probléma</dt>
-                <dd>Van adat, de az ügyfélút még túl általános.</dd>
-              </div>
-              <div>
-                <dt>Lépés</dt>
-                <dd>Szegmens, journey, automatizált touchpoint.</dd>
-              </div>
-              <div>
-                <dt>Eredmény</dt>
-                <dd>Relevánsabb onboarding, CRM és megtartás.</dd>
-              </div>
-            </dl>
+        <div class="help-grid">
+          <article class="help-card">
+            <h3>Kell valaki, aki érti az ügyfeleidet, és tudja hogyan kell őket onboardolni és megtartani?</h3>
+            <p class="help-answer">Ügyféladatból szegmenseket, journey-ket, CRM flow-kat, onboarding logikát és dashboardokat építek. AI-alapú kutatással gyorsabban találok mintázatokat.</p>
+            <div class="proof-chips">
+              <span class="proof-chip">AI-alapú kutatás</span>
+              <span class="proof-chip">Dashboarding</span>
+              <span class="proof-chip">Customer lifecycle</span>
+              <span class="proof-chip">Megtartás</span>
+            </div>
           </article>
 
-          <article class="outcome-card">
-            <h3>Delivery tisztázása</h3>
-            <dl>
-              <div>
-                <dt>Probléma</dt>
-                <dd>Mindenki dolgozik, de a prioritás és felelősség nem tiszta.</dd>
-              </div>
-              <div>
-                <dt>Lépés</dt>
-                <dd>Prioritás, felelősök, roadmap, működési ritmus.</dd>
-              </div>
-              <div>
-                <dt>Eredmény</dt>
-                <dd>Kevesebb sodródás, tisztább megvalósítás.</dd>
-              </div>
-            </dl>
+          <article class="help-card">
+            <h3>Kellenek kreatív marketing ötletek és end-to-end kampánystratégia?</h3>
+            <p class="help-answer">A közönségtől és pozicionálástól a tartalmon, csatornákon, kreatívokon és kampányokon át ROI-központú javításig tudom vinni a folyamatot.</p>
+            <div class="proof-chips">
+              <span class="proof-chip">Sikeres kampányok</span>
+              <span class="proof-chip">ROI javítás</span>
+              <span class="proof-chip">GTM</span>
+              <span class="proof-chip">Tartalom + PPC</span>
+            </div>
           </article>
 
-          <article class="outcome-card">
-            <h3>Növekedés összekötése a termékkel</h3>
-            <dl>
-              <div>
-                <dt>Probléma</dt>
-                <dd>A marketing, funnel és termékirány széttart.</dd>
-              </div>
-              <div>
-                <dt>Lépés</dt>
-                <dd>Közönség, üzenet, UX és termékfeedback összehangolása.</dd>
-              </div>
-              <div>
-                <dt>Eredmény</dt>
-                <dd>Tisztább go-to-market és jobb konverziós potenciál.</dd>
-              </div>
-            </dl>
+          <article class="help-card">
+            <h3>Kell egy hatékony csapatjátékos fejlesztéshez és product lifecycle menedzsmenthez?</h3>
+            <p class="help-answer">Tisztán tartom a roadmapet, felelősségeket, requirementeket és delivery ritmust üzlet, termék, marketing, support és fejlesztés között.</p>
+            <div class="proof-chips">
+              <span class="proof-chip">10+ csapat koordináció</span>
+              <span class="proof-chip">Roadmap</span>
+              <span class="proof-chip">Product lifecycle</span>
+              <span class="proof-chip">Delivery management</span>
+            </div>
           </article>
         </div>
-        <p class="principle">Egyszerűen: jelet találni, prioritást választani, leszállítani, javítani.</p>
       </section>
 
       <section class="section reveal" aria-labelledby="work-hu">
         <div class="section-head">
           <h2 id="work-hu">Hogyan teremtek értéket</h2>
         </div>
-        <div class="value-flow" aria-label="Értékteremtési folyamat">
-          <article class="value-step">
-            <span class="step-number">1</span>
-            <h3>Jel megtalálása</h3>
-            <p>Ügyféladat, kutatás, funnel jelek.</p>
+        <div class="work-grid">
+          <article class="work-card">
+            <h3>Customer lifecycle rendszerek</h3>
+            <p>Szegmentáció, journey mapping, onboarding logika, megtartási kommunikáció és CRM workflow-k, amelyek kevésbé ad hoc működést hoznak.</p>
           </article>
-          <article class="value-step">
-            <span class="step-number">2</span>
-            <h3>Prioritás</h3>
-            <p>Mi fontos most, mi várhat.</p>
+          <article class="work-card">
+            <h3>Kutatásból prioritás</h3>
+            <p>Közönség-, funnel-, termék- és piackutatás, döntésekké fordítva, nem csak dokumentumokká vagy dashboardokká.</p>
           </article>
-          <article class="value-step">
-            <span class="step-number">3</span>
-            <h3>Megvalósítás</h3>
-            <p>Felelősök, roadmap, CRM, termék, kampány.</p>
+          <article class="work-card">
+            <h3>Roadmap és delivery ritmus</h3>
+            <p>Tiszta problémafelvetés, felelősségek, függőségek, backlog-higiénia és működő csapatrutinok üzleti és technikai szereplők között.</p>
           </article>
-          <article class="value-step">
-            <span class="step-number">4</span>
-            <h3>Javítás</h3>
-            <p>Mérés, tanulás, következő lépés.</p>
+          <article class="work-card">
+            <h3>Go-to-market koherencia</h3>
+            <p>Üzenetek, kampányok, tartalom, UX input és termék-visszacsatolás összekötése, hogy a piac felé tett munka a termék valóságát erősítse.</p>
           </article>
         </div>
       </section>
