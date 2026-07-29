@@ -357,8 +357,8 @@
 
     .help-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: 1fr;
+      gap: 14px;
     }
 
     .help-card,
@@ -373,33 +373,180 @@
     }
 
     .help-card {
+      position: relative;
+      display: grid;
+      min-height: 172px;
+      grid-template-columns: minmax(220px, 0.34fr) minmax(0, 1fr);
+      gap: 22px;
+      overflow: hidden;
+      padding: 16px 22px 16px 16px;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.68)),
+        var(--white);
+    }
+
+    .help-visual {
+      position: relative;
+      min-height: 138px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 22% 22%, rgba(15, 143, 134, 0.22), transparent 28%),
+        linear-gradient(135deg, rgba(19, 36, 60, 0.96), rgba(15, 143, 134, 0.72));
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+    }
+
+    .help-visual::before,
+    .help-visual::after {
+      position: absolute;
+      content: "";
+    }
+
+    .help-visual::before {
+      width: 190px;
+      height: 92px;
+      right: -28px;
+      bottom: -42px;
+      border-radius: 999px 999px 0 0;
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(-7deg);
+    }
+
+    .help-visual::after {
+      width: 64px;
+      height: 64px;
+      right: 18px;
+      top: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .visual-window,
+    .visual-node,
+    .visual-line,
+    .visual-orbit {
+      position: absolute;
+      z-index: 2;
+      display: block;
+    }
+
+    .visual-window {
+      width: 92px;
+      height: 58px;
+      left: 22px;
+      top: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.44);
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.17);
+      box-shadow: 44px 34px 0 -12px rgba(255, 255, 255, 0.14);
+    }
+
+    .visual-window::before,
+    .visual-window::after {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.48);
+      content: "";
+    }
+
+    .visual-window::before {
+      top: 16px;
+    }
+
+    .visual-window::after {
+      top: 32px;
+      right: 32px;
+    }
+
+    .visual-node {
+      width: 38px;
+      height: 38px;
+      right: 56px;
+      bottom: 32px;
+      border: 2px solid rgba(255, 255, 255, 0.74);
+      border-radius: 50%;
+      background: rgba(225, 184, 77, 0.88);
+      box-shadow:
+        -42px -20px 0 -10px rgba(255, 255, 255, 0.28),
+        34px -30px 0 -12px rgba(255, 255, 255, 0.22);
+    }
+
+    .visual-line {
+      width: 112px;
+      height: 2px;
+      right: 44px;
+      bottom: 52px;
+      background: rgba(255, 255, 255, 0.46);
+      transform: rotate(-18deg);
+      transform-origin: right center;
+    }
+
+    .visual-orbit {
+      width: 112px;
+      height: 112px;
+      left: 38px;
+      top: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+    }
+
+    .visual-orbit::before,
+    .visual-orbit::after {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.62);
+      content: "";
+    }
+
+    .visual-orbit::before {
+      width: 14px;
+      height: 14px;
+      right: 2px;
+      top: 20px;
+    }
+
+    .visual-orbit::after {
+      width: 11px;
+      height: 11px;
+      left: 14px;
+      bottom: 12px;
+    }
+
+    .help-card-marketing .help-visual {
+      background:
+        radial-gradient(circle at 76% 22%, rgba(225, 184, 77, 0.26), transparent 30%),
+        linear-gradient(135deg, #332654, #0f8f86 85%);
+    }
+
+    .help-card-delivery .help-visual {
+      background:
+        radial-gradient(circle at 20% 72%, rgba(225, 184, 77, 0.28), transparent 26%),
+        linear-gradient(135deg, #123047, #506d75);
+    }
+
+    .help-content {
       display: flex;
-      min-height: 100%;
+      min-width: 0;
       flex-direction: column;
-      padding: 24px;
+      justify-content: center;
     }
 
     .help-card h3 {
-      margin-bottom: 12px;
-      color: var(--navy);
-      font-size: 1.42rem;
-      line-height: 1.13;
-    }
-
-    .help-card p {
-      color: var(--ink-soft);
-    }
-
-    .help-answer {
+      max-width: 760px;
       margin-bottom: 16px;
-      font-size: 1.03rem;
+      color: var(--navy);
+      font-size: clamp(1.25rem, 2vw, 1.8rem);
+      line-height: 1.13;
     }
 
     .proof-chips {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: auto;
     }
 
     .proof-chip {
@@ -413,6 +560,66 @@
       background: rgba(15, 143, 134, 0.08);
       font-size: 0.82rem;
       font-weight: 850;
+    }
+
+    .help-close {
+      display: grid;
+      width: min(720px, 100%);
+      grid-template-columns: minmax(120px, 0.36fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      margin: 16px 0 0 auto;
+      border: 1px solid rgba(19, 36, 60, 0.1);
+      border-radius: var(--radius);
+      padding: 12px 16px 12px 12px;
+      background: linear-gradient(135deg, rgba(216, 232, 223, 0.84), rgba(242, 223, 154, 0.54));
+      box-shadow: 0 12px 34px rgba(19, 36, 60, 0.07);
+    }
+
+    .close-art {
+      position: relative;
+      min-height: 82px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(19, 36, 60, 0.95), rgba(15, 143, 134, 0.78));
+    }
+
+    .close-art::before,
+    .close-art::after {
+      position: absolute;
+      content: "";
+    }
+
+    .close-art::before {
+      width: 74px;
+      height: 48px;
+      left: 20px;
+      top: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.14);
+      box-shadow: 38px 14px 0 -8px rgba(255, 255, 255, 0.16);
+      transform: perspective(120px) rotateY(-18deg);
+    }
+
+    .close-art::after {
+      width: 46px;
+      height: 46px;
+      right: 18px;
+      top: 18px;
+      border-radius: 50%;
+      background: rgba(225, 184, 77, 0.9);
+      box-shadow: 0 0 0 10px rgba(225, 184, 77, 0.16);
+    }
+
+    .help-close p {
+      margin-bottom: 0;
+      color: var(--navy);
+      font-size: 1.12rem;
+      font-weight: 850;
+      line-height: 1.25;
+      text-align: right;
     }
 
     .work-grid {
@@ -684,6 +891,29 @@
         padding: 24px 18px;
       }
 
+      .help-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 14px;
+      }
+
+      .help-visual {
+        min-height: 112px;
+      }
+
+      .help-card h3 {
+        font-size: 1.35rem;
+      }
+
+      .help-close {
+        grid-template-columns: 1fr;
+        padding: 12px;
+      }
+
+      .help-close p {
+        text-align: left;
+      }
+
       .button-row,
       .work-grid,
       .experience-list,
@@ -764,38 +994,63 @@
           <h2 id="help-en">Can I help with this?</h2>
         </div>
         <div class="help-grid">
-          <article class="help-card">
-            <h3>You need someone who understands your customers and how to onboard and keep them?</h3>
-            <p class="help-answer">I turn customer data into segments, journeys, CRM flows, onboarding logic and dashboards. I also use AI-powered research to find patterns faster.</p>
-            <div class="proof-chips">
-              <span class="proof-chip">AI-powered research</span>
-              <span class="proof-chip">Dashboarding</span>
-              <span class="proof-chip">Customer lifecycle</span>
-              <span class="proof-chip">Retention</span>
+          <article class="help-card help-card-crm">
+            <div class="help-visual" aria-hidden="true">
+              <span class="visual-window"></span>
+              <span class="visual-node"></span>
+              <span class="visual-line"></span>
+            </div>
+            <div class="help-content">
+              <h3>You need someone who understands your customers and how to onboard and keep them?</h3>
+              <div class="proof-chips">
+                <span class="proof-chip">AI-powered research</span>
+                <span class="proof-chip">Dashboarding</span>
+                <span class="proof-chip">Customer lifecycle</span>
+                <span class="proof-chip">Retention</span>
+                <span class="proof-chip">CRM flows</span>
+              </div>
             </div>
           </article>
 
-          <article class="help-card">
-            <h3>You need creative marketing ideas and an end-to-end campaign strategist?</h3>
-            <p class="help-answer">I can build the path from audience and positioning to content, channels, creative work, campaigns and ROI-focused improvement.</p>
-            <div class="proof-chips">
-              <span class="proof-chip">Successful campaigns</span>
-              <span class="proof-chip">ROI improvement</span>
-              <span class="proof-chip">GTM</span>
-              <span class="proof-chip">Content + PPC</span>
+          <article class="help-card help-card-marketing">
+            <div class="help-visual" aria-hidden="true">
+              <span class="visual-orbit"></span>
+              <span class="visual-window"></span>
+              <span class="visual-node"></span>
+            </div>
+            <div class="help-content">
+              <h3>You need creative marketing ideas and an end-to-end campaign strategist?</h3>
+              <div class="proof-chips">
+                <span class="proof-chip">Successful campaigns</span>
+                <span class="proof-chip">ROI improvement</span>
+                <span class="proof-chip">GTM</span>
+                <span class="proof-chip">Content + PPC</span>
+                <span class="proof-chip">Creative strategy</span>
+              </div>
             </div>
           </article>
 
-          <article class="help-card">
-            <h3>You need an efficient team player to manage development and product lifecycle?</h3>
-            <p class="help-answer">I keep roadmap, ownership, requirements and delivery rhythm clear across business, product, marketing, support and development teams.</p>
-            <div class="proof-chips">
-              <span class="proof-chip">10+ team coordination</span>
-              <span class="proof-chip">Roadmaps</span>
-              <span class="proof-chip">Product lifecycle</span>
-              <span class="proof-chip">Delivery management</span>
+          <article class="help-card help-card-delivery">
+            <div class="help-visual" aria-hidden="true">
+              <span class="visual-window"></span>
+              <span class="visual-line"></span>
+              <span class="visual-node"></span>
+            </div>
+            <div class="help-content">
+              <h3>You need an efficient team player to manage development and product lifecycle?</h3>
+              <div class="proof-chips">
+                <span class="proof-chip">10+ team coordination</span>
+                <span class="proof-chip">Roadmaps</span>
+                <span class="proof-chip">Product lifecycle</span>
+                <span class="proof-chip">Delivery management</span>
+                <span class="proof-chip">Requirements</span>
+              </div>
             </div>
           </article>
+        </div>
+        <div class="help-close">
+          <div class="close-art" aria-hidden="true"></div>
+          <p>Placeholder: one sharp proof sentence goes here once the strongest angle is chosen.</p>
         </div>
       </section>
 
@@ -902,38 +1157,63 @@
           <h2 id="help-hu">Ebben tudok segíteni</h2>
         </div>
         <div class="help-grid">
-          <article class="help-card">
-            <h3>Kell valaki, aki érti az ügyfeleidet, és tudja hogyan kell őket onboardolni és megtartani?</h3>
-            <p class="help-answer">Ügyféladatból szegmenseket, journey-ket, CRM flow-kat, onboarding logikát és dashboardokat építek. AI-alapú kutatással gyorsabban találok mintázatokat.</p>
-            <div class="proof-chips">
-              <span class="proof-chip">AI-alapú kutatás</span>
-              <span class="proof-chip">Dashboarding</span>
-              <span class="proof-chip">Customer lifecycle</span>
-              <span class="proof-chip">Megtartás</span>
+          <article class="help-card help-card-crm">
+            <div class="help-visual" aria-hidden="true">
+              <span class="visual-window"></span>
+              <span class="visual-node"></span>
+              <span class="visual-line"></span>
+            </div>
+            <div class="help-content">
+              <h3>Kell valaki, aki érti az ügyfeleidet, és tudja hogyan kell őket onboardolni és megtartani?</h3>
+              <div class="proof-chips">
+                <span class="proof-chip">AI-alapú kutatás</span>
+                <span class="proof-chip">Dashboarding</span>
+                <span class="proof-chip">Customer lifecycle</span>
+                <span class="proof-chip">Megtartás</span>
+                <span class="proof-chip">CRM flow-k</span>
+              </div>
             </div>
           </article>
 
-          <article class="help-card">
-            <h3>Kellenek kreatív marketing ötletek és end-to-end kampánystratégia?</h3>
-            <p class="help-answer">A közönségtől és pozicionálástól a tartalmon, csatornákon, kreatívokon és kampányokon át ROI-központú javításig tudom vinni a folyamatot.</p>
-            <div class="proof-chips">
-              <span class="proof-chip">Sikeres kampányok</span>
-              <span class="proof-chip">ROI javítás</span>
-              <span class="proof-chip">GTM</span>
-              <span class="proof-chip">Tartalom + PPC</span>
+          <article class="help-card help-card-marketing">
+            <div class="help-visual" aria-hidden="true">
+              <span class="visual-orbit"></span>
+              <span class="visual-window"></span>
+              <span class="visual-node"></span>
+            </div>
+            <div class="help-content">
+              <h3>Kellenek kreatív marketing ötletek és end-to-end kampánystratégia?</h3>
+              <div class="proof-chips">
+                <span class="proof-chip">Sikeres kampányok</span>
+                <span class="proof-chip">ROI javítás</span>
+                <span class="proof-chip">GTM</span>
+                <span class="proof-chip">Tartalom + PPC</span>
+                <span class="proof-chip">Kreatív stratégia</span>
+              </div>
             </div>
           </article>
 
-          <article class="help-card">
-            <h3>Kell egy hatékony csapatjátékos fejlesztéshez és product lifecycle menedzsmenthez?</h3>
-            <p class="help-answer">Tisztán tartom a roadmapet, felelősségeket, requirementeket és delivery ritmust üzlet, termék, marketing, support és fejlesztés között.</p>
-            <div class="proof-chips">
-              <span class="proof-chip">10+ csapat koordináció</span>
-              <span class="proof-chip">Roadmap</span>
-              <span class="proof-chip">Product lifecycle</span>
-              <span class="proof-chip">Delivery management</span>
+          <article class="help-card help-card-delivery">
+            <div class="help-visual" aria-hidden="true">
+              <span class="visual-window"></span>
+              <span class="visual-line"></span>
+              <span class="visual-node"></span>
+            </div>
+            <div class="help-content">
+              <h3>Kell egy hatékony csapatjátékos fejlesztéshez és product lifecycle menedzsmenthez?</h3>
+              <div class="proof-chips">
+                <span class="proof-chip">10+ csapat koordináció</span>
+                <span class="proof-chip">Roadmap</span>
+                <span class="proof-chip">Product lifecycle</span>
+                <span class="proof-chip">Delivery management</span>
+                <span class="proof-chip">Requirementek</span>
+              </div>
             </div>
           </article>
+        </div>
+        <div class="help-close">
+          <div class="close-art" aria-hidden="true"></div>
+          <p>Placeholder: ide kerül majd egy éles bizonyító mondat, ha kiválasztottuk a legerősebb irányt.</p>
         </div>
       </section>
 
