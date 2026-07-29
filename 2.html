@@ -178,7 +178,7 @@
       align-items: stretch;
       border: 1px solid rgba(255, 255, 255, 0.7);
       border-radius: var(--radius);
-      padding: clamp(28px, 5vw, 54px);
+      padding: clamp(22px, 4vw, 40px);
       background:
         linear-gradient(135deg, rgba(248, 242, 231, 0.96), rgba(232, 239, 235, 0.96)),
         var(--paper-strong);
@@ -204,15 +204,15 @@
 
     h1 {
       max-width: 840px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       color: var(--navy);
-      font-size: clamp(2.6rem, 7vw, 5.4rem);
+      font-size: clamp(2.45rem, 6.2vw, 4.85rem);
       line-height: 0.96;
       letter-spacing: 0;
     }
 
     .location {
-      margin-bottom: 22px;
+      margin-bottom: 16px;
       color: var(--muted);
       font-size: 0.98rem;
       font-weight: 750;
@@ -220,9 +220,9 @@
 
     .hero-lead {
       max-width: 780px;
-      margin-bottom: 22px;
+      margin-bottom: 0;
       color: var(--ink);
-      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      font-size: clamp(1.22rem, 2.25vw, 1.78rem);
       line-height: 1.24;
       font-weight: 800;
     }
@@ -248,19 +248,14 @@
     .hero-panel {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.62);
+      justify-content: center;
+      gap: 14px;
+      padding: 4px 0;
     }
 
-    .hero-panel h2 {
-      margin-bottom: 10px;
-      color: var(--navy);
-      font-size: 1.05rem;
-      line-height: 1.25;
+    .hero-panel .button-row {
+      border-top: 1px solid rgba(19, 36, 60, 0.14);
+      padding-top: 14px;
     }
 
     .button-row,
@@ -387,145 +382,243 @@
 
     .help-visual {
       position: relative;
-      min-height: 138px;
+      min-height: 150px;
       overflow: hidden;
       border-radius: var(--radius);
       background:
-        radial-gradient(circle at 22% 22%, rgba(15, 143, 134, 0.22), transparent 28%),
-        linear-gradient(135deg, rgba(19, 36, 60, 0.96), rgba(15, 143, 134, 0.72));
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+        linear-gradient(135deg, rgba(19, 36, 60, 0.96), rgba(15, 143, 134, 0.68));
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+        0 12px 28px rgba(19, 36, 60, 0.12);
     }
 
-    .help-visual::before,
-    .help-visual::after {
+    .help-visual span {
       position: absolute;
-      content: "";
-    }
-
-    .help-visual::before {
-      width: 190px;
-      height: 92px;
-      right: -28px;
-      bottom: -42px;
-      border-radius: 999px 999px 0 0;
-      background: rgba(255, 255, 255, 0.2);
-      transform: rotate(-7deg);
-    }
-
-    .help-visual::after {
-      width: 64px;
-      height: 64px;
-      right: 18px;
-      top: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .visual-window,
-    .visual-node,
-    .visual-line,
-    .visual-orbit {
-      position: absolute;
-      z-index: 2;
       display: block;
     }
 
-    .visual-window {
-      width: 92px;
-      height: 58px;
-      left: 22px;
-      top: 26px;
-      border: 1px solid rgba(255, 255, 255, 0.44);
-      border-radius: 7px;
-      background: rgba(255, 255, 255, 0.17);
-      box-shadow: 44px 34px 0 -12px rgba(255, 255, 255, 0.14);
+    .help-card-crm .help-visual {
+      background:
+        linear-gradient(135deg, #173250, #0f8f86);
     }
 
-    .visual-window::before,
-    .visual-window::after {
-      position: absolute;
-      left: 12px;
-      right: 12px;
-      height: 7px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.48);
-      content: "";
-    }
-
-    .visual-window::before {
-      top: 16px;
-    }
-
-    .visual-window::after {
-      top: 32px;
-      right: 32px;
-    }
-
-    .visual-node {
-      width: 38px;
-      height: 38px;
-      right: 56px;
-      bottom: 32px;
-      border: 2px solid rgba(255, 255, 255, 0.74);
-      border-radius: 50%;
-      background: rgba(225, 184, 77, 0.88);
-      box-shadow:
-        -42px -20px 0 -10px rgba(255, 255, 255, 0.28),
-        34px -30px 0 -12px rgba(255, 255, 255, 0.22);
-    }
-
-    .visual-line {
-      width: 112px;
+    .journey-path {
+      left: 42px;
+      right: 42px;
+      top: 74px;
       height: 2px;
-      right: 44px;
-      bottom: 52px;
-      background: rgba(255, 255, 255, 0.46);
-      transform: rotate(-18deg);
-      transform-origin: right center;
+      background: rgba(255, 255, 255, 0.52);
     }
 
-    .visual-orbit {
-      width: 112px;
-      height: 112px;
-      left: 38px;
-      top: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
+    .journey-step {
+      width: 66px;
+      height: 46px;
+      top: 51px;
+      border: 1px solid rgba(255, 255, 255, 0.52);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.16);
+      box-shadow: 0 10px 20px rgba(19, 36, 60, 0.1);
     }
 
-    .visual-orbit::before,
-    .visual-orbit::after {
+    .journey-step::before,
+    .journey-step::after,
+    .tablet-screen::before,
+    .tablet-screen::after {
       position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.62);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.54);
       content: "";
     }
 
-    .visual-orbit::before {
-      width: 14px;
-      height: 14px;
-      right: 2px;
-      top: 20px;
+    .journey-step::before {
+      width: 34px;
+      height: 6px;
+      left: 14px;
+      top: 13px;
     }
 
-    .visual-orbit::after {
-      width: 11px;
-      height: 11px;
+    .journey-step::after {
+      width: 24px;
+      height: 6px;
       left: 14px;
-      bottom: 12px;
+      top: 26px;
+    }
+
+    .journey-one {
+      left: 22px;
+    }
+
+    .journey-two {
+      left: calc(50% - 33px);
+    }
+
+    .journey-three {
+      right: 22px;
+    }
+
+    .journey-dot {
+      width: 18px;
+      height: 18px;
+      top: 66px;
+      border: 3px solid rgba(255, 255, 255, 0.74);
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 7px rgba(225, 184, 77, 0.18);
+    }
+
+    .journey-dot-one {
+      left: 88px;
+    }
+
+    .journey-dot-two {
+      left: calc(50% + 40px);
+    }
+
+    .journey-label {
+      right: 28px;
+      bottom: 20px;
+      width: 92px;
+      height: 22px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
     }
 
     .help-card-marketing .help-visual {
       background:
-        radial-gradient(circle at 76% 22%, rgba(225, 184, 77, 0.26), transparent 30%),
-        linear-gradient(135deg, #332654, #0f8f86 85%);
+        radial-gradient(circle at 62% 43%, rgba(255, 255, 255, 0.92), transparent 9%),
+        radial-gradient(circle at 62% 43%, rgba(225, 184, 77, 0.9), transparent 20%),
+        linear-gradient(135deg, #2f2858, #0f8f86 76%);
+    }
+
+    .flash-core {
+      width: 72px;
+      height: 72px;
+      left: 55%;
+      top: 39px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow:
+        0 0 0 14px rgba(225, 184, 77, 0.22),
+        0 0 42px rgba(225, 184, 77, 0.82);
+    }
+
+    .flash-ray {
+      width: 142px;
+      height: 3px;
+      left: calc(55% - 36px);
+      top: 73px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.62);
+      transform-origin: left center;
+    }
+
+    .flash-ray-one {
+      transform: rotate(-24deg);
+    }
+
+    .flash-ray-two {
+      transform: rotate(18deg);
+    }
+
+    .flash-ray-three {
+      width: 100px;
+      transform: rotate(52deg);
+    }
+
+    .person {
+      bottom: 24px;
+      width: 22px;
+      height: 42px;
+      border-radius: 999px 999px 8px 8px;
+      background: rgba(255, 255, 255, 0.34);
+    }
+
+    .person::before {
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      left: 2px;
+      top: -18px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.48);
+      content: "";
+    }
+
+    .person-one {
+      left: 34px;
+      transform: scale(0.92);
+    }
+
+    .person-two {
+      left: 72px;
+      opacity: 0.84;
+    }
+
+    .person-three {
+      left: 112px;
+      transform: scale(0.82);
+      opacity: 0.72;
     }
 
     .help-card-delivery .help-visual {
       background:
-        radial-gradient(circle at 20% 72%, rgba(225, 184, 77, 0.28), transparent 26%),
+        radial-gradient(circle at 70% 30%, rgba(225, 184, 77, 0.22), transparent 22%),
         linear-gradient(135deg, #123047, #506d75);
+    }
+
+    .tablet {
+      left: 24px;
+      top: 28px;
+      width: 132px;
+      height: 88px;
+      border: 5px solid rgba(255, 255, 255, 0.66);
+      border-radius: 13px;
+      background: rgba(19, 36, 60, 0.34);
+      box-shadow: 0 20px 28px rgba(19, 36, 60, 0.24);
+      transform: rotate(-8deg);
+    }
+
+    .tablet-screen {
+      inset: 9px;
+      border-radius: 7px;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.28) 42%, transparent 42%),
+        linear-gradient(180deg, rgba(15, 143, 134, 0.48), rgba(255, 255, 255, 0.12));
+    }
+
+    .tablet-screen::before {
+      width: 58px;
+      height: 8px;
+      left: 10px;
+      top: 12px;
+    }
+
+    .tablet-screen::after {
+      width: 42px;
+      height: 8px;
+      left: 10px;
+      top: 30px;
+    }
+
+    .build-block {
+      width: 54px;
+      height: 38px;
+      right: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: -64px 28px 0 -4px rgba(225, 184, 77, 0.7);
+    }
+
+    .block-one {
+      top: 28px;
+    }
+
+    .block-two {
+      top: 74px;
+      right: 74px;
+      background: rgba(225, 184, 77, 0.74);
+      box-shadow: 56px 0 0 -8px rgba(255, 255, 255, 0.22);
     }
 
     .help-content {
@@ -563,54 +656,9 @@
     }
 
     .help-close {
-      display: grid;
-      width: min(720px, 100%);
-      grid-template-columns: minmax(120px, 0.36fr) minmax(0, 1fr);
-      gap: 18px;
-      align-items: center;
-      margin: 16px 0 0 auto;
-      border: 1px solid rgba(19, 36, 60, 0.1);
-      border-radius: var(--radius);
-      padding: 12px 16px 12px 12px;
-      background: linear-gradient(135deg, rgba(216, 232, 223, 0.84), rgba(242, 223, 154, 0.54));
-      box-shadow: 0 12px 34px rgba(19, 36, 60, 0.07);
-    }
-
-    .close-art {
-      position: relative;
-      min-height: 82px;
-      overflow: hidden;
-      border-radius: var(--radius);
-      background:
-        linear-gradient(135deg, rgba(19, 36, 60, 0.95), rgba(15, 143, 134, 0.78));
-    }
-
-    .close-art::before,
-    .close-art::after {
-      position: absolute;
-      content: "";
-    }
-
-    .close-art::before {
-      width: 74px;
-      height: 48px;
-      left: 20px;
-      top: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.38);
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.14);
-      box-shadow: 38px 14px 0 -8px rgba(255, 255, 255, 0.16);
-      transform: perspective(120px) rotateY(-18deg);
-    }
-
-    .close-art::after {
-      width: 46px;
-      height: 46px;
-      right: 18px;
-      top: 18px;
-      border-radius: 50%;
-      background: rgba(225, 184, 77, 0.9);
-      box-shadow: 0 0 0 10px rgba(225, 184, 77, 0.16);
+      width: min(760px, 100%);
+      margin: 18px auto 0;
+      padding: 0 18px;
     }
 
     .help-close p {
@@ -619,7 +667,7 @@
       font-size: 1.12rem;
       font-weight: 850;
       line-height: 1.25;
-      text-align: right;
+      text-align: center;
     }
 
     .work-grid {
@@ -690,8 +738,8 @@
 
     .fit-grid {
       display: grid;
-      width: min(var(--max), calc(100% - 40px));
-      grid-template-columns: 0.95fr 1.05fr;
+      width: min(640px, calc(100% - 40px));
+      grid-template-columns: 1fr;
       gap: 16px;
       margin: 0 auto;
     }
@@ -906,12 +954,11 @@
       }
 
       .help-close {
-        grid-template-columns: 1fr;
-        padding: 12px;
+        padding: 0 8px;
       }
 
       .help-close p {
-        text-align: left;
+        text-align: center;
       }
 
       .button-row,
@@ -976,7 +1023,6 @@
         </div>
         <aside class="hero-panel" aria-label="Contact and CV links">
           <div>
-            <h2>Shareable profile</h2>
             <div class="cv-grid">
               <a class="cv-link" href="david_halmi_cv_np_en.pdf" download>English CV</a>
               <a class="cv-link" href="halmi_david_oneletrajz_np_hu.pdf" download>Hungarian CV</a>
@@ -996,9 +1042,13 @@
         <div class="help-grid">
           <article class="help-card help-card-crm">
             <div class="help-visual" aria-hidden="true">
-              <span class="visual-window"></span>
-              <span class="visual-node"></span>
-              <span class="visual-line"></span>
+              <span class="journey-path"></span>
+              <span class="journey-step journey-one"></span>
+              <span class="journey-step journey-two"></span>
+              <span class="journey-step journey-three"></span>
+              <span class="journey-dot journey-dot-one"></span>
+              <span class="journey-dot journey-dot-two"></span>
+              <span class="journey-label"></span>
             </div>
             <div class="help-content">
               <h3>You need someone who understands your customers and how to onboard and keep them?</h3>
@@ -1014,9 +1064,13 @@
 
           <article class="help-card help-card-marketing">
             <div class="help-visual" aria-hidden="true">
-              <span class="visual-orbit"></span>
-              <span class="visual-window"></span>
-              <span class="visual-node"></span>
+              <span class="flash-ray flash-ray-one"></span>
+              <span class="flash-ray flash-ray-two"></span>
+              <span class="flash-ray flash-ray-three"></span>
+              <span class="flash-core"></span>
+              <span class="person person-one"></span>
+              <span class="person person-two"></span>
+              <span class="person person-three"></span>
             </div>
             <div class="help-content">
               <h3>You need creative marketing ideas and an end-to-end campaign strategist?</h3>
@@ -1032,9 +1086,11 @@
 
           <article class="help-card help-card-delivery">
             <div class="help-visual" aria-hidden="true">
-              <span class="visual-window"></span>
-              <span class="visual-line"></span>
-              <span class="visual-node"></span>
+              <span class="tablet">
+                <span class="tablet-screen"></span>
+              </span>
+              <span class="build-block block-one"></span>
+              <span class="build-block block-two"></span>
             </div>
             <div class="help-content">
               <h3>You need an efficient team player to manage development and product lifecycle?</h3>
@@ -1049,7 +1105,6 @@
           </article>
         </div>
         <div class="help-close">
-          <div class="close-art" aria-hidden="true"></div>
           <p>Placeholder: one sharp proof sentence goes here once the strongest angle is chosen.</p>
         </div>
       </section>
@@ -1109,15 +1164,6 @@
               <span class="chip">Product Operations</span>
             </div>
           </article>
-          <article class="fit-card">
-            <h3>Hire me if</h3>
-            <ul>
-              <li>Your team needs strategy and hands-on execution in the same person.</li>
-              <li>The role touches both business and technical teams.</li>
-              <li>You need customer data, priorities and delivery to become more connected.</li>
-              <li>You value clear ownership, direct communication and practical momentum.</li>
-            </ul>
-          </article>
         </div>
       </section>
 
@@ -1139,7 +1185,6 @@
         </div>
         <aside class="hero-panel" aria-label="Kapcsolat és CV linkek">
           <div>
-            <h2>Megosztható profil</h2>
             <div class="cv-grid">
               <a class="cv-link" href="david_halmi_cv_np_en.pdf" download>Angol CV</a>
               <a class="cv-link" href="halmi_david_oneletrajz_np_hu.pdf" download>Magyar CV</a>
@@ -1159,9 +1204,13 @@
         <div class="help-grid">
           <article class="help-card help-card-crm">
             <div class="help-visual" aria-hidden="true">
-              <span class="visual-window"></span>
-              <span class="visual-node"></span>
-              <span class="visual-line"></span>
+              <span class="journey-path"></span>
+              <span class="journey-step journey-one"></span>
+              <span class="journey-step journey-two"></span>
+              <span class="journey-step journey-three"></span>
+              <span class="journey-dot journey-dot-one"></span>
+              <span class="journey-dot journey-dot-two"></span>
+              <span class="journey-label"></span>
             </div>
             <div class="help-content">
               <h3>Kell valaki, aki érti az ügyfeleidet, és tudja hogyan kell őket onboardolni és megtartani?</h3>
@@ -1177,9 +1226,13 @@
 
           <article class="help-card help-card-marketing">
             <div class="help-visual" aria-hidden="true">
-              <span class="visual-orbit"></span>
-              <span class="visual-window"></span>
-              <span class="visual-node"></span>
+              <span class="flash-ray flash-ray-one"></span>
+              <span class="flash-ray flash-ray-two"></span>
+              <span class="flash-ray flash-ray-three"></span>
+              <span class="flash-core"></span>
+              <span class="person person-one"></span>
+              <span class="person person-two"></span>
+              <span class="person person-three"></span>
             </div>
             <div class="help-content">
               <h3>Kellenek kreatív marketing ötletek és end-to-end kampánystratégia?</h3>
@@ -1195,9 +1248,11 @@
 
           <article class="help-card help-card-delivery">
             <div class="help-visual" aria-hidden="true">
-              <span class="visual-window"></span>
-              <span class="visual-line"></span>
-              <span class="visual-node"></span>
+              <span class="tablet">
+                <span class="tablet-screen"></span>
+              </span>
+              <span class="build-block block-one"></span>
+              <span class="build-block block-two"></span>
             </div>
             <div class="help-content">
               <h3>Kell egy hatékony csapatjátékos fejlesztéshez és product lifecycle menedzsmenthez?</h3>
@@ -1212,7 +1267,6 @@
           </article>
         </div>
         <div class="help-close">
-          <div class="close-art" aria-hidden="true"></div>
           <p>Placeholder: ide kerül majd egy éles bizonyító mondat, ha kiválasztottuk a legerősebb irányt.</p>
         </div>
       </section>
@@ -1271,15 +1325,6 @@
               <span class="chip">Cross-functional Delivery</span>
               <span class="chip">Product Operations</span>
             </div>
-          </article>
-          <article class="fit-card">
-            <h3>Beszéljünk, ha</h3>
-            <ul>
-              <li>A csapatnak stratégiára és kézzelfogható végrehajtásra is szüksége van ugyanattól az embertől.</li>
-              <li>A szerep üzleti és technikai csapatokat is érint.</li>
-              <li>Az ügyféladatot, prioritásokat és deliveryt össze kell kötni.</li>
-              <li>Fontos a tiszta felelősség, az egyenes kommunikáció és a gyakorlati lendület.</li>
-            </ul>
           </article>
         </div>
       </section>
