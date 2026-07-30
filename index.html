@@ -530,7 +530,7 @@
 
     .fit-card-wide {
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.55fr);
+      grid-template-columns: minmax(0, 1fr) minmax(340px, 0.58fr);
       gap: 20px;
       align-items: center;
     }
@@ -556,7 +556,8 @@
 
     .chip-row {
       display: grid;
-      grid-template-columns: repeat(2, minmax(118px, 150px));
+      grid-template-columns: repeat(2, 168px);
+      grid-auto-rows: 38px;
       gap: 8px;
       align-content: start;
       justify-content: end;
@@ -565,6 +566,7 @@
     .chip {
       display: inline-flex;
       min-height: 38px;
+      height: 100%;
       align-items: center;
       justify-content: center;
       border: 1px solid rgba(19, 36, 60, 0.12);
@@ -575,6 +577,7 @@
       font-size: 0.92rem;
       font-weight: 850;
       text-align: center;
+      white-space: nowrap;
     }
 
     .cta {
@@ -761,12 +764,15 @@
 
       .chip-row {
         grid-template-columns: 1fr;
+        grid-auto-rows: auto;
         justify-content: stretch;
       }
 
       .chip {
         min-height: 44px;
+        height: auto;
         font-size: 0.98rem;
+        white-space: normal;
       }
 
       .button,
