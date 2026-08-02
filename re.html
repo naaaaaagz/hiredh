@@ -171,24 +171,15 @@
     .hero {
       position: relative;
       display: grid;
-      min-height: clamp(620px, calc(100svh - 72px), 760px);
+      min-height: clamp(500px, calc(82svh - 72px), 620px);
       grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.58fr);
       gap: clamp(32px, 6vw, 72px);
       align-items: center;
-      padding: clamp(48px, 8vw, 110px) 0 clamp(44px, 7vw, 90px);
+      padding: clamp(34px, 5.5vw, 78px) 0 clamp(38px, 5vw, 72px);
     }
 
     .hero::before {
-      position: absolute;
-      z-index: -1;
-      top: 10%;
-      right: -20vw;
-      width: min(560px, 60vw);
-      height: 72%;
-      border: 1px solid rgba(8, 124, 117, 0.14);
-      border-radius: 44px;
-      background: rgba(255, 255, 255, 0.28);
-      content: "";
+      display: none;
     }
 
     .kicker {
@@ -227,7 +218,7 @@
     .role-line {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px 15px;
+      gap: 7px 0;
       max-width: 680px;
       color: var(--teal);
       font-size: 0.86rem;
@@ -238,20 +229,18 @@
       white-space: nowrap;
     }
 
+    .role-line span:not(:last-child)::after {
+      margin: 0 12px;
+      color: var(--gold);
+      content: "·";
+    }
+
     .hero-card {
       border: 1px solid rgba(19, 32, 51, 0.11);
       border-radius: var(--radius);
       padding: 26px;
       background: rgba(255, 253, 248, 0.78);
       box-shadow: var(--shadow);
-    }
-
-    .hero-card h2 {
-      margin-bottom: 16px;
-      color: var(--ink);
-      font-size: 1rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
     }
 
     .cv-list {
@@ -306,7 +295,7 @@
     }
 
     .section {
-      padding: clamp(58px, 8vw, 104px) 0;
+      padding: clamp(48px, 6.5vw, 86px) 0;
     }
 
     .section-band {
@@ -328,8 +317,8 @@
     .section-head h2 {
       margin-bottom: 0;
       color: var(--ink);
-      font-size: clamp(2.6rem, 6vw, 5.4rem);
-      line-height: 0.94;
+      font-size: clamp(2.35rem, 5vw, 4.35rem);
+      line-height: 0.98;
       letter-spacing: -0.018em;
     }
 
@@ -418,7 +407,7 @@
     }
 
     .value-intro h2 {
-      margin-bottom: 18px;
+      margin-bottom: 0;
       font-size: clamp(2.4rem, 5vw, 4.4rem);
       line-height: 0.96;
       letter-spacing: -0.016em;
@@ -435,17 +424,16 @@
     }
 
     .value-card {
-      min-height: 176px;
       border: 1px solid rgba(19, 32, 51, 0.1);
       border-radius: var(--radius);
-      padding: 22px;
+      padding: 20px 22px;
       background: var(--surface);
       box-shadow: 0 12px 32px rgba(30, 39, 53, 0.05);
     }
 
     .value-card .num {
       display: block;
-      margin-bottom: 26px;
+      margin-bottom: 16px;
       color: var(--gold);
       font-size: 0.82rem;
       font-weight: 900;
@@ -467,14 +455,14 @@
       position: relative;
       display: grid;
       gap: 14px;
-      max-width: 980px;
+      max-width: 860px;
     }
 
     .career-wrap::before {
       position: absolute;
       top: 8px;
       bottom: 8px;
-      left: 26%;
+      left: 208px;
       width: 1px;
       background: rgba(8, 124, 117, 0.28);
       content: "";
@@ -483,17 +471,18 @@
     .career-item {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(170px, 0.26fr) minmax(0, 1fr);
-      gap: 34px;
+      grid-template-columns: 184px minmax(0, 1fr);
+      gap: 48px;
       align-items: start;
     }
 
     .career-period {
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       font-weight: 850;
       line-height: 1.3;
       text-align: right;
+      white-space: nowrap;
     }
 
     .career-card {
@@ -508,7 +497,7 @@
     .career-card::before {
       position: absolute;
       top: 23px;
-      left: -43px;
+      left: -33px;
       width: 10px;
       height: 10px;
       border: 2px solid var(--paper);
@@ -534,11 +523,13 @@
       grid-template-columns: minmax(0, 1fr) minmax(300px, 0.5fr);
       gap: 20px;
       align-items: center;
-      border: 1px solid rgba(19, 32, 51, 0.1);
+      border: 1px solid rgba(215, 170, 66, 0.38);
       border-radius: var(--radius);
-      padding: 28px;
-      background: var(--surface);
-      box-shadow: var(--shadow);
+      padding: clamp(24px, 4vw, 36px);
+      background:
+        linear-gradient(135deg, rgba(243, 229, 185, 0.62), rgba(255, 253, 248, 0.92) 44%),
+        var(--surface);
+      box-shadow: 0 26px 70px rgba(30, 39, 53, 0.12);
     }
 
     .fit-panel h2 {
@@ -583,6 +574,11 @@
       box-shadow: var(--shadow);
     }
 
+    .contact-section {
+      padding-top: clamp(24px, 3.2vw, 46px);
+      padding-bottom: clamp(18px, 2.6vw, 34px);
+    }
+
     .cta h2 {
       margin-bottom: 4px;
       font-size: clamp(2rem, 4vw, 3rem);
@@ -609,7 +605,7 @@
     }
 
     footer {
-      padding: 28px 0 36px;
+      padding: 12px 0 28px;
       color: var(--muted);
       font-size: 0.9rem;
       text-align: center;
@@ -693,6 +689,29 @@
       .hero::before {
         display: none;
       }
+
+      .career-wrap {
+        max-width: none;
+      }
+
+      .career-wrap::before {
+        left: 0;
+      }
+
+      .career-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding-left: 24px;
+      }
+
+      .career-period {
+        text-align: left;
+        white-space: normal;
+      }
+
+      .career-card::before {
+        left: -29px;
+      }
     }
 
     @media (max-width: 680px) {
@@ -735,23 +754,6 @@
         height: 158px;
       }
 
-      .career-wrap::before {
-        left: 0;
-      }
-
-      .career-item {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        padding-left: 24px;
-      }
-
-      .career-period {
-        text-align: left;
-      }
-
-      .career-card::before {
-        left: -29px;
-      }
     }
   </style>
 </head>
@@ -783,7 +785,6 @@
           </div>
         </div>
         <aside class="hero-card" aria-label="CV and contact links">
-          <h2>Profile dossier</h2>
           <div class="cv-list">
             <a class="cv-link" href="david_halmi_cv_np_en.pdf" download>English CV <span>PDF</span></a>
             <a class="cv-link" href="halmi_david_oneletrajz_np_hu.pdf" download>Hungarian CV <span>PDF</span></a>
@@ -837,7 +838,6 @@
         <div class="value-layout">
           <div class="value-intro">
             <h2 id="work-en">How I create value</h2>
-            <p>I work best where customer data, business priorities and delivery reality need to become one coherent operating rhythm.</p>
           </div>
           <div class="value-grid">
             <article class="value-card"><span class="num">01</span><h3>Customer lifecycle systems</h3><p>Segmentation, journey mapping, onboarding logic, retention and CRM workflows that make customer work less improvised.</p></article>
@@ -854,7 +854,7 @@
             <h2 id="experience-en">Career path</h2>
           </div>
           <div class="career-wrap">
-            <article class="career-item"><p class="career-period">April 2026 - August 2026</p><div class="career-card"><h3>CRM and Customer Data Manager</h3><p class="company">Kulcs-Soft Zrt.</p></div></article>
+            <article class="career-item"><p class="career-period">Apr 2026 - Aug 2026</p><div class="career-card"><h3>CRM and Customer Data Manager</h3><p class="company">Kulcs-Soft Zrt.</p></div></article>
             <article class="career-item"><p class="career-period">Oct 2016 - Dec 2024</p><div class="career-card"><h3>Project, Product and CRM Manager</h3><p class="company">Apex IT Services Ltd.</p></div></article>
             <article class="career-item"><p class="career-period">Apr 2016 - Sep 2016</p><div class="career-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Ltd.</p></div></article>
             <article class="career-item"><p class="career-period">May 2015 - Apr 2016</p><div class="career-card"><h3>Marketing Manager / Team Lead</h3><p class="company">ClickPapa</p></div></article>
@@ -878,7 +878,7 @@
         </div>
       </section>
 
-      <section class="section shell reveal" aria-labelledby="contact-en">
+      <section class="section shell contact-section reveal" aria-labelledby="contact-en">
         <div class="cta">
           <div>
             <h2 id="contact-en">Interested?</h2>
@@ -904,7 +904,6 @@
           </div>
         </div>
         <aside class="hero-card" aria-label="CV és kapcsolat linkek">
-          <h2>Profilcsomag</h2>
           <div class="cv-list">
             <a class="cv-link" href="david_halmi_cv_np_en.pdf" download>Angol CV <span>PDF</span></a>
             <a class="cv-link" href="halmi_david_oneletrajz_np_hu.pdf" download>Magyar CV <span>PDF</span></a>
@@ -958,7 +957,6 @@
         <div class="value-layout">
           <div class="value-intro">
             <h2 id="work-hu">Hogyan teremtek értéket</h2>
-            <p>Akkor vagyok a legerősebb, amikor ügyféladatot, üzleti prioritást és delivery valóságot kell egy működő ritmussá összekötni.</p>
           </div>
           <div class="value-grid">
             <article class="value-card"><span class="num">01</span><h3>Customer lifecycle rendszerek</h3><p>Szegmentáció, journey mapping, onboarding, megtartás és CRM workflow-k, amelyek célzottabb működést hoznak.</p></article>
@@ -975,14 +973,14 @@
             <h2 id="experience-hu">Karrierút</h2>
           </div>
           <div class="career-wrap">
-            <article class="career-item"><p class="career-period">2026. április - 2026. augusztus</p><div class="career-card"><h3>CRM- és Ügyféladat Manager</h3><p class="company">Kulcs-Soft Zrt.</p></div></article>
-            <article class="career-item"><p class="career-period">2016. október - 2024. december</p><div class="career-card"><h3>Projekt, Termék- és CRM Manager</h3><p class="company">Apex IT Services Kft.</p></div></article>
-            <article class="career-item"><p class="career-period">2016. április - 2016. szeptember</p><div class="career-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Kft.</p></div></article>
-            <article class="career-item"><p class="career-period">2015. május - 2016. április</p><div class="career-card"><h3>Marketing Manager / Csoportvezető</h3><p class="company">ClickPapa</p></div></article>
-            <article class="career-item"><p class="career-period">2014. szeptember - 2015. május</p><div class="career-card"><h3>Marketing Manager</h3><p class="company">InfomatiX Kft.</p></div></article>
-            <article class="career-item"><p class="career-period">2013. január - 2014. július</p><div class="career-card"><h3>Termék- és Project Manager</h3><p class="company">A.L.e.v.</p></div></article>
-            <article class="career-item"><p class="career-period">2009. augusztus - 2012. november</p><div class="career-card"><h3>Marketing Manager / Médiavásárló</h3><p class="company">Docler Holding</p></div></article>
-            <article class="career-item"><p class="career-period">2007. január - 2009. augusztus</p><div class="career-card"><h3>Ügyfélszolgálat, Műszakvezető</h3><p class="company">Docler Holding</p></div></article>
+            <article class="career-item"><p class="career-period">2026. ápr. - 2026. aug.</p><div class="career-card"><h3>CRM- és Ügyféladat Manager</h3><p class="company">Kulcs-Soft Zrt.</p></div></article>
+            <article class="career-item"><p class="career-period">2016. okt. - 2024. dec.</p><div class="career-card"><h3>Projekt, Termék- és CRM Manager</h3><p class="company">Apex IT Services Kft.</p></div></article>
+            <article class="career-item"><p class="career-period">2016. ápr. - 2016. szept.</p><div class="career-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Kft.</p></div></article>
+            <article class="career-item"><p class="career-period">2015. máj. - 2016. ápr.</p><div class="career-card"><h3>Marketing Manager / Csoportvezető</h3><p class="company">ClickPapa</p></div></article>
+            <article class="career-item"><p class="career-period">2014. szept. - 2015. máj.</p><div class="career-card"><h3>Marketing Manager</h3><p class="company">InfomatiX Kft.</p></div></article>
+            <article class="career-item"><p class="career-period">2013. jan. - 2014. júl.</p><div class="career-card"><h3>Termék- és Project Manager</h3><p class="company">A.L.e.v.</p></div></article>
+            <article class="career-item"><p class="career-period">2009. aug. - 2012. nov.</p><div class="career-card"><h3>Marketing Manager / Médiavásárló</h3><p class="company">Docler Holding</p></div></article>
+            <article class="career-item"><p class="career-period">2007. jan. - 2009. aug.</p><div class="career-card"><h3>Ügyfélszolgálat, Műszakvezető</h3><p class="company">Docler Holding</p></div></article>
           </div>
         </div>
       </section>
@@ -999,7 +997,7 @@
         </div>
       </section>
 
-      <section class="section shell reveal" aria-labelledby="contact-hu">
+      <section class="section shell contact-section reveal" aria-labelledby="contact-hu">
         <div class="cta">
           <div>
             <h2 id="contact-hu">Beszéljünk!</h2>
