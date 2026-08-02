@@ -350,6 +350,20 @@
       overflow: hidden;
       border-radius: 8px;
       background: var(--ink);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .challenge-media.journey {
+      background-image: url("assets/help-journey.jpg");
+    }
+
+    .challenge-media.marketing {
+      background-image: url("assets/help-marketing.jpg");
+    }
+
+    .challenge-media.product {
+      background-image: url("assets/help-product.jpg");
     }
 
     .challenge-media img {
@@ -454,56 +468,58 @@
     .career-wrap {
       position: relative;
       display: grid;
-      gap: 14px;
-      max-width: 860px;
+      gap: 0;
+      max-width: 920px;
     }
 
     .career-wrap::before {
       position: absolute;
-      top: 8px;
-      bottom: 8px;
-      left: 208px;
+      top: 18px;
+      bottom: 18px;
+      left: 178px;
       width: 1px;
-      background: rgba(8, 124, 117, 0.28);
+      background: linear-gradient(180deg, rgba(8, 124, 117, 0), rgba(8, 124, 117, 0.34) 12%, rgba(8, 124, 117, 0.34) 88%, rgba(8, 124, 117, 0));
       content: "";
     }
 
     .career-item {
       position: relative;
       display: grid;
-      grid-template-columns: 184px minmax(0, 1fr);
-      gap: 48px;
-      align-items: start;
+      grid-template-columns: 142px minmax(0, 1fr);
+      gap: 72px;
+      align-items: baseline;
+      padding: 15px 0;
+    }
+
+    .career-item:not(:last-child) {
+      border-bottom: 1px solid rgba(19, 32, 51, 0.08);
     }
 
     .career-period {
       color: var(--muted);
-      font-size: 0.82rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.78rem;
       font-weight: 850;
       line-height: 1.3;
       text-align: right;
       white-space: nowrap;
     }
 
-    .career-card {
-      position: relative;
-      border: 1px solid rgba(19, 32, 51, 0.1);
-      border-radius: var(--radius);
-      padding: 18px 20px;
-      background: var(--surface);
-      box-shadow: 0 10px 28px rgba(30, 39, 53, 0.05);
-    }
-
-    .career-card::before {
+    .career-item::before {
       position: absolute;
-      top: 23px;
-      left: -33px;
-      width: 10px;
-      height: 10px;
-      border: 2px solid var(--paper);
+      top: 1.72rem;
+      left: 174px;
+      width: 9px;
+      height: 9px;
+      border: 2px solid var(--paper-2);
       border-radius: 50%;
       background: var(--teal);
       content: "";
+    }
+
+    .career-card {
+      position: relative;
+      padding: 0 0 0 2px;
     }
 
     .career-card h3 {
@@ -639,6 +655,75 @@
       pointer-events: auto;
     }
 
+    .page-rail {
+      position: fixed;
+      z-index: 18;
+      top: 50%;
+      right: 22px;
+      display: grid;
+      gap: 14px;
+      transform: translateY(-50%);
+    }
+
+    [data-rail-lang] {
+      display: none;
+    }
+
+    html[data-lang="en"] [data-rail-lang="en"],
+    html[data-lang="hu"] [data-rail-lang="hu"] {
+      display: inline;
+    }
+
+    .page-rail button {
+      display: flex;
+      width: 18px;
+      min-height: 18px;
+      align-items: center;
+      justify-content: center;
+      justify-self: end;
+      border: 1px solid rgba(8, 124, 117, 0.24);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.72);
+      color: var(--ink);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0;
+      font-weight: 900;
+      line-height: 1;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(19, 32, 51, 0.08);
+      transition: width 180ms ease, min-height 180ms ease, padding 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .page-rail button::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(8, 124, 117, 0.52);
+      content: "";
+    }
+
+    .page-rail button.is-active {
+      width: auto;
+      min-width: 86px;
+      min-height: 34px;
+      padding: 0 16px;
+      background: var(--teal);
+      color: #fff;
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .page-rail button.is-active::before {
+      display: none;
+    }
+
+    html[data-lang="en"] .page-rail button.is-active [data-rail-lang="en"],
+    html[data-lang="hu"] .page-rail button.is-active [data-rail-lang="hu"] {
+      display: inline;
+    }
+
     .reveal {
       opacity: 1;
       transform: none;
@@ -690,18 +775,23 @@
         display: none;
       }
 
+      .page-rail {
+        display: none;
+      }
+
       .career-wrap {
         max-width: none;
       }
 
       .career-wrap::before {
-        left: 0;
+        left: 4px;
       }
 
       .career-item {
         grid-template-columns: 1fr;
         gap: 8px;
         padding-left: 24px;
+        align-items: start;
       }
 
       .career-period {
@@ -709,8 +799,9 @@
         white-space: normal;
       }
 
-      .career-card::before {
-        left: -29px;
+      .career-item::before {
+        top: 1.1rem;
+        left: 0;
       }
     }
 
@@ -769,9 +860,18 @@
     </div>
   </header>
 
+  <nav class="page-rail" aria-label="Page position">
+    <button type="button" class="is-active" data-rail-link="top"><span data-rail-lang="en">Top</span><span data-rail-lang="hu">Top</span></button>
+    <button type="button" data-rail-link="value"><span data-rail-lang="en">Value</span><span data-rail-lang="hu">Érték</span></button>
+    <button type="button" data-rail-link="help"><span data-rail-lang="en">Help</span><span data-rail-lang="hu">Segítség</span></button>
+    <button type="button" data-rail-link="experience"><span data-rail-lang="en">Experience</span><span data-rail-lang="hu">Karrier</span></button>
+    <button type="button" data-rail-link="fit"><span data-rail-lang="en">Fit</span><span data-rail-lang="hu">Keresek</span></button>
+    <button type="button" data-rail-link="contact"><span data-rail-lang="en">Contact</span><span data-rail-lang="hu">Kontakt</span></button>
+  </nav>
+
   <main>
     <div data-lang-content="en">
-      <section class="hero shell reveal" aria-labelledby="hero-en">
+      <section class="hero shell reveal" aria-labelledby="hero-en" data-rail-section="top">
         <div>
           <p class="kicker">Portfolio & CV</p>
           <h1 id="hero-en">Dávid Halmi</h1>
@@ -796,45 +896,7 @@
         </aside>
       </section>
 
-      <section class="section section-band reveal" aria-labelledby="help-en">
-        <div class="shell">
-          <div class="section-head">
-            <h2 id="help-en">Where I can help</h2>
-          </div>
-          <div class="challenge-stack">
-            <article class="challenge-card">
-              <div class="challenge-media" aria-hidden="true"><img src="assets/help-journey.jpg" alt="" loading="lazy" decoding="async"></div>
-              <div class="challenge-copy">
-                <h3>You need someone who understands your customers and how to onboard and keep them?</h3>
-                <div class="tags">
-                  <span>AI-powered research</span><span>Dashboarding</span><span>Customer lifecycle</span><span>Retention</span><span>CRM flows</span>
-                </div>
-              </div>
-            </article>
-            <article class="challenge-card">
-              <div class="challenge-media" aria-hidden="true"><img src="assets/help-marketing.jpg" alt="" loading="lazy" decoding="async"></div>
-              <div class="challenge-copy">
-                <h3>You lack a creative marketing professional leading campaign strategies end-to-end?</h3>
-                <div class="tags">
-                  <span>Successful campaigns</span><span>ROI improvement</span><span>GTM</span><span>Content + PPC</span><span>Creative strategy</span>
-                </div>
-              </div>
-            </article>
-            <article class="challenge-card">
-              <div class="challenge-media" aria-hidden="true"><img src="assets/help-product.jpg" alt="" loading="lazy" decoding="async"></div>
-              <div class="challenge-copy">
-                <h3>Your team needs an efficient member to manage development and product lifecycle?</h3>
-                <div class="tags">
-                  <span>10+ team coordination</span><span>Roadmaps</span><span>Product lifecycle</span><span>Delivery management</span><span>Requirements</span>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="proof-strip">I am open to join your team and solve any of these challenges.</div>
-        </div>
-      </section>
-
-      <section class="section shell reveal" aria-labelledby="work-en">
+      <section class="section shell reveal" aria-labelledby="work-en" data-rail-section="value">
         <div class="value-layout">
           <div class="value-intro">
             <h2 id="work-en">How I create value</h2>
@@ -848,25 +910,63 @@
         </div>
       </section>
 
-      <section class="section section-band reveal" aria-labelledby="experience-en">
+      <section class="section section-band reveal" aria-labelledby="help-en" data-rail-section="help">
+        <div class="shell">
+          <div class="section-head">
+            <h2 id="help-en">Where I can help</h2>
+          </div>
+          <div class="challenge-stack">
+            <article class="challenge-card">
+              <div class="challenge-media journey" aria-hidden="true"><img src="assets/help-journey.jpg" alt="" decoding="async"></div>
+              <div class="challenge-copy">
+                <h3>You need someone who understands your customers and how to onboard and keep them?</h3>
+                <div class="tags">
+                  <span>AI-powered research</span><span>Dashboarding</span><span>Customer lifecycle</span><span>Retention</span><span>CRM flows</span>
+                </div>
+              </div>
+            </article>
+            <article class="challenge-card">
+              <div class="challenge-media marketing" aria-hidden="true"><img src="assets/help-marketing.jpg" alt="" decoding="async"></div>
+              <div class="challenge-copy">
+                <h3>You lack a creative marketing professional leading campaign strategies end-to-end?</h3>
+                <div class="tags">
+                  <span>Successful campaigns</span><span>ROI improvement</span><span>GTM</span><span>Content + PPC</span><span>Creative strategy</span>
+                </div>
+              </div>
+            </article>
+            <article class="challenge-card">
+              <div class="challenge-media product" aria-hidden="true"><img src="assets/help-product.jpg" alt="" decoding="async"></div>
+              <div class="challenge-copy">
+                <h3>Your team needs an efficient member to manage development and product lifecycle?</h3>
+                <div class="tags">
+                  <span>10+ team coordination</span><span>Roadmaps</span><span>Product lifecycle</span><span>Delivery management</span><span>Requirements</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="proof-strip">I am open to join your team and solve any of these challenges.</div>
+        </div>
+      </section>
+
+      <section class="section section-band reveal" aria-labelledby="experience-en" data-rail-section="experience">
         <div class="shell">
           <div class="section-head">
             <h2 id="experience-en">Career path</h2>
           </div>
           <div class="career-wrap">
-            <article class="career-item"><p class="career-period">Apr 2026 - Aug 2026</p><div class="career-card"><h3>CRM and Customer Data Manager</h3><p class="company">Kulcs-Soft Zrt.</p></div></article>
-            <article class="career-item"><p class="career-period">Oct 2016 - Dec 2024</p><div class="career-card"><h3>Project, Product and CRM Manager</h3><p class="company">Apex IT Services Ltd.</p></div></article>
-            <article class="career-item"><p class="career-period">Apr 2016 - Sep 2016</p><div class="career-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Ltd.</p></div></article>
-            <article class="career-item"><p class="career-period">May 2015 - Apr 2016</p><div class="career-card"><h3>Marketing Manager / Team Lead</h3><p class="company">ClickPapa</p></div></article>
-            <article class="career-item"><p class="career-period">Sep 2014 - May 2015</p><div class="career-card"><h3>Marketing Manager</h3><p class="company">InfomatiX Ltd.</p></div></article>
-            <article class="career-item"><p class="career-period">Jan 2013 - Jul 2014</p><div class="career-card"><h3>Product and Project Manager</h3><p class="company">A.L.e.v.</p></div></article>
-            <article class="career-item"><p class="career-period">Aug 2009 - Nov 2012</p><div class="career-card"><h3>Marketing Manager / Media Buyer</h3><p class="company">Docler Holding</p></div></article>
-            <article class="career-item"><p class="career-period">Jan 2007 - Aug 2009</p><div class="career-card"><h3>Customer Support, Shift Leader</h3><p class="company">Docler Holding</p></div></article>
+            <article class="career-item"><p class="career-period">2026/04-08</p><div class="career-card"><h3>CRM and Customer Data Manager</h3><p class="company">Kulcs-Soft Zrt.</p></div></article>
+            <article class="career-item"><p class="career-period">2016/10 - 2024/12</p><div class="career-card"><h3>Project, Product and CRM Manager</h3><p class="company">Apex IT Services Ltd.</p></div></article>
+            <article class="career-item"><p class="career-period">2016/04-09</p><div class="career-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Ltd.</p></div></article>
+            <article class="career-item"><p class="career-period">2015/05 - 2016/04</p><div class="career-card"><h3>Marketing Manager / Team Lead</h3><p class="company">ClickPapa</p></div></article>
+            <article class="career-item"><p class="career-period">2014/09 - 2015/05</p><div class="career-card"><h3>Marketing Manager</h3><p class="company">InfomatiX Ltd.</p></div></article>
+            <article class="career-item"><p class="career-period">2013/01 - 2014/07</p><div class="career-card"><h3>Product and Project Manager</h3><p class="company">A.L.e.v.</p></div></article>
+            <article class="career-item"><p class="career-period">2009/08 - 2012/11</p><div class="career-card"><h3>Marketing Manager / Media Buyer</h3><p class="company">Docler Holding</p></div></article>
+            <article class="career-item"><p class="career-period">2007/01 - 2009/08</p><div class="career-card"><h3>Customer Support, Shift Leader</h3><p class="company">Docler Holding</p></div></article>
           </div>
         </div>
       </section>
 
-      <section class="section shell reveal" aria-labelledby="fit-en">
+      <section class="section shell reveal" aria-labelledby="fit-en" data-rail-section="fit">
         <div class="fit-panel">
           <div>
             <h2 id="fit-en">What I am looking for</h2>
@@ -878,7 +978,7 @@
         </div>
       </section>
 
-      <section class="section shell contact-section reveal" aria-labelledby="contact-en">
+      <section class="section shell contact-section reveal" aria-labelledby="contact-en" data-rail-section="contact">
         <div class="cta">
           <div>
             <h2 id="contact-en">Interested?</h2>
@@ -890,7 +990,7 @@
     </div>
 
     <div data-lang-content="hu">
-      <section class="hero shell reveal" aria-labelledby="hero-hu">
+      <section class="hero shell reveal" aria-labelledby="hero-hu" data-rail-section="top">
         <div>
           <p class="kicker">Portfólió & CV</p>
           <h1 id="hero-hu">Halmi Dávid</h1>
@@ -915,45 +1015,7 @@
         </aside>
       </section>
 
-      <section class="section section-band reveal" aria-labelledby="help-hu">
-        <div class="shell">
-          <div class="section-head">
-            <h2 id="help-hu">Ahol segíteni tudok</h2>
-          </div>
-          <div class="challenge-stack">
-            <article class="challenge-card">
-              <div class="challenge-media" aria-hidden="true"><img src="assets/help-journey.jpg" alt="" loading="lazy" decoding="async"></div>
-              <div class="challenge-copy">
-                <h3>Kell valaki, aki érti az ügyfeleidet, és tudja hogyan kell őket onboardolni és megtartani?</h3>
-                <div class="tags">
-                  <span>AI-alapú kutatás</span><span>Dashboarding</span><span>Customer lifecycle</span><span>Megtartás</span><span>CRM flow-k</span>
-                </div>
-              </div>
-            </article>
-            <article class="challenge-card">
-              <div class="challenge-media" aria-hidden="true"><img src="assets/help-marketing.jpg" alt="" loading="lazy" decoding="async"></div>
-              <div class="challenge-copy">
-                <h3>Hiányzik egy kreatív marketing szakember, aki teljes körű kampánystratégiát tervez?</h3>
-                <div class="tags">
-                  <span>Sikeres kampányok</span><span>ROI javítás</span><span>GTM</span><span>Tartalom + PPC</span><span>Kreatív stratégia</span>
-                </div>
-              </div>
-            </article>
-            <article class="challenge-card">
-              <div class="challenge-media" aria-hidden="true"><img src="assets/help-product.jpg" alt="" loading="lazy" decoding="async"></div>
-              <div class="challenge-copy">
-                <h3>Hatékony csapattagot keresel fejlesztéshez és product életút menedzsmenthez?</h3>
-                <div class="tags">
-                  <span>10+ csapat koordináció</span><span>Roadmap-ek</span><span>Product lifecycle</span><span>Delivery management</span><span>Requirementek</span>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="proof-strip">Örömmel segítek ezek megoldásában a csapat tagjaként.</div>
-        </div>
-      </section>
-
-      <section class="section shell reveal" aria-labelledby="work-hu">
+      <section class="section shell reveal" aria-labelledby="work-hu" data-rail-section="value">
         <div class="value-layout">
           <div class="value-intro">
             <h2 id="work-hu">Hogyan teremtek értéket</h2>
@@ -967,25 +1029,63 @@
         </div>
       </section>
 
-      <section class="section section-band reveal" aria-labelledby="experience-hu">
+      <section class="section section-band reveal" aria-labelledby="help-hu" data-rail-section="help">
+        <div class="shell">
+          <div class="section-head">
+            <h2 id="help-hu">Ahol segíteni tudok</h2>
+          </div>
+          <div class="challenge-stack">
+            <article class="challenge-card">
+              <div class="challenge-media journey" aria-hidden="true"><img src="assets/help-journey.jpg" alt="" decoding="async"></div>
+              <div class="challenge-copy">
+                <h3>Kell valaki, aki érti az ügyfeleidet, és tudja hogyan kell őket onboardolni és megtartani?</h3>
+                <div class="tags">
+                  <span>AI-alapú kutatás</span><span>Dashboarding</span><span>Customer lifecycle</span><span>Megtartás</span><span>CRM flow-k</span>
+                </div>
+              </div>
+            </article>
+            <article class="challenge-card">
+              <div class="challenge-media marketing" aria-hidden="true"><img src="assets/help-marketing.jpg" alt="" decoding="async"></div>
+              <div class="challenge-copy">
+                <h3>Hiányzik egy kreatív marketing szakember, aki teljes körű kampánystratégiát tervez?</h3>
+                <div class="tags">
+                  <span>Sikeres kampányok</span><span>ROI javítás</span><span>GTM</span><span>Tartalom + PPC</span><span>Kreatív stratégia</span>
+                </div>
+              </div>
+            </article>
+            <article class="challenge-card">
+              <div class="challenge-media product" aria-hidden="true"><img src="assets/help-product.jpg" alt="" decoding="async"></div>
+              <div class="challenge-copy">
+                <h3>Hatékony csapattagot keresel fejlesztéshez és product életút menedzsmenthez?</h3>
+                <div class="tags">
+                  <span>10+ csapat koordináció</span><span>Roadmap-ek</span><span>Product lifecycle</span><span>Delivery management</span><span>Requirementek</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="proof-strip">Örömmel segítek ezek megoldásában a csapat tagjaként.</div>
+        </div>
+      </section>
+
+      <section class="section section-band reveal" aria-labelledby="experience-hu" data-rail-section="experience">
         <div class="shell">
           <div class="section-head">
             <h2 id="experience-hu">Karrierút</h2>
           </div>
           <div class="career-wrap">
-            <article class="career-item"><p class="career-period">2026. ápr. - 2026. aug.</p><div class="career-card"><h3>CRM- és Ügyféladat Manager</h3><p class="company">Kulcs-Soft Zrt.</p></div></article>
-            <article class="career-item"><p class="career-period">2016. okt. - 2024. dec.</p><div class="career-card"><h3>Projekt, Termék- és CRM Manager</h3><p class="company">Apex IT Services Kft.</p></div></article>
-            <article class="career-item"><p class="career-period">2016. ápr. - 2016. szept.</p><div class="career-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Kft.</p></div></article>
-            <article class="career-item"><p class="career-period">2015. máj. - 2016. ápr.</p><div class="career-card"><h3>Marketing Manager / Csoportvezető</h3><p class="company">ClickPapa</p></div></article>
-            <article class="career-item"><p class="career-period">2014. szept. - 2015. máj.</p><div class="career-card"><h3>Marketing Manager</h3><p class="company">InfomatiX Kft.</p></div></article>
-            <article class="career-item"><p class="career-period">2013. jan. - 2014. júl.</p><div class="career-card"><h3>Termék- és Project Manager</h3><p class="company">A.L.e.v.</p></div></article>
-            <article class="career-item"><p class="career-period">2009. aug. - 2012. nov.</p><div class="career-card"><h3>Marketing Manager / Médiavásárló</h3><p class="company">Docler Holding</p></div></article>
-            <article class="career-item"><p class="career-period">2007. jan. - 2009. aug.</p><div class="career-card"><h3>Ügyfélszolgálat, Műszakvezető</h3><p class="company">Docler Holding</p></div></article>
+            <article class="career-item"><p class="career-period">2026/04-08</p><div class="career-card"><h3>CRM- és Ügyféladat Manager</h3><p class="company">Kulcs-Soft Zrt.</p></div></article>
+            <article class="career-item"><p class="career-period">2016/10 - 2024/12</p><div class="career-card"><h3>Projekt, Termék- és CRM Manager</h3><p class="company">Apex IT Services Kft.</p></div></article>
+            <article class="career-item"><p class="career-period">2016/04-09</p><div class="career-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Kft.</p></div></article>
+            <article class="career-item"><p class="career-period">2015/05 - 2016/04</p><div class="career-card"><h3>Marketing Manager / Csoportvezető</h3><p class="company">ClickPapa</p></div></article>
+            <article class="career-item"><p class="career-period">2014/09 - 2015/05</p><div class="career-card"><h3>Marketing Manager</h3><p class="company">InfomatiX Kft.</p></div></article>
+            <article class="career-item"><p class="career-period">2013/01 - 2014/07</p><div class="career-card"><h3>Termék- és Project Manager</h3><p class="company">A.L.e.v.</p></div></article>
+            <article class="career-item"><p class="career-period">2009/08 - 2012/11</p><div class="career-card"><h3>Marketing Manager / Médiavásárló</h3><p class="company">Docler Holding</p></div></article>
+            <article class="career-item"><p class="career-period">2007/01 - 2009/08</p><div class="career-card"><h3>Ügyfélszolgálat, Műszakvezető</h3><p class="company">Docler Holding</p></div></article>
           </div>
         </div>
       </section>
 
-      <section class="section shell reveal" aria-labelledby="fit-hu">
+      <section class="section shell reveal" aria-labelledby="fit-hu" data-rail-section="fit">
         <div class="fit-panel">
           <div>
             <h2 id="fit-hu">Amit keresek</h2>
@@ -997,7 +1097,7 @@
         </div>
       </section>
 
-      <section class="section shell contact-section reveal" aria-labelledby="contact-hu">
+      <section class="section shell contact-section reveal" aria-labelledby="contact-hu" data-rail-section="contact">
         <div class="cta">
           <div>
             <h2 id="contact-hu">Beszéljünk!</h2>
@@ -1021,6 +1121,7 @@
     const footerEn = document.querySelector("[data-footer-en]");
     const footerHu = document.querySelector("[data-footer-hu]");
     const backTop = document.querySelector(".back-top");
+    const railButtons = Array.from(document.querySelectorAll("[data-rail-link]"));
     const normalizeLang = (lang) => lang === "hu" ? "hu" : "en";
 
     function setLanguage(nextLang, updateHash = true) {
@@ -1035,6 +1136,7 @@
       if (updateHash && window.location.hash !== "#" + lang) {
         history.replaceState(null, "", "#" + lang);
       }
+      requestAnimationFrame(updateRail);
     }
 
     langButtons.forEach((button) => {
@@ -1059,8 +1161,46 @@
       revealTargets.forEach((target) => target.classList.add("is-visible"));
     }
 
+    function visibleSection(name) {
+      return Array.from(document.querySelectorAll(`[data-rail-section="${name}"]`))
+        .find((section) => section.offsetParent !== null);
+    }
+
+    function setActiveRail(name) {
+      railButtons.forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.railLink === name);
+      });
+    }
+
+    function updateRail() {
+      const sections = Array.from(document.querySelectorAll("[data-rail-section]"))
+        .filter((section) => section.offsetParent !== null);
+      let active = "top";
+      const marker = window.innerHeight * 0.42;
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= marker && rect.bottom > marker * 0.35) {
+          active = section.dataset.railSection;
+        }
+      });
+      setActiveRail(active);
+    }
+
+    railButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const targetName = button.dataset.railLink;
+        const target = targetName === "top" ? document.body : visibleSection(targetName);
+        if (targetName === "top") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+
     const toggleBackTop = () => {
       backTop.classList.toggle("is-visible", window.scrollY > 520);
+      updateRail();
     };
     window.addEventListener("scroll", toggleBackTop, { passive: true });
     toggleBackTop();
