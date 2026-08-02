@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Dávid Halmi">
+  <meta name="description" content="Dávid Halmi - CRM and cross-functional delivery manager in Budapest.">
+  <meta property="og:title" content="Hire Dávid Halmi">
+  <meta property="og:description" content="I connect customer data, commercial priorities and delivery so teams make better decisions and ship the right work.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hire.davidhalmi.com/">
+  <meta name="twitter:card" content="summary">
+  <title>Hire Dávid Halmi</title>
+  <link rel="canonical" href="https://hire.davidhalmi.com/">
+  <link rel="icon" href="favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="favicon-96x96.png">
+  <style>
+    :root {
+      --ink: #172238;
+      --ink-soft: #42506a;
+      --muted: #6e7789;
+      --paper: #eee9df;
+      --paper-strong: #f7f1e7;
+      --white: #ffffff;
+      --navy: #13243c;
+      --teal: #0f8f86;
+      --teal-dark: #096a65;
+      --green: #2f9d5b;
+      --gold: #e1b84d;
+      --gold-soft: #f2df9a;
+      --line: rgba(23, 34, 56, 0.12);
+      --shadow: 0 18px 48px rgba(19, 36, 60, 0.12);
+      --radius: 8px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #f4efe6 0%, var(--paper) 40%, #e6eee9 72%, #eee8dc 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--teal-dark);
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 20px 0 28px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      min-height: 36px;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(47, 157, 91, 0.24);
+      border-radius: 999px;
+      padding: 7px 13px;
+      color: #185432;
+      background: rgba(47, 157, 91, 0.1);
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .status-pill::before {
+      width: 9px;
+      height: 9px;
+      flex: 0 0 9px;
+      border-radius: 50%;
+      background: #2fbd68;
+      box-shadow: 0 0 0 5px rgba(47, 189, 104, 0.12);
+      content: "";
+    }
+
+    .status-pill.is-unavailable {
+      border-color: rgba(150, 93, 82, 0.2);
+      color: #805044;
+      background: rgba(150, 93, 82, 0.08);
+    }
+
+    .status-pill.is-unavailable::before {
+      background: #9a908a;
+      box-shadow: 0 0 0 5px rgba(154, 144, 138, 0.13);
+    }
+
+    [data-status-lang],
+    .status-unavailable {
+      display: none;
+    }
+
+    .status-pill.is-unavailable .status-available {
+      display: none;
+    }
+
+    .status-pill.is-unavailable .status-unavailable {
+      display: inline;
+    }
+
+    html[data-lang="en"] .status-available [data-status-lang="en"],
+    html[data-lang="en"] .status-unavailable [data-status-lang="en"],
+    html[data-lang="hu"] .status-available [data-status-lang="hu"],
+    html[data-lang="hu"] .status-unavailable [data-status-lang="hu"] {
+      display: inline;
+    }
+
+    .language-switch {
+      display: inline-flex;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 999px;
+      background: rgba(19, 36, 60, 0.07);
+    }
+
+    .language-switch button {
+      min-height: 34px;
+      border: 0;
+      border-radius: 999px;
+      padding: 6px 15px;
+      color: var(--ink-soft);
+      background: transparent;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 750;
+    }
+
+    .language-switch button[aria-pressed="true"] {
+      color: var(--white);
+      background: var(--navy);
+      box-shadow: 0 6px 16px rgba(19, 36, 60, 0.16);
+    }
+
+    [data-lang-content] {
+      display: none;
+    }
+
+    html[data-lang="en"] [data-lang-content="en"],
+    html[data-lang="hu"] [data-lang-content="hu"] {
+      display: block;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(270px, 0.65fr);
+      gap: 28px;
+      align-items: stretch;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: var(--radius);
+      padding: clamp(22px, 4vw, 40px);
+      background:
+        linear-gradient(135deg, rgba(248, 242, 231, 0.96), rgba(232, 239, 235, 0.96)),
+        var(--paper-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+      overflow-wrap: break-word;
+    }
+
+    h1 {
+      max-width: 840px;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: clamp(2.45rem, 6.2vw, 4.85rem);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .location {
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      font-weight: 750;
+    }
+
+    .hero-lead {
+      max-width: 820px;
+      margin-bottom: 0;
+      color: var(--ink);
+      font-size: clamp(1.12rem, 2vw, 1.52rem);
+      line-height: 1.24;
+      font-weight: 800;
+    }
+
+    .hero-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px 14px;
+      max-width: 760px;
+      margin-top: 16px;
+      color: var(--teal-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .hero-roles span {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .hero-copy p:last-child {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .section-head > *,
+    .help-card,
+    .work-card,
+    .experience-card,
+    .fit-card,
+    .cta {
+      min-width: 0;
+    }
+
+    .hero-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+      padding: 4px 0;
+    }
+
+    .hero-panel .button-row {
+      border-top: 1px solid rgba(19, 36, 60, 0.14);
+      padding-top: 14px;
+    }
+
+    .button-row,
+    .cv-grid {
+      display: grid;
+      gap: 9px;
+    }
+
+    .button-row {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .button,
+    .cv-link {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(19, 36, 60, 0.16);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-weight: 850;
+      line-height: 1.1;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .cv-link {
+      color: var(--navy);
+      background: var(--gold);
+      box-shadow: 0 8px 18px rgba(243, 202, 90, 0.24);
+    }
+
+    .button {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .button.secondary {
+      color: var(--navy);
+      background: var(--white);
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(19, 36, 60, 0.04);
+    }
+
+    .proof-item {
+      min-height: 112px;
+      padding: 18px;
+      border-right: 1px solid var(--line);
+    }
+
+    .proof-item:last-child {
+      border-right: 0;
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--teal-dark);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1;
+    }
+
+    .proof-item span {
+      display: block;
+      color: var(--ink-soft);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .section {
+      margin-top: clamp(28px, 5vw, 58px);
+    }
+
+    .section-head {
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      margin-bottom: 0;
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .help-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .help-card,
+    .work-card,
+    .experience-card,
+    .fit-card,
+    .cta {
+      border: 1px solid rgba(19, 36, 60, 0.11);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 12px 34px rgba(19, 36, 60, 0.08);
+    }
+
+    .help-card {
+      position: relative;
+      display: grid;
+      min-height: 172px;
+      grid-template-columns: minmax(300px, 0.42fr) minmax(0, 1fr);
+      gap: 22px;
+      overflow: hidden;
+      padding: 16px 22px 16px 16px;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.68)),
+        var(--white);
+    }
+
+    .help-visual {
+      position: relative;
+      height: 150px;
+      min-height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, #173250, #0f8f86);
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+        0 12px 28px rgba(19, 36, 60, 0.12);
+    }
+
+    .help-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .help-content {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .help-card h3 {
+      max-width: 760px;
+      margin-bottom: 16px;
+      color: var(--navy);
+      font-size: clamp(1.25rem, 2vw, 1.8rem);
+      line-height: 1.13;
+    }
+
+    .proof-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .proof-chip {
+      position: relative;
+      display: inline-flex;
+      min-height: 22px;
+      align-items: center;
+      padding-left: 12px;
+      color: var(--teal-dark);
+      background: transparent;
+      font-size: 0.8rem;
+      font-weight: 780;
+    }
+
+    .proof-chip::before {
+      position: absolute;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(15, 143, 134, 0.62);
+      content: "";
+    }
+
+    .help-close {
+      margin: 22px calc(50% - 50vw) 0;
+      padding: 22px max(20px, calc((100vw - var(--max)) / 2));
+      background:
+        linear-gradient(90deg, rgba(255, 207, 90, 0.2), rgba(15, 143, 134, 0.13), rgba(255, 126, 182, 0.12));
+    }
+
+    .help-close p {
+      width: min(820px, 100%);
+      margin: 0 auto;
+      color: var(--navy);
+      font-size: clamp(1.18rem, 2vw, 1.55rem);
+      font-weight: 850;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .work-card {
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(245, 241, 232, 0.78));
+    }
+
+    .work-card h3 {
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 1.28rem;
+    }
+
+    .work-card p {
+      margin-bottom: 0;
+      color: var(--ink-soft);
+    }
+
+    .experience-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .experience-card {
+      min-height: 138px;
+      padding: 18px;
+    }
+
+    .experience-card h3 {
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 1.05rem;
+      line-height: 1.25;
+    }
+
+    .company {
+      margin-bottom: 6px;
+      color: var(--teal-dark);
+      font-weight: 850;
+    }
+
+    .period {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .fit-band {
+      margin-right: calc(50% - 50vw);
+      margin-left: calc(50% - 50vw);
+      padding: clamp(36px, 6vw, 64px) max(20px, calc((100vw - var(--max)) / 2));
+      background: linear-gradient(135deg, #d8e8df, #eadfbd);
+    }
+
+    .fit-band .section-head {
+      width: min(var(--max), calc(100% - 40px));
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .fit-grid {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .fit-card {
+      padding: 20px 24px;
+      background: rgba(255, 255, 255, 0.76);
+    }
+
+    .fit-card-wide {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(340px, 0.58fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .fit-card h3 {
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 1.25rem;
+    }
+
+    .fit-card p {
+      margin-bottom: 0;
+      color: var(--ink-soft);
+    }
+
+    .fit-card ul {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--ink-soft);
+    }
+
+    .chip-row {
+      display: grid;
+      grid-template-columns: repeat(2, 168px);
+      grid-auto-rows: 38px;
+      gap: 8px;
+      align-content: start;
+      justify-content: end;
+    }
+
+    .chip {
+      display: inline-flex;
+      min-height: 38px;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(19, 36, 60, 0.1);
+      border-left: 3px solid rgba(225, 184, 77, 0.75);
+      border-radius: var(--radius);
+      padding: 7px 10px;
+      color: var(--navy);
+      background: rgba(255, 255, 255, 0.46);
+      font-size: 0.92rem;
+      font-weight: 850;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .cta {
+      display: grid;
+      width: min(640px, 100%);
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      margin: clamp(34px, 6vw, 68px) auto 34px;
+      padding: 24px;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .cta h2 {
+      margin-bottom: 4px;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      line-height: 1;
+    }
+
+    .cta p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .cta .button {
+      color: var(--navy);
+      background: var(--gold);
+    }
+
+    footer {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    footer a {
+      font-weight: 500;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid rgba(19, 36, 60, 0.12);
+      border-radius: 999px;
+      color: var(--navy);
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 10px 24px rgba(19, 36, 60, 0.12);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .back-top.is-visible {
+      opacity: 0.8;
+      pointer-events: auto;
+    }
+
+    .back-top:hover,
+    .back-top:focus-visible {
+      transform: translateY(-2px);
+      opacity: 1;
+      text-decoration: none;
+    }
+
+    .reveal,
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+      transition: opacity 520ms ease, transform 520ms ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal,
+      .back-top {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .fit-card-wide {
+        grid-template-columns: 1fr;
+      }
+
+      .help-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid,
+      .experience-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-proof {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-item {
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .proof-item:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(var(--max), calc(100% - 24px));
+        padding-top: 14px;
+      }
+
+      .topbar {
+        align-items: stretch;
+        flex-wrap: wrap;
+      }
+
+      .language-switch {
+        margin-left: auto;
+        max-width: 100%;
+      }
+
+      .status-pill {
+        white-space: normal;
+      }
+
+      .language-switch {
+        flex: 0 0 auto;
+      }
+
+      .language-switch button {
+        padding: 6px 10px;
+      }
+
+      .hero {
+        padding: 24px 18px;
+      }
+
+      .help-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 14px;
+      }
+
+      .help-visual {
+        height: 158px;
+      }
+
+      .help-card h3 {
+        font-size: 1.35rem;
+      }
+
+      .help-close {
+        padding: 18px;
+      }
+
+      .help-close p {
+        text-align: center;
+      }
+
+      .button-row,
+      .work-grid,
+      .experience-list,
+      .fit-card-wide,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .chip-row {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        justify-content: stretch;
+      }
+
+      .chip {
+        min-height: 44px;
+        height: auto;
+        font-size: 0.98rem;
+        white-space: normal;
+      }
+
+      .button,
+      .cv-link {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      dd,
+      li {
+        overflow-wrap: anywhere;
+      }
+
+      .fit-band {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .cta {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <main class="page">
+    <div class="topbar" aria-label="Language and availability">
+      <div class="status-pill">
+        <span class="status-available">
+          <span data-status-lang="en">Available for hire</span>
+          <span data-status-lang="hu">Pozíciót keresek!</span>
+        </span>
+        <span class="status-unavailable">
+          <span data-status-lang="en">Not searching currently</span>
+          <span data-status-lang="hu">Jelenleg nem keresek állást</span>
+        </span>
+      </div>
+      <div class="language-switch">
+        <button type="button" data-lang-button="en" aria-pressed="true">English</button>
+        <button type="button" data-lang-button="hu" aria-pressed="false">Magyar</button>
+      </div>
+    </div>
+
+    <div data-lang-content="en">
+      <section class="hero reveal" aria-labelledby="hero-en">
+        <div class="hero-copy">
+          <h1 id="hero-en">Dávid Halmi</h1>
+          <p class="location">Budapest, Hungary</p>
+          <p class="hero-lead">Bridging business and technology for better results</p>
+          <div class="hero-roles" aria-label="Target roles">
+            <span>· CRM Manager</span>
+            <span>· Marketing Manager</span>
+            <span>· Project Manager</span>
+            <span>· Product Owner</span>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Contact and CV links">
+          <div>
+            <div class="cv-grid">
+              <a class="cv-link" href="david_halmi_cv_np_en.pdf" download>English CV</a>
+              <a class="cv-link" href="halmi_david_oneletrajz_np_hu.pdf" download>Hungarian CV</a>
+            </div>
+          </div>
+          <div class="button-row">
+            <a class="button secondary" href="https://www.linkedin.com/in/davidhalmi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="button" href="mailto:me@davidhalmi.com">Mail me</a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section reveal" aria-labelledby="help-en">
+        <div class="section-head">
+          <h2 id="help-en">What is your enterprise lacking?</h2>
+        </div>
+        <div class="help-grid">
+          <article class="help-card help-card-crm">
+            <div class="help-visual" aria-hidden="true">
+              <img src="assets/help-journey.jpg" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="help-content">
+              <h3>You need someone who understands your customers and how to onboard and keep them?</h3>
+              <div class="proof-chips">
+                <span class="proof-chip">AI-powered research</span>
+                <span class="proof-chip">Dashboarding</span>
+                <span class="proof-chip">Customer lifecycle</span>
+                <span class="proof-chip">Retention</span>
+                <span class="proof-chip">CRM flows</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="help-card help-card-marketing">
+            <div class="help-visual" aria-hidden="true">
+              <img src="assets/help-marketing.jpg" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="help-content">
+              <h3>You lack a creative marketing professional leading campaign strategies end-to-end?</h3>
+              <div class="proof-chips">
+                <span class="proof-chip">Successful campaigns</span>
+                <span class="proof-chip">ROI improvement</span>
+                <span class="proof-chip">GTM</span>
+                <span class="proof-chip">Content + PPC</span>
+                <span class="proof-chip">Creative strategy</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="help-card help-card-delivery">
+            <div class="help-visual" aria-hidden="true">
+              <img src="assets/help-product.jpg" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="help-content">
+              <h3>Your team needs an efficient member to manage development and product lifecycle?</h3>
+              <div class="proof-chips">
+                <span class="proof-chip">10+ team coordination</span>
+                <span class="proof-chip">Roadmaps</span>
+                <span class="proof-chip">Product lifecycle</span>
+                <span class="proof-chip">Delivery management</span>
+                <span class="proof-chip">Requirements</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="help-close">
+          <p>I am open to join your team and solve any of these challenges!</p>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="work-en">
+        <div class="section-head">
+          <h2 id="work-en">How I create value</h2>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <h3>Customer lifecycle systems</h3>
+            <p>Segmentation, journey mapping, onboarding logic, retention and CRM workflows that make customer work less improvised.</p>
+          </article>
+          <article class="work-card">
+            <h3>Research into priorities</h3>
+            <p>Audience, funnel, product and market research translated into decisions, not just documents or dashboards.</p>
+          </article>
+          <article class="work-card">
+            <h3>Roadmaps and delivery cadence</h3>
+            <p>Clear problem detection, backlog hygiene and practical team routines across business and technical teams.</p>
+          </article>
+          <article class="work-card">
+            <h3>Go-to-market coherence</h3>
+            <p>Messaging, campaigns, content, UX input and product feedback to launch an excellent product.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="experience-en">
+        <div class="section-head">
+          <h2 id="experience-en">Past employers</h2>
+        </div>
+        <div class="experience-list">
+          <article class="experience-card"><h3>CRM and Customer Data Manager</h3><p class="company">Kulcs-Soft Zrt.</p><p class="period">April 2026 - August 2026</p></article>
+          <article class="experience-card"><h3>Project, Product and CRM Manager</h3><p class="company">Apex IT Services Ltd.</p><p class="period">Oct 2016 - Dec 2024</p></article>
+          <article class="experience-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Ltd.</p><p class="period">Apr 2016 - Sep 2016</p></article>
+          <article class="experience-card"><h3>Marketing Manager / Team Lead</h3><p class="company">ClickPapa</p><p class="period">May 2015 - Apr 2016</p></article>
+          <article class="experience-card"><h3>Marketing Manager</h3><p class="company">InfomatiX Ltd.</p><p class="period">Sep 2014 - May 2015</p></article>
+          <article class="experience-card"><h3>Product and Project Manager</h3><p class="company">A.L.e.v.</p><p class="period">Jan 2013 - Jul 2014</p></article>
+          <article class="experience-card"><h3>Marketing Manager / Media Buyer</h3><p class="company">Docler Holding</p><p class="period">Aug 2009 - Nov 2012</p></article>
+          <article class="experience-card"><h3>Customer Support, Shift Leader</h3><p class="company">Docler Holding</p><p class="period">Jan 2007 - Aug 2009</p></article>
+        </div>
+      </section>
+
+      <section class="section fit-band reveal" aria-labelledby="fit-en">
+        <div class="section-head">
+          <h2 id="fit-en">What I am looking for</h2>
+        </div>
+        <div class="fit-grid">
+          <article class="fit-card fit-card-wide">
+            <div>
+              <h3>Best-fit roles</h3>
+              <p>Senior individual contributor or small-team lead roles where CRM, customer lifecycle, product delivery and commercial execution meet.</p>
+            </div>
+            <div class="chip-row">
+              <span class="chip">CRM Manager</span>
+              <span class="chip">Marketing Manager</span>
+              <span class="chip">Project Manager</span>
+              <span class="chip">Product Owner</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta reveal" aria-labelledby="contact-en">
+        <div>
+          <h2 id="contact-en">Interested?</h2>
+          <p>Let's talk and see how I can contribute!</p>
+        </div>
+        <a class="button" href="mailto:me@davidhalmi.com">Mail me</a>
+      </section>
+    </div>
+
+    <div data-lang-content="hu">
+      <section class="hero reveal" aria-labelledby="hero-hu">
+        <div class="hero-copy">
+          <h1 id="hero-hu">Halmi Dávid</h1>
+          <p class="location">Budapest, Magyarország</p>
+          <p class="hero-lead">Híd az üzleti és technológiai területek közt</p>
+          <div class="hero-roles" aria-label="Célpozíciók">
+            <span>CRM Manager</span>
+            <span>Marketing Manager</span>
+            <span>Project Manager</span>
+            <span>Product Owner</span>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Kapcsolat és CV linkek">
+          <div>
+            <div class="cv-grid">
+              <a class="cv-link" href="david_halmi_cv_np_en.pdf" download>Angol CV</a>
+              <a class="cv-link" href="halmi_david_oneletrajz_np_hu.pdf" download>Magyar CV</a>
+            </div>
+          </div>
+          <div class="button-row">
+            <a class="button secondary" href="https://www.linkedin.com/in/davidhalmi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="button" href="mailto:me@davidhalmi.com">Írj nekem</a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section reveal" aria-labelledby="help-hu">
+        <div class="section-head">
+          <h2 id="help-hu">Mi hiányzik a vállalkozásodból?</h2>
+        </div>
+        <div class="help-grid">
+          <article class="help-card help-card-crm">
+            <div class="help-visual" aria-hidden="true">
+              <img src="assets/help-journey.jpg" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="help-content">
+              <h3>Kell valaki, aki érti az ügyfeleidet, és tudja hogyan kell őket onboardolni és megtartani?</h3>
+              <div class="proof-chips">
+                <span class="proof-chip">AI-alapú kutatás</span>
+                <span class="proof-chip">Dashboarding</span>
+                <span class="proof-chip">Customer lifecycle</span>
+                <span class="proof-chip">Megtartás</span>
+                <span class="proof-chip">CRM flow-k</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="help-card help-card-marketing">
+            <div class="help-visual" aria-hidden="true">
+              <img src="assets/help-marketing.jpg" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="help-content">
+              <h3>Hiányzik egy kreatív marketing szakember aki teljes körű kampánystratégiát tervez?</h3>
+              <div class="proof-chips">
+                <span class="proof-chip">Sikeres kampányok</span>
+                <span class="proof-chip">ROI javítás</span>
+                <span class="proof-chip">GTM</span>
+                <span class="proof-chip">Tartalom + PPC</span>
+                <span class="proof-chip">Kreatív stratégia</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="help-card help-card-delivery">
+            <div class="help-visual" aria-hidden="true">
+              <img src="assets/help-product.jpg" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="help-content">
+              <h3>Hatékony csapattagot keresel fejlesztéshez és product életút menedzsmenthez?</h3>
+              <div class="proof-chips">
+                <span class="proof-chip">10+ csapat koordináció</span>
+                <span class="proof-chip">Roadmap-ek</span>
+                <span class="proof-chip">Product lifecycle</span>
+                <span class="proof-chip">Delivery management</span>
+                <span class="proof-chip">Requirementek</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="help-close">
+          <p>Örömmel segítek ezek megoldásában a csapat tagjaként!</p>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="work-hu">
+        <div class="section-head">
+          <h2 id="work-hu">Hogyan teremtek értéket</h2>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <h3>Customer lifecycle rendszerek</h3>
+            <p>Szegmentáció, journey mapping, onboarding, megtartás és CRM workflow-k, amelyek célzottabb működést hoznak.</p>
+          </article>
+          <article class="work-card">
+            <h3>Kutatásból prioritás</h3>
+            <p>Közönség-, funnel-, termék- és piackutatás, döntésekké fordítva, nem csak dokumentumokká vagy dashboardokká.</p>
+          </article>
+          <article class="work-card">
+            <h3>Roadmap és delivery ritmus</h3>
+            <p>Tiszta problémafeltárás, backlog-higiénia és működő csapatrutinok üzleti és technikai szereplők között.</p>
+          </article>
+          <article class="work-card">
+            <h3>Go-to-market koherencia</h3>
+            <p>Üzenetek, kampányok, tartalom, UX input és termék-visszacsatolás összekötése, hogy kiváló terméket szállítsunk.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="experience-hu">
+        <div class="section-head">
+          <h2 id="experience-hu">Korábbi munkahelyeim</h2>
+        </div>
+        <div class="experience-list">
+          <article class="experience-card"><h3>CRM- és Ügyféladat Manager</h3><p class="company">Kulcs-Soft Zrt.</p><p class="period">2026. április - 2026. augusztus</p></article>
+          <article class="experience-card"><h3>Projekt, Termék- és CRM Manager</h3><p class="company">Apex IT Services Kft.</p><p class="period">2016. október - 2024. december</p></article>
+          <article class="experience-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Kft.</p><p class="period">2016. április - 2016. szeptember</p></article>
+          <article class="experience-card"><h3>Marketing Manager / Csoportvezető</h3><p class="company">ClickPapa</p><p class="period">2015. május - 2016. április</p></article>
+          <article class="experience-card"><h3>Marketing Manager</h3><p class="company">InfomatiX Kft.</p><p class="period">2014. szeptember - 2015. május</p></article>
+          <article class="experience-card"><h3>Termék- és Project Manager</h3><p class="company">A.L.e.v.</p><p class="period">2013. január - 2014. július</p></article>
+          <article class="experience-card"><h3>Marketing Manager / Médiavásárló</h3><p class="company">Docler Holding</p><p class="period">2009. augusztus - 2012. november</p></article>
+          <article class="experience-card"><h3>Ügyfélszolgálat, Műszakvezető</h3><p class="company">Docler Holding</p><p class="period">2007. január - 2009. augusztus</p></article>
+        </div>
+      </section>
+
+      <section class="section fit-band reveal" aria-labelledby="fit-hu">
+        <div class="section-head">
+          <h2 id="fit-hu">Amit keresek</h2>
+        </div>
+        <div class="fit-grid">
+          <article class="fit-card fit-card-wide">
+            <div>
+              <h3>Legjobb illeszkedés</h3>
+              <p>Senior egyéni szakértői vagy kisebb csapatot vezető szerepek, ahol CRM, customer lifecycle, product delivery és üzleti végrehajtás találkozik.</p>
+            </div>
+            <div class="chip-row">
+              <span class="chip">CRM Manager</span>
+              <span class="chip">Marketing Manager</span>
+              <span class="chip">Project Manager</span>
+              <span class="chip">Product Owner</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta reveal" aria-labelledby="contact-hu">
+        <div>
+          <h2 id="contact-hu">Beszéljünk!</h2>
+          <p>Beszéljünk és nézzük meg, hogyan tudok segíteni!</p>
+        </div>
+        <a class="button" href="mailto:me@davidhalmi.com">Írj nekem</a>
+      </section>
+    </div>
+
+    <footer>
+      <span data-footer-en>&copy; <a href="https://davidhalmi.com/" target="_blank" rel="noopener noreferrer">Dávid Halmi</a></span>
+      <span data-footer-hu hidden>&copy; <a href="https://davidhalmi.com/" target="_blank" rel="noopener noreferrer">Halmi Dávid</a></span>
+    </footer>
+  </main>
+
+  <a class="back-top" href="#top" aria-label="Back to top">↑</a>
+
+  <script>
+    const langButtons = Array.from(document.querySelectorAll("[data-lang-button]"));
+    const footerEn = document.querySelector("[data-footer-en]");
+    const footerHu = document.querySelector("[data-footer-hu]");
+    const backTop = document.querySelector(".back-top");
+    const normalizeLang = (lang) => lang === "hu" ? "hu" : "en";
+
+    function setLanguage(nextLang, updateHash = true) {
+      const lang = normalizeLang(nextLang);
+      document.documentElement.dataset.lang = lang;
+      document.documentElement.lang = lang;
+      langButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.langButton === lang));
+      });
+      footerEn.hidden = lang !== "en";
+      footerHu.hidden = lang !== "hu";
+      if (updateHash && window.location.hash !== "#" + lang) {
+        history.replaceState(null, "", "#" + lang);
+      }
+    }
+
+    langButtons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.langButton));
+    });
+
+    window.addEventListener("hashchange", () => setLanguage(window.location.hash.slice(1), false));
+    setLanguage(window.location.hash.slice(1), false);
+
+    const revealTargets = Array.from(document.querySelectorAll(".reveal"));
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealTargets.forEach((target) => observer.observe(target));
+    } else {
+      revealTargets.forEach((target) => target.classList.add("is-visible"));
+    }
+
+    const toggleBackTop = () => {
+      backTop.classList.toggle("is-visible", window.scrollY > 420);
+    };
+    window.addEventListener("scroll", toggleBackTop, { passive: true });
+    toggleBackTop();
+  </script>
+</body>
+</html>
