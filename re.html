@@ -468,25 +468,18 @@
     .career-wrap {
       position: relative;
       display: grid;
+      --date-col: 190px;
+      --marker-col: 34px;
+      --timeline-x: 207px;
       gap: 0;
       max-width: 920px;
-    }
-
-    .career-wrap::before {
-      position: absolute;
-      top: 18px;
-      bottom: 18px;
-      left: 208px;
-      width: 1px;
-      background: linear-gradient(180deg, rgba(8, 124, 117, 0), rgba(8, 124, 117, 0.34) 12%, rgba(8, 124, 117, 0.34) 88%, rgba(8, 124, 117, 0));
-      content: "";
     }
 
     .career-item {
       position: relative;
       display: grid;
-      grid-template-columns: 172px minmax(0, 1fr);
-      gap: 74px;
+      grid-template-columns: var(--date-col) var(--marker-col) minmax(0, 1fr);
+      gap: 0;
       align-items: center;
       min-height: 72px;
       padding: 14px 0;
@@ -504,23 +497,49 @@
       line-height: 1.3;
       text-align: right;
       white-space: nowrap;
+      display: flex;
+      min-height: 100%;
+      align-items: center;
+      justify-content: flex-end;
+      transform: translateY(1px);
     }
 
     .career-item::before {
       position: absolute;
       top: 50%;
-      left: 204px;
-      width: 9px;
-      height: 9px;
+      left: var(--timeline-x);
+      z-index: 1;
+      width: 10px;
+      height: 10px;
       border: 2px solid var(--paper-2);
       border-radius: 50%;
       background: var(--teal);
       content: "";
-      transform: translateY(-50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .career-item::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--timeline-x);
+      width: 1px;
+      background: rgba(8, 124, 117, 0.28);
+      content: "";
+      transform: translateX(-50%);
+    }
+
+    .career-item:first-child::after {
+      top: 50%;
+    }
+
+    .career-item:last-child::after {
+      bottom: 50%;
     }
 
     .career-card {
       position: relative;
+      grid-column: 3;
       padding: 0 0 0 2px;
     }
 
@@ -772,11 +791,10 @@
       }
 
       .career-wrap {
+        --date-col: 0px;
+        --marker-col: 24px;
+        --timeline-x: 4px;
         max-width: none;
-      }
-
-      .career-wrap::before {
-        left: 4px;
       }
 
       .career-item {
@@ -790,12 +808,28 @@
       .career-period {
         text-align: left;
         white-space: normal;
+        min-height: 0;
+        justify-content: flex-start;
+        transform: none;
       }
 
       .career-item::before {
         top: 1.1rem;
         left: 0;
         transform: none;
+      }
+
+      .career-item::after {
+        left: 4px;
+        transform: none;
+      }
+
+      .career-item:first-child::after {
+        top: 1.1rem;
+      }
+
+      .career-item:last-child::after {
+        bottom: calc(100% - 1.1rem);
       }
     }
 
