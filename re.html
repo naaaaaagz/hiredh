@@ -470,7 +470,6 @@
       display: grid;
       --date-col: 190px;
       --marker-col: 34px;
-      --timeline-x: 207px;
       gap: 0;
       max-width: 920px;
     }
@@ -480,7 +479,7 @@
       display: grid;
       grid-template-columns: var(--date-col) var(--marker-col) minmax(0, 1fr);
       gap: 0;
-      align-items: center;
+      align-items: stretch;
       min-height: 72px;
       padding: 14px 0;
     }
@@ -504,10 +503,28 @@
       transform: translateY(1px);
     }
 
-    .career-item::before {
+    .career-marker {
+      position: relative;
+      grid-column: 2;
+      align-self: stretch;
+      min-height: 100%;
+    }
+
+    .career-marker::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: rgba(8, 124, 117, 0.28);
+      content: "";
+      transform: translateX(-50%);
+    }
+
+    .career-marker::after {
       position: absolute;
       top: 50%;
-      left: var(--timeline-x);
+      left: 50%;
       z-index: 1;
       width: 10px;
       height: 10px;
@@ -518,28 +535,18 @@
       transform: translate(-50%, -50%);
     }
 
-    .career-item::after {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: var(--timeline-x);
-      width: 1px;
-      background: rgba(8, 124, 117, 0.28);
-      content: "";
-      transform: translateX(-50%);
-    }
-
-    .career-item:first-child::after {
+    .career-item:first-child .career-marker::before {
       top: 50%;
     }
 
-    .career-item:last-child::after {
+    .career-item:last-child .career-marker::before {
       bottom: 50%;
     }
 
     .career-card {
       position: relative;
       grid-column: 3;
+      align-self: center;
       padding: 0 0 0 2px;
     }
 
@@ -793,19 +800,18 @@
       .career-wrap {
         --date-col: 0px;
         --marker-col: 24px;
-        --timeline-x: 4px;
         max-width: none;
       }
 
       .career-item {
-        grid-template-columns: 1fr;
+        grid-template-columns: var(--marker-col) minmax(0, 1fr);
         gap: 8px;
         min-height: 0;
-        padding-left: 24px;
         align-items: start;
       }
 
       .career-period {
+        grid-column: 2;
         text-align: left;
         white-space: normal;
         min-height: 0;
@@ -813,22 +819,24 @@
         transform: none;
       }
 
-      .career-item::before {
-        top: 1.1rem;
-        left: 0;
-        transform: none;
+      .career-marker {
+        grid-column: 1;
+        grid-row: 1 / span 2;
       }
 
-      .career-item::after {
-        left: 4px;
-        transform: none;
-      }
-
-      .career-item:first-child::after {
+      .career-marker::after {
         top: 1.1rem;
       }
 
-      .career-item:last-child::after {
+      .career-card {
+        grid-column: 2;
+      }
+
+      .career-item:first-child .career-marker::before {
+        top: 1.1rem;
+      }
+
+      .career-item:last-child .career-marker::before {
         bottom: calc(100% - 1.1rem);
       }
     }
@@ -982,14 +990,14 @@
             <h2 id="experience-en">Career path</h2>
           </div>
           <div class="career-wrap">
-            <article class="career-item"><p class="career-period">2026/04-08</p><div class="career-card"><h3>CRM and Customer Data Manager</h3><p class="company">Kulcs-Soft Zrt.</p></div></article>
-            <article class="career-item"><p class="career-period">2016/10 - 2024/12</p><div class="career-card"><h3>Project, Product and CRM Manager</h3><p class="company">Apex IT Services Ltd.</p></div></article>
-            <article class="career-item"><p class="career-period">2016/04-09</p><div class="career-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Ltd.</p></div></article>
-            <article class="career-item"><p class="career-period">2015/05 - 2016/04</p><div class="career-card"><h3>Marketing Manager / Team Lead</h3><p class="company">ClickPapa</p></div></article>
-            <article class="career-item"><p class="career-period">2014/09 - 2015/05</p><div class="career-card"><h3>Marketing Manager</h3><p class="company">InfomatiX Ltd.</p></div></article>
-            <article class="career-item"><p class="career-period">2013/01 - 2014/07</p><div class="career-card"><h3>Product and Project Manager</h3><p class="company">A.L.e.v.</p></div></article>
-            <article class="career-item"><p class="career-period">2009/08 - 2012/11</p><div class="career-card"><h3>Marketing Manager / Media Buyer</h3><p class="company">Docler Holding</p></div></article>
-            <article class="career-item"><p class="career-period">2007/01 - 2009/08</p><div class="career-card"><h3>Customer Support, Shift Leader</h3><p class="company">Docler Holding</p></div></article>
+            <article class="career-item"><p class="career-period">2026/04-08</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>CRM and Customer Data Manager</h3><p class="company">Kulcs-Soft Zrt.</p></div></article>
+            <article class="career-item"><p class="career-period">2016/10 - 2024/12</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Project, Product and CRM Manager</h3><p class="company">Apex IT Services Ltd.</p></div></article>
+            <article class="career-item"><p class="career-period">2016/04-09</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Ltd.</p></div></article>
+            <article class="career-item"><p class="career-period">2015/05 - 2016/04</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Marketing Manager / Team Lead</h3><p class="company">ClickPapa</p></div></article>
+            <article class="career-item"><p class="career-period">2014/09 - 2015/05</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Marketing Manager</h3><p class="company">InfomatiX Ltd.</p></div></article>
+            <article class="career-item"><p class="career-period">2013/01 - 2014/07</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Product and Project Manager</h3><p class="company">A.L.e.v.</p></div></article>
+            <article class="career-item"><p class="career-period">2009/08 - 2012/11</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Marketing Manager / Media Buyer</h3><p class="company">Docler Holding</p></div></article>
+            <article class="career-item"><p class="career-period">2007/01 - 2009/08</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Customer Support, Shift Leader</h3><p class="company">Docler Holding</p></div></article>
           </div>
         </div>
       </section>
@@ -1101,14 +1109,14 @@
             <h2 id="experience-hu">Karrierút</h2>
           </div>
           <div class="career-wrap">
-            <article class="career-item"><p class="career-period">2026/04-08</p><div class="career-card"><h3>CRM- és Ügyféladat Manager</h3><p class="company">Kulcs-Soft Zrt.</p></div></article>
-            <article class="career-item"><p class="career-period">2016/10 - 2024/12</p><div class="career-card"><h3>Projekt, Termék- és CRM Manager</h3><p class="company">Apex IT Services Kft.</p></div></article>
-            <article class="career-item"><p class="career-period">2016/04-09</p><div class="career-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Kft.</p></div></article>
-            <article class="career-item"><p class="career-period">2015/05 - 2016/04</p><div class="career-card"><h3>Marketing Manager / Csoportvezető</h3><p class="company">ClickPapa</p></div></article>
-            <article class="career-item"><p class="career-period">2014/09 - 2015/05</p><div class="career-card"><h3>Marketing Manager</h3><p class="company">InfomatiX Kft.</p></div></article>
-            <article class="career-item"><p class="career-period">2013/01 - 2014/07</p><div class="career-card"><h3>Termék- és Project Manager</h3><p class="company">A.L.e.v.</p></div></article>
-            <article class="career-item"><p class="career-period">2009/08 - 2012/11</p><div class="career-card"><h3>Marketing Manager / Médiavásárló</h3><p class="company">Docler Holding</p></div></article>
-            <article class="career-item"><p class="career-period">2007/01 - 2009/08</p><div class="career-card"><h3>Ügyfélszolgálat, Műszakvezető</h3><p class="company">Docler Holding</p></div></article>
+            <article class="career-item"><p class="career-period">2026/04-08</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>CRM- és Ügyféladat Manager</h3><p class="company">Kulcs-Soft Zrt.</p></div></article>
+            <article class="career-item"><p class="career-period">2016/10 - 2024/12</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Projekt, Termék- és CRM Manager</h3><p class="company">Apex IT Services Kft.</p></div></article>
+            <article class="career-item"><p class="career-period">2016/04-09</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Product Owner / PM</h3><p class="company">Virtual Skyline Kft.</p></div></article>
+            <article class="career-item"><p class="career-period">2015/05 - 2016/04</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Marketing Manager / Csoportvezető</h3><p class="company">ClickPapa</p></div></article>
+            <article class="career-item"><p class="career-period">2014/09 - 2015/05</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Marketing Manager</h3><p class="company">InfomatiX Kft.</p></div></article>
+            <article class="career-item"><p class="career-period">2013/01 - 2014/07</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Termék- és Project Manager</h3><p class="company">A.L.e.v.</p></div></article>
+            <article class="career-item"><p class="career-period">2009/08 - 2012/11</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Marketing Manager / Médiavásárló</h3><p class="company">Docler Holding</p></div></article>
+            <article class="career-item"><p class="career-period">2007/01 - 2009/08</p><span class="career-marker" aria-hidden="true"></span><div class="career-card"><h3>Ügyfélszolgálat, Műszakvezető</h3><p class="company">Docler Holding</p></div></article>
           </div>
         </div>
       </section>
